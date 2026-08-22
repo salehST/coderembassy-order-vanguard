@@ -1,0 +1,1560 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CoderEmbassy Order Guard for WooCommerce 1.0.11\n"
+"Report-Msgid-Bugs-To: https://coderembassy.com/\n"
+"POT-Creation-Date: 2026-08-08 08:30:17+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: CoderEmbassy release tooling\n"
+"X-Domain: coderembassy-order-guard\n"
+
+#: src/views/CircuitBreakers.jsx:108
+#. 1: minutes, 2: seconds
+msgid "%1$dm %2$ds remaining"
+msgstr ""
+
+#: src/views/Lists.jsx:165
+#. %d: number of whitelist entries.
+msgid "%d allowed"
+msgstr ""
+
+#: src/views/Lists.jsx:157
+#. %d: number of blocklist entries.
+msgid "%d blocked"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:407
+#. %d: active breaker tiers
+msgid "%d cooling down"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:56
+#. %d: trial days remaining
+msgid "%d days remain to activate Order Guard Pro."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:266
+#. %d: number of matching protection events.
+msgid "%d events"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:114
+#. %d: seconds
+msgid "%d seconds remaining"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:355
+#. %d: number of selected log rows.
+msgid "%d selected"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:49
+msgid ""
+"A license key is required to continue managing Order Guard Pro workspaces. Free protection remains "
+"available."
+msgstr ""
+
+#: src/views/Lists.jsx:177
+msgid "A matching role, IP, or payment method bypasses blocklists and future protection rules."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:73
+msgid ""
+"A shared household or team billing email may affect more than one shopper. The default requires "
+"three failures."
+msgstr ""
+
+#: includes/class-ceog-store-api-guard.php:379
+msgid "A valid WooCommerce session is required for this request."
+msgstr ""
+
+#: coderembassy-order-guard.php:5
+msgid "API-level protection against card testing, bot orders, and fake WooCommerce checkouts."
+msgstr ""
+
+#: src/views/Dashboard.jsx:287
+msgid "API-level protection against card testing, bot orders, and fake checkouts."
+msgstr ""
+
+#: src/views/Lists.jsx:142
+msgid "Access controls"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:45
+msgid "Activate license"
+msgstr ""
+
+#: src/views/Placeholder.jsx:104
+msgid "Active"
+msgstr ""
+
+#: src/navigation.js:32 src/views/ActivityLog.jsx:254
+msgid "Activity Log"
+msgstr ""
+
+#: src/components/SearchMultiSelect.jsx:197
+msgid "Add key"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:53 src/views/Dashboard.jsx:45
+msgid "Add-to-cart blocked"
+msgstr ""
+
+#: src/views/Settings.jsx:178
+msgid "Adds an invisible field that human shoppers never interact with."
+msgstr ""
+
+#: src/components/Topbar.jsx:87
+msgid "Admin"
+msgstr ""
+
+#: src/views/Settings.jsx:255
+msgid "Advanced Store API controls"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:258
+msgid "Advanced request controls"
+msgstr ""
+
+#: src/views/Settings.jsx:219
+msgid "Alert email"
+msgstr ""
+
+#: src/navigation.js:59
+msgid "Alerts"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:280
+msgid "All events"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:410
+msgid "All ready"
+msgstr ""
+
+#: includes/class-ceog-lists.php:630
+msgid "Already blocklisted"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:249
+msgid "Always"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:314
+msgid "Apply filters"
+msgstr ""
+
+#: src/navigation.js:91
+msgid "Attack Cleanup"
+msgstr ""
+
+#: src/views/Placeholder.jsx:95
+msgid "Attack Cleanup and Pro automation tools are ready from the Order Guard navigation."
+msgstr ""
+
+#: src/views/Dashboard.jsx:400
+msgid "Attack cleanup is available"
+msgstr ""
+
+#: src/views/Placeholder.jsx:74
+msgid "Attack cleanup, automated blocking, longer history, and advanced alerts are planned for Pro."
+msgstr ""
+
+#: src/navigation.js:85
+msgid "Auto Blocklisting"
+msgstr ""
+
+#: includes/class-ceog-honeypot.php:97
+msgid "Automated checkout signal detected."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:286
+msgid "Available in Pro"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:211
+msgid "Batch inspection"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:57 src/views/Dashboard.jsx:49
+msgid "Batch operation blocked"
+msgstr ""
+
+#: includes/class-ceog-lists.php:881
+msgid "Billing email domain matched the blocklist."
+msgstr ""
+
+#: includes/class-ceog-lists.php:877
+msgid "Billing email matched the blocklist."
+msgstr ""
+
+#: src/views/Lists.jsx:215
+msgid "Billing emails"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:51 src/views/CircuitBreakers.jsx:71
+msgid "Block duration (seconds)"
+msgstr ""
+
+#: includes/class-ceog-lists.php:553
+msgid "Block this IP"
+msgstr ""
+
+#: includes/class-ceog-lists.php:552
+msgid "Block this email"
+msgstr ""
+
+#: src/views/Dashboard.jsx:306
+msgid "Blocked today"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:145
+msgid "Blocking"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:279
+msgid "Blocking enabled"
+msgstr ""
+
+#: src/views/Lists.jsx:203
+msgid "Blocklist"
+msgstr ""
+
+#: src/views/Placeholder.jsx:47
+msgid "Blocklist and whitelist entries will be managed from this workspace."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:63 src/views/Dashboard.jsx:55
+msgid "Blocklist matched"
+msgstr ""
+
+#: includes/class-ceog-lists.php:523
+msgid "Blocklisted"
+msgstr ""
+
+#: includes/class-ceog-lists.php:528
+msgid "Breaker"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:189
+msgid "Cart and batch"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:139
+msgid "Cart mutation rate limit"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:78
+msgid "Check license"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:282
+msgid "Checkout Block field"
+msgstr ""
+
+#: src/views/Settings.jsx:270 src/views/StoreApiGuard.jsx:273
+msgid "Checkout block detected"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:55 src/views/Dashboard.jsx:47
+msgid "Checkout blocked"
+msgstr ""
+
+#: includes/class-ceog-breakers.php:776
+msgid "Checkout is temporarily paused due to unusual activity. Please try again in a couple of minutes."
+msgstr ""
+
+#: includes/class-ceog-breakers.php:627
+msgid "Checkout matched a tripped circuit breaker."
+msgstr ""
+
+#: src/views/Dashboard.jsx:321
+msgid "Checkout paused"
+msgstr ""
+
+#: src/views/Settings.jsx:69
+msgid "Choose what Order Guard records and how it responds to suspicious checkout traffic."
+msgstr ""
+
+#: src/views/Settings.jsx:221
+msgid "Choose where important protection notices will be delivered."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:174
+msgid "Choose whether uninstalling Order Guard removes its local records."
+msgstr ""
+
+#: src/navigation.js:43 src/views/CircuitBreakers.jsx:387
+msgid "Circuit Breakers"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:460
+msgid "Circuit breaker settings saved"
+msgstr ""
+
+#: src/views/Dashboard.jsx:321
+msgid "Circuit breakers"
+msgstr ""
+
+#: src/views/Placeholder.jsx:27
+msgid "Circuit breakers are standing by"
+msgstr ""
+
+#: src/views/Settings.jsx:271 src/views/StoreApiGuard.jsx:274
+msgid "Classic checkout detected"
+msgstr ""
+
+#: src/views/Settings.jsx:177
+msgid "Classic checkout honeypot"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:318
+msgid "Clear"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:332 src/views/ActivityLog.jsx:333
+msgid "Clear attacker filter"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:116
+msgid "Client IP source"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:164
+msgid "Close"
+msgstr ""
+
+#: src/components/Sidebar.jsx:25 src/components/Sidebar.jsx:53 src/components/Sidebar.jsx:54
+msgid "Close navigation"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:128
+msgid "Cloudflare CF-Connecting-IP"
+msgstr ""
+
+#: src/components/Sidebar.jsx:41 src/components/Sidebar.jsx:45
+msgid "CoderEmbassy"
+msgstr ""
+
+#: coderembassy-order-guard.php:3 src/views/Dashboard.jsx:286
+msgid "CoderEmbassy Order Guard for WooCommerce"
+msgstr ""
+
+#: coderembassy-order-guard.php:85
+msgid "CoderEmbassy Order Guard requires WooCommerce to be installed and active."
+msgstr ""
+
+#: src/views/Settings.jsx:168
+msgid "Collect low-friction signals without changing legitimate checkout fields."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:152
+msgid "Configured in Monitor mode and activated only while Enforce mode is effective."
+msgstr ""
+
+#: src/views/Lists.jsx:297
+msgid "Confirm gateway keys in WooCommerce payment settings before adding an exception."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:91
+msgid "Cooldown (seconds)"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:140
+msgid "Cooling down"
+msgstr ""
+
+#: includes/class-ceog-lists.php:540
+msgid "Current list status"
+msgstr ""
+
+#: src/views/Lists.jsx:292
+msgid "Custom gateway key"
+msgstr ""
+
+#: includes/class-ceog-lists.php:884
+msgid "Customer IP matched the blocklist."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:149
+msgid "Daily pruning keeps the attack-volume table bounded."
+msgstr ""
+
+#: src/navigation.js:27
+msgid "Dashboard"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:183
+msgid "Delete all data on uninstall"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:393
+msgid "Delete selected"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:392
+msgid "Deleting..."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:123
+msgid "Disabled"
+msgstr ""
+
+#: src/views/Settings.jsx:108
+msgid "Disabling this keeps your configuration while suspending all blocking."
+msgstr ""
+
+#: src/views/Dashboard.jsx:409
+msgid "Dismiss cleanup suggestion"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:105
+msgid "Dismiss license notice"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:182
+msgid "Distributed defense"
+msgstr ""
+
+#: src/views/Settings.jsx:198
+msgid "Do not flag"
+msgstr ""
+
+#: src/views/Lists.jsx:224
+msgid "Domain names without @, one per line."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:278
+msgid "Effective behavior"
+msgstr ""
+
+#: src/views/Settings.jsx:148
+msgid "Effective mode"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:49 src/views/Dashboard.jsx:41
+msgid "Email breaker tripped"
+msgstr ""
+
+#: src/views/Lists.jsx:223
+msgid "Email domains"
+msgstr ""
+
+#: includes/class-ceog-rest-controller.php:392 src/views/Settings.jsx:343 src/views/StoreApiGuard.jsx:343
+msgid "Emergency Lockdown cannot be enabled while the WooCommerce Checkout block is active."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:123
+msgid "Emergency Lockdown is enabled"
+msgstr ""
+
+#: src/views/Settings.jsx:323 src/views/StoreApiGuard.jsx:326
+msgid "Emergency Store API Checkout Lockdown"
+msgstr ""
+
+#: includes/class-ceog-store-api-guard.php:346
+msgid "Emergency Store API Checkout Lockdown is enabled."
+msgstr ""
+
+#: src/views/Settings.jsx:117
+msgid "Enable Order Guard"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:151
+msgid "Enable Order Guard rate limiting"
+msgstr ""
+
+#: src/views/Settings.jsx:230
+msgid "Enable email alerts"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:194
+msgid "Enable this breaker"
+msgstr ""
+
+#: src/views/Settings.jsx:278
+msgid "Enabled in WooCommerce"
+msgstr ""
+
+#: src/components/ModeControl.jsx:40 src/views/ActivityLog.jsx:460 src/views/Dashboard.jsx:315
+msgid "Enforce"
+msgstr ""
+
+#: src/views/Dashboard.jsx:297 src/views/Settings.jsx:151 src/views/StoreApiGuard.jsx:102
+msgid "Enforcing"
+msgstr ""
+
+#: includes/class-ceog-rest-controller.php:314
+msgid "Enter a valid email address or IP address."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:274
+msgid "Event type"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:408
+msgid ""
+"Events recorded by future protection rules will appear here. Adjust the filters if you expected "
+"existing rows."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:230
+msgid "Every embedded path and method is checked before WooCommerce executes the batch."
+msgstr ""
+
+#: src/views/Lists.jsx:216
+msgid "Exact email addresses, one per line."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:371
+msgid "Export filtered CSV"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:236
+#. %d: exported rows.
+msgid "Exported %d matching events."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:230
+#. 1: exported rows, 2: total matching rows.
+msgid "Exported the first %1$d of %2$d matching events."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:205
+msgid "Failed orders"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:195
+msgid "Failed orders feed this sliding window in both Monitor and Enforce modes."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:385
+msgid "Failed-order protection"
+msgstr ""
+
+#: src/views/Settings.jsx:195
+msgid "Flag for review"
+msgstr ""
+
+#: src/views/Settings.jsx:347 src/views/StoreApiGuard.jsx:347
+msgid ""
+"For classic-checkout stores under active attack only. This stops Store API checkout and must never "
+"be used as normal protection."
+msgstr ""
+
+#: src/components/Sidebar.jsx:89 src/views/Dashboard.jsx:276
+msgid "Free"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:161
+msgid "Free includes 7-day history. Pro extends retention to 30 or 90 days."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:290
+msgid "From date"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:93
+msgid ""
+"Full IP addresses are personal data. Enable this only when your privacy policy and legal basis "
+"cover the additional storage."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:82
+msgid "Full addresses will be visible in new log rows."
+msgstr ""
+
+#: src/views/Settings.jsx:65
+msgid "General"
+msgstr ""
+
+#: includes/class-ceog-alerts.php:81
+msgid "Global"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:80
+msgid "Global breaker"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:51 src/views/Dashboard.jsx:43
+msgid "Global breaker tripped"
+msgstr ""
+
+#: src/views/Settings.jsx:106
+msgid "Global protection"
+msgstr ""
+
+#: src/navigation.js:80
+msgid "Help"
+msgstr ""
+
+#: src/navigation.js:37
+msgid "History & Reports"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:61 src/views/Dashboard.jsx:53
+msgid "Honeypot triggered"
+msgstr ""
+
+#: src/views/Settings.jsx:315 src/views/Settings.jsx:363 src/views/StoreApiGuard.jsx:319 src/views/StoreApiGuard.jsx:360
+msgid "I understand the risks"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:430
+msgid "IP"
+msgstr ""
+
+#: src/views/Lists.jsx:231
+msgid "IP addresses"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:83
+msgid "IP addresses are anonymized for display."
+msgstr ""
+
+#: src/views/Placeholder.jsx:56
+msgid "IP anonymization, trusted proxy handling, retention, and uninstall controls will live here."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:68
+msgid "IP display"
+msgstr ""
+
+#: src/views/Lists.jsx:232
+msgid "IPv4 matches exactly; IPv6 matches its entire /64 network."
+msgstr ""
+
+#: src/views/Lists.jsx:261
+msgid "IPv6 exceptions cover the entered /64 network."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:226
+msgid "Inspection active"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:227
+msgid "Inspection unavailable"
+msgstr ""
+
+#: src/views/Dashboard.jsx:329
+msgid ""
+"Keep Monitor mode on while Order Guard records traffic. Switch to Enforce after the activity log "
+"matches what you expect."
+msgstr ""
+
+#: includes/class-ceog-honeypot.php:53
+msgid "Leave this field empty"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:62
+msgid "Links rotating IPs when repeated failures use the same billing email."
+msgstr ""
+
+#: includes/class-ceog-lists.php:527 src/navigation.js:65 src/views/Lists.jsx:144
+msgid "Lists"
+msgstr ""
+
+#: src/views/Lists.jsx:311
+msgid "Lists saved"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:401
+msgid "Loading protection events..."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:59
+msgid "Local only"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:49
+msgid "Local, privacy-first records"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:245
+msgid "Logged"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:146
+msgid "Logging"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:279
+msgid "Logging only"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:244
+msgid "Malformed batches"
+msgstr ""
+
+#: src/views/Lists.jsx:146
+msgid "Manually block known sources and preserve trusted checkout paths."
+msgstr ""
+
+#: src/views/Lists.jsx:205
+msgid "Matches are logged in Monitor mode and stopped in Enforce mode."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:240
+msgid "Maximum operations"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:429
+msgid "Mode"
+msgstr ""
+
+#: src/components/ModeControl.jsx:30 src/views/ActivityLog.jsx:461 src/views/Dashboard.jsx:315
+msgid "Monitor"
+msgstr ""
+
+#: src/views/Placeholder.jsx:20
+msgid "Monitor and blocked events will appear here with server-side filters and pagination."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:65 src/views/Dashboard.jsx:57
+msgid "Monitor decision"
+msgstr ""
+
+#: src/views/Dashboard.jsx:327
+msgid "Monitor first"
+msgstr ""
+
+#: src/views/Settings.jsx:134
+msgid "Monitor records decisions. Enforce applies them at checkout."
+msgstr ""
+
+#: src/views/Dashboard.jsx:297 src/views/Settings.jsx:152 src/views/StoreApiGuard.jsx:103
+msgid "Monitoring"
+msgstr ""
+
+#: src/views/Placeholder.jsx:65
+msgid "Monitoring guidance and checkout compatibility notes will be available here."
+msgstr ""
+
+#: src/views/Dashboard.jsx:283
+msgid "Monitoring traffic"
+msgstr ""
+
+#: src/views/Settings.jsx:275
+msgid "Native checkout limiter"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:528
+msgid "Next"
+msgstr ""
+
+#: includes/class-ceog-lists.php:548
+msgid "No Order Guard signals have been recorded for this order."
+msgstr ""
+
+#: src/views/Placeholder.jsx:45
+msgid "No list entries yet"
+msgstr ""
+
+#: includes/class-ceog-lists.php:523
+msgid "No list match"
+msgstr ""
+
+#: src/views/Lists.jsx:276
+msgid "No matching WordPress roles."
+msgstr ""
+
+#: src/views/Lists.jsx:290
+msgid "No matching payment methods."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:406
+msgid "No matching protection events"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:510
+msgid "No pages"
+msgstr ""
+
+#: src/views/Dashboard.jsx:390 src/views/Placeholder.jsx:18
+msgid "No protection events yet"
+msgstr ""
+
+#: includes/class-ceog-store-api-guard.php:387
+msgid "No route was found matching the URL and request method."
+msgstr ""
+
+#: src/views/Settings.jsx:279
+msgid "Not enabled"
+msgstr ""
+
+#: src/views/Placeholder.jsx:100
+msgid "Open Attack Cleanup"
+msgstr ""
+
+#: src/components/Topbar.jsx:46 src/components/Topbar.jsx:49
+msgid "Open navigation"
+msgstr ""
+
+#: src/views/Dashboard.jsx:380
+msgid "Open order"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:260
+msgid "Opt-in compatibility-sensitive rules for stores under elevated attack pressure."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:433
+msgid "Order"
+msgstr ""
+
+#: includes/class-ceog-admin.php:42 includes/class-ceog-admin.php:43 includes/class-ceog-lists.php:488 src/components/Sidebar.jsx:63 src/components/Topbar.jsx:55
+msgid "Order Guard"
+msgstr ""
+
+#: src/views/Placeholder.jsx:72
+msgid "Order Guard Pro"
+msgstr ""
+
+#: src/views/Placeholder.jsx:92
+msgid "Order Guard Pro is active"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:41
+msgid "Order Guard Pro requires a license key for commercial updates and continued Pro workspace access."
+msgstr ""
+
+#: includes/class-ceog-plugin.php:130 src/views/Dashboard.jsx:268
+msgid "Order Guard Safe Mode is active - protection is monitoring only."
+msgstr ""
+
+#: includes/class-ceog-admin.php:147
+msgid "Order Guard admin assets are missing. Please reinstall the plugin from a complete release package."
+msgstr ""
+
+#: includes/class-ceog-alerts.php:55
+msgid "Order Guard alert: %s breaker tripped"
+msgstr ""
+
+#: src/views/Dashboard.jsx:403
+msgid ""
+"Order Guard blocked %1$s attempts. %2$s failed or junk orders remain - Pro can clean these up "
+"automatically."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:192
+msgid "Order Guard configured"
+msgstr ""
+
+#: src/components/ErrorState.jsx:13
+msgid "Order Guard could not connect"
+msgstr ""
+
+#: src/api.js:94
+msgid "Order Guard could not load this data. Please try again."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:193
+msgid "Order Guard disabled"
+msgstr ""
+
+#: src/views/Placeholder.jsx:63
+msgid "Order Guard help"
+msgstr ""
+
+#: src/components/Sidebar.jsx:34
+msgid "Order Guard navigation"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:211
+msgid "Order Guard returned an invalid CSV export."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:51
+msgid "Order Guard stores protection events on this WordPress site and sends nothing to external services."
+msgstr ""
+
+#: includes/class-ceog-lists.php:595
+msgid "Order Guard: billing email added to the blocklist."
+msgstr ""
+
+#: includes/class-ceog-lists.php:596
+msgid "Order Guard: customer IP added to the blocklist."
+msgstr ""
+
+#: includes/class-ceog-origin-rules.php:143
+msgid "Order Guard: unknown origin - review before fulfilment."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:59 src/views/Dashboard.jsx:51
+msgid "Order flagged"
+msgstr ""
+
+#: src/views/Settings.jsx:166
+msgid "Order rules"
+msgstr ""
+
+#: includes/class-ceog-lists.php:525
+msgid "Origin"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:506
+#. 1: current page, 2: total pages.
+msgid "Page %1$d of %2$d"
+msgstr ""
+
+#: src/views/Settings.jsx:205
+msgid "Paid orders are never moved; this rule does not block checkout."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:82
+msgid "Pauses non-whitelisted checkout when failures arrive across the whole store."
+msgstr ""
+
+#: src/views/Lists.jsx:280
+msgid "Payment methods"
+msgstr ""
+
+#: includes/class-ceog-alerts.php:75
+msgid "Per-IP"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:40
+msgid "Per-IP breaker"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:47 src/views/Dashboard.jsx:39
+msgid "Per-IP breaker tripped"
+msgstr ""
+
+#: src/views/Placeholder.jsx:29
+msgid "Per-IP, per-email, and global checkout protection will report their live state here."
+msgstr ""
+
+#: includes/class-ceog-alerts.php:78
+msgid "Per-email"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:60
+msgid "Per-email breaker"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:176
+#. %d: number of selected log rows.
+msgid "Permanently delete %d selected event(s)?"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:197
+msgid "Place order"
+msgstr ""
+
+#: src/views/Settings.jsx:204
+msgid "Place unpaid flagged orders on hold"
+msgstr ""
+
+#: src/views/Settings.jsx:156
+msgid "Plugin version"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:370
+msgid "Preparing CSV..."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:213
+msgid "Prevents protected operations from being hidden inside one Store API request."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:520
+msgid "Previous"
+msgstr ""
+
+#: src/navigation.js:75 src/views/PrivacyLogs.jsx:47
+msgid "Privacy & Logs"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:201
+msgid "Privacy settings saved"
+msgstr ""
+
+#: src/views/Placeholder.jsx:54
+msgid "Privacy-first logging"
+msgstr ""
+
+#: src/views/Dashboard.jsx:276 src/views/Dashboard.jsx:399
+msgid "Pro"
+msgstr ""
+
+#: src/navigation.js:97
+msgid "Pro License"
+msgstr ""
+
+#: src/components/Sidebar.jsx:89
+msgid "Pro active"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:285
+msgid "Pro honeypot active"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:85
+msgid "Protect cart mutations, checkout requests, and every operation embedded in a Store API batch."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:157 src/views/Dashboard.jsx:282
+msgid "Protection active"
+msgstr ""
+
+#: src/views/Dashboard.jsx:280
+msgid "Protection disabled"
+msgstr ""
+
+#: src/views/Dashboard.jsx:59
+msgid "Protection event"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:252
+msgid "Protection history"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:124
+msgid "Protection inactive"
+msgstr ""
+
+#: src/views/Settings.jsx:121
+msgid "Protection is disabled"
+msgstr ""
+
+#: src/views/Settings.jsx:120
+msgid "Protection is enabled"
+msgstr ""
+
+#: src/components/ModeControl.jsx:20 src/views/Dashboard.jsx:296 src/views/Dashboard.jsx:316 src/views/Settings.jsx:132
+msgid "Protection mode"
+msgstr ""
+
+#: src/views/Settings.jsx:67
+msgid "Protection settings"
+msgstr ""
+
+#: src/views/Settings.jsx:374
+msgid "Protection settings saved"
+msgstr ""
+
+#: src/views/Dashboard.jsx:302
+msgid "Protection summary"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:108
+msgid "Proxy headers remain untrusted unless you explicitly select your infrastructure."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:156 src/views/Dashboard.jsx:320 src/views/Settings.jsx:85
+msgid "Ready"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:432
+msgid "Reason"
+msgstr ""
+
+#: src/views/Dashboard.jsx:363
+msgid "Recent protection events"
+msgstr ""
+
+#: src/views/Settings.jsx:239
+msgid "Recipient"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:417 src/views/CircuitBreakers.jsx:418
+msgid "Refresh breaker status"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:379 src/views/ActivityLog.jsx:380
+msgid "Refresh events"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:245
+msgid "Rejected"
+msgstr ""
+
+#: src/components/SearchMultiSelect.jsx:106 src/components/SearchMultiSelect.jsx:111
+#. %s: selected role or payment-method key.
+msgid "Remove %s"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:184
+msgid "Removes the log table and plugin options permanently."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:171 src/components/LicenseNotice.jsx:64 src/components/LicenseNotice.jsx:71
+msgid "Renew license"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:70
+msgid "Repeat-attacker correlation always uses a one-way HMAC hash."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:162
+msgid "Requests"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:295
+msgid "Requires an existing WooCommerce session for Store API cart mutations and batch equivalents."
+msgstr ""
+
+#: src/views/Settings.jsx:288
+msgid "Requires an existing WooCommerce session for Store API cart mutations."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:147
+msgid "Retention"
+msgstr ""
+
+#: src/components/ErrorState.jsx:19
+msgid "Retry"
+msgstr ""
+
+#: src/views/Dashboard.jsx:256 src/views/Dashboard.jsx:257
+msgid "Retry dashboard update"
+msgstr ""
+
+#: src/views/Settings.jsx:324
+msgid "Returns 404 for Store API checkout requests, including checkout operations inside batch requests."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:327
+msgid "Returns 404 for direct and batch-wrapped Store API checkout operations."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:84
+msgid "Review license"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:256
+msgid "Review monitor decisions and enforced actions without loading the full log into your browser."
+msgstr ""
+
+#: src/views/Dashboard.jsx:332
+msgid "Review settings"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:431
+msgid "Route"
+msgstr ""
+
+#: src/views/Settings.jsx:84 src/views/StoreApiGuard.jsx:100
+msgid "Safe Mode"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:111
+msgid ""
+"Safe Mode keeps Store API blocking and Order Guard rate limiting suspended while logging stays "
+"active."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:436
+msgid "Safe Mode keeps breaker counters and logging active while all checkout blocking remains suspended."
+msgstr ""
+
+#: src/views/Settings.jsx:93
+msgid ""
+"Safe Mode overrides these settings and keeps all protection in Monitor mode. Settings remain "
+"available and logging stays active."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:382
+msgid "Save Store API settings"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:472
+msgid "Save breaker settings"
+msgstr ""
+
+#: src/views/Lists.jsx:323
+msgid "Save lists"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:213
+msgid "Save privacy settings"
+msgstr ""
+
+#: src/views/Settings.jsx:386
+msgid "Save protection settings"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:471 src/views/Lists.jsx:322 src/views/PrivacyLogs.jsx:212 src/views/Settings.jsx:385 src/views/StoreApiGuard.jsx:381
+msgid "Saving..."
+msgstr ""
+
+#: src/views/Lists.jsx:275
+msgid "Search WordPress roles..."
+msgstr ""
+
+#: src/views/Lists.jsx:270
+msgid "Search and select the roles that should always bypass protection."
+msgstr ""
+
+#: src/views/Lists.jsx:281
+msgid "Search installed gateways or add a custom gateway key manually."
+msgstr ""
+
+#: src/views/Lists.jsx:289
+msgid "Search payment methods..."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:446
+#. %d: log row ID.
+msgid "Select event %d"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:358
+msgid "Select rows to delete"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:424
+msgid "Select this page"
+msgstr ""
+
+#: src/components/SearchMultiSelect.jsx:96
+msgid "Selected values"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:136
+msgid "Selecting the wrong proxy can let attackers spoof their source address."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:125
+msgid "Server connection (recommended)"
+msgstr ""
+
+#: includes/class-ceog-lists.php:526
+msgid "Session"
+msgstr ""
+
+#: src/navigation.js:70
+msgid "Settings"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:53
+msgid "Shared mobile, office, and CGNAT connections can represent several customers. Keep this block short."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:472 src/views/ActivityLog.jsx:473
+msgid "Show the same attacker"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:326
+msgid "Showing events from the same attacker"
+msgstr ""
+
+#: src/views/Dashboard.jsx:328
+msgid "Start with a clear baseline"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:42
+msgid "Stops repeated failed orders from one IPv4 address or IPv6 /64 network."
+msgstr ""
+
+#: src/navigation.js:48 src/views/Placeholder.jsx:36 src/views/StoreApiGuard.jsx:83
+msgid "Store API Guard"
+msgstr ""
+
+#: includes/class-ceog-store-api-guard.php:348
+msgid "Store API batch request was malformed."
+msgstr ""
+
+#: includes/class-ceog-store-api-guard.php:344
+msgid "Store API cart mutation had no existing WooCommerce session."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:125
+msgid ""
+"Store API checkout returns 404 whenever Order Guard is enforcing. Disable this after the active "
+"attack has passed."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:81
+msgid "Store API protection"
+msgstr ""
+
+#: src/views/Placeholder.jsx:38
+msgid "Store API rate limits, batch inspection, and advanced emergency controls will appear here."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:370
+msgid "Store API settings saved"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:79
+msgid "Store full IP addresses"
+msgstr ""
+
+#: src/views/Settings.jsx:287 src/views/StoreApiGuard.jsx:294
+msgid "Strict Session Requirement"
+msgstr ""
+
+#: src/views/Dashboard.jsx:311
+msgid "Suspicious (7d)"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:67
+msgid "Temporary block added"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:69
+msgid "Temporary block expired"
+msgstr ""
+
+#: includes/class-ceog-alerts.php:58
+#. 1: circuit breaker tier, 2: dashboard URL.
+msgid ""
+"The %1$s circuit breaker tripped after repeated failed orders. Review the Order Guard dashboard and "
+"Activity Log:\n"
+"\n"
+"%2$s"
+msgstr ""
+
+#: includes/class-ceog-store-api-guard.php:394
+msgid "The Store API batch request is malformed."
+msgstr ""
+
+#: includes/class-ceog-store-api-guard.php:342
+msgid "The Store API request would be blocked by current settings."
+msgstr ""
+
+#: includes/class-ceog-breakers.php:803
+msgid "The global failed-order circuit breaker tripped."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:169
+msgid ""
+"The grace period is over. Renew now to restore private updates and Pro workspace access. Existing "
+"Free protection remains available."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:80
+msgid "The license server is temporarily unreachable. Order Guard Pro is using its last known status."
+msgstr ""
+
+#: includes/class-ceog-breakers.php:796
+msgid "The per-IP failed-order circuit breaker tripped."
+msgstr ""
+
+#: includes/class-ceog-breakers.php:800
+msgid "The per-email failed-order circuit breaker tripped."
+msgstr ""
+
+#: includes/class-ceog-lists.php:572
+msgid "The requested Order Guard action is invalid."
+msgstr ""
+
+#: includes/class-ceog-lists.php:584 includes/class-ceog-lists.php:589
+msgid "The requested Order Guard value is invalid."
+msgstr ""
+
+#: includes/class-ceog-rest-controller.php:412
+msgid "The selected protection mode is invalid."
+msgstr ""
+
+#: includes/class-ceog-rest-controller.php:335
+msgid "The start date must not be later than the end date."
+msgstr ""
+
+#: src/views/Settings.jsx:257
+msgid "These opt-in controls can affect headless, app, block, and express checkout flows."
+msgstr ""
+
+#: src/views/Settings.jsx:300 src/views/StoreApiGuard.jsx:307
+msgid ""
+"This may break headless, custom, mobile-app, and some express checkout flows. Use Monitor Mode "
+"first."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:176
+#. %d: seconds until the modal closes
+msgid "This reminder closes in %d seconds."
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:93
+msgid ""
+"This temporarily pauses all non-whitelisted checkout. A short cooldown is the primary defense "
+"against distributed attacks."
+msgstr ""
+
+#: src/views/Dashboard.jsx:342
+msgid "Threat activity this week"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:389
+msgid ""
+"Three short sliding windows stop repeated payment failures with the smallest practical checkout "
+"impact."
+msgstr ""
+
+#: src/views/ActivityLog.jsx:427
+msgid "Time"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:174
+msgid "Time window (seconds)"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:301
+msgid "To date"
+msgstr ""
+
+#: src/components/SearchMultiSelect.jsx:149 src/components/SearchMultiSelect.jsx:150
+msgid "Toggle options"
+msgstr ""
+
+#: src/views/Lists.jsx:260
+msgid "Trusted IP addresses"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:106
+msgid "Trusted proxy"
+msgstr ""
+
+#: src/navigation.js:53
+msgid "Turnstile"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:428
+msgid "Type"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:172
+msgid "Uninstall cleanup"
+msgstr ""
+
+#: src/views/ActivityLog.jsx:71
+msgid "Unknown event"
+msgstr ""
+
+#: includes/class-ceog-origin-rules.php:128
+msgid "Unknown order attribution requires review."
+msgstr ""
+
+#: src/views/Settings.jsx:186
+msgid "Unknown-origin orders"
+msgstr ""
+
+#: src/components/Topbar.jsx:36
+msgid "Use dark mode"
+msgstr ""
+
+#: src/components/Topbar.jsx:35
+msgid "Use light mode"
+msgstr ""
+
+#: src/views/Lists.jsx:248
+msgid "Use narrow exceptions for trusted staff, infrastructure, and checkout methods."
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:141
+msgid "Uses WooCommerce's native Store API limiter for POST cart and batch traffic."
+msgstr ""
+
+#: src/views/Settings.jsx:231
+msgid "Uses the WordPress administrator email when the field below is empty."
+msgstr ""
+
+#: src/components/Sidebar.jsx:92
+msgid "Version"
+msgstr ""
+
+#: src/views/Dashboard.jsx:290
+msgid "View activity log"
+msgstr ""
+
+#: src/views/Dashboard.jsx:366
+msgid "View all"
+msgstr ""
+
+#: includes/class-ceog-lists.php:149 includes/class-ceog-lists.php:241
+msgid "We could not process your order. Please contact the store for assistance."
+msgstr ""
+
+#: includes/class-ceog-honeypot.php:110
+msgid "We could not process your order. Please try again or contact the store for assistance."
+msgstr ""
+
+#: src/App.jsx:156
+msgid "We recommend reviewing the Activity Log first. Switch to Enforce mode?"
+msgstr ""
+
+#: src/views/Lists.jsx:246
+msgid "Whitelist"
+msgstr ""
+
+#: src/views/Lists.jsx:175
+msgid "Whitelist always wins"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:248
+msgid "Whitelist precedence"
+msgstr ""
+
+#: includes/class-ceog-lists.php:522
+msgid "Whitelisted"
+msgstr ""
+
+#: src/views/CircuitBreakers.jsx:219
+msgid "Window (seconds)"
+msgstr ""
+
+#: src/views/Settings.jsx:267 src/views/StoreApiGuard.jsx:270
+msgid "WooCommerce Checkout"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:200
+msgid "WooCommerce limiter enabled"
+msgstr ""
+
+#: src/views/StoreApiGuard.jsx:201
+msgid "WooCommerce limiter not enabled"
+msgstr ""
+
+#: src/views/Settings.jsx:244
+msgid "WordPress administrator email"
+msgstr ""
+
+#: src/views/Lists.jsx:269
+msgid "WordPress roles"
+msgstr ""
+
+#: src/views/Placeholder.jsx:104
+msgid "Workspace ready"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:131
+msgid "X-Forwarded-For first hop"
+msgstr ""
+
+#: includes/class-ceog-admin.php:57
+msgid "You do not have permission to manage Order Guard."
+msgstr ""
+
+#: includes/class-ceog-lists.php:563
+msgid "You do not have permission to update Order Guard lists."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:74
+msgid "Your Order Guard Pro license could not be verified. Review the saved key."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:168
+msgid "Your Order Guard Pro license has expired"
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:67
+msgid "Your Order Guard Pro license has expired. Renew it to restore updates and Pro workspace access."
+msgstr ""
+
+#: src/components/LicenseNotice.jsx:60
+msgid ""
+"Your Order Guard Pro license is in its grace period. Renew soon to keep updates and Pro workspace "
+"access."
+msgstr ""
+
+#: src/api.js:86
+msgid "Your admin session expired. Please refresh the page and try again."
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:158
+msgid "days"
+msgstr ""
