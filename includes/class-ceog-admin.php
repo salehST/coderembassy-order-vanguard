@@ -111,8 +111,8 @@ final class CEOG_Admin {
 				),
 				'version'   => CEOG_VERSION,
 				'isPro'     => false,
-				'logoLight' => esc_url_raw( CEOG_URL . 'logo-light.png' ),
-				'logoDark'  => esc_url_raw( CEOG_URL . 'logo-dark.png' ),
+				'logoLight' => esc_url_raw( CEOG_URL . 'assets/images/logo-light.png' ),
+				'logoDark'  => esc_url_raw( CEOG_URL . 'assets/images/logo-dark.png' ),
 				'user'      => array(
 					'displayName' => sanitize_text_field( $user->display_name ),
 					'avatarUrl'   => esc_url_raw( get_avatar_url( $user->ID, array( 'size' => 64 ) ) ),

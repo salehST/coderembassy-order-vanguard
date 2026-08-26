@@ -19,8 +19,7 @@ $runtimeItems = @(
 	'includes',
 	'languages',
 	'coderembassy-order-guard.php',
-	'logo-dark.png',
-	'logo-light.png',
+	'assets',
 	'readme.txt',
 	'uninstall.php'
 )
