@@ -264,11 +264,9 @@ final class CEOG_Logger {
 			function () {
 				global $wpdb;
 
-				$settings  = ceog_get_settings();
-				$retention = absint( $settings['log_retention_days'] ?? 7 );
-				$retention = (int) apply_filters( 'ceog_log_retention_days', $retention );
-				$retention = min( 3650, max( 1, $retention ) );
-				$cutoff    = gmdate( 'Y-m-d H:i:s', current_time( 'timestamp' ) - ( $retention * DAY_IN_SECONDS ) );
+				// The WordPress.org Free plugin owns a complete, fixed seven-day history.
+				// Longer retention is implemented by the separate Pro add-on's own pruner.
+				$cutoff = gmdate( 'Y-m-d H:i:s', current_time( 'timestamp' ) - ( 7 * DAY_IN_SECONDS ) );
 				$table     = $wpdb->prefix . 'ceog_log';
 				$total     = 0;
 

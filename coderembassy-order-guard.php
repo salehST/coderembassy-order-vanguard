@@ -3,7 +3,7 @@
  * Plugin Name: CoderEmbassy Order Guard for WooCommerce
  * Plugin URI:  https://coderembassy.com/
  * Description: API-level protection against card testing, bot orders, and fake WooCommerce checkouts.
- * Version:     1.0.11
+ * Version:     1.0.12
  * Author:      CoderEmbassy
  * Author URI:  https://coderembassy.com/
  * License:     GPLv2 or later
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CEOG_VERSION', '1.0.11' );
+define( 'CEOG_VERSION', '1.0.12' );
 define( 'CEOG_DB_VERSION', '1.0.4' );
 define( 'CEOG_FILE', __FILE__ );
 define( 'CEOG_PATH', plugin_dir_path( __FILE__ ) );

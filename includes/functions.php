@@ -46,7 +46,6 @@ function ceog_get_default_settings() {
 		'whitelist_payment_methods' => array(),
 		'log_full_ip'               => 'no',
 		'trusted_proxy'             => 'none',
-		'log_retention_days'        => 7,
 		'alert_email_enabled'       => 'yes',
 		'alert_email'               => '',
 		'delete_data_on_uninstall'  => 'no',

@@ -89,7 +89,7 @@ Build only the MVP first.
 - Global enable/disable setting.
 - Monitor mode vs Enforce mode (global, default: Monitor).
 - CEOG_SAFE_MODE emergency constant.
-- Activity log (one custom table, ip_display + ip_hash) with retention setting and daily pruning.
+- Activity log (one custom table, ip_display + ip_hash) with fixed seven-day Free retention and daily pruning.
 - Lists engine: blocklist (emails, email domains, IPs) and whitelist (user roles, IPs, payment methods).
 - Store API rate limiting toggle (wraps the WooCommerce built-in) with native-setting detection.
 - Store API /batch inspection applying all rules to embedded operations.
@@ -382,7 +382,7 @@ array(
     // Logging & privacy
     'log_full_ip'              => 'no',
     'trusted_proxy'            => 'none', // none | cloudflare | xff
-    'log_retention_days'       => 7,  // fixed in free; Pro unlocks 30/90 (filterable)
+    'log_retention_days'       => 7,  // fixed seven-day Free cutoff; Pro owns a separate 30/90 pruner
     // Alerts
     'alert_email_enabled'      => 'yes',
     'alert_email'              => '',     // empty = admin_email
@@ -418,7 +418,7 @@ KEY order_id (order_id)
 KEY mode_time (mode, event_time)
 ```
 
-Create with `dbDelta()` on activation. All queries through `$wpdb->prepare()`. Daily cron `ceog_prune_log` deletes rows older than retention in batched DELETEs (LIMIT 1000 per pass) so pruning never locks the table under load.
+Create with `dbDelta()` on activation. All queries through `$wpdb->prepare()`. Free daily cron `ceog_prune_log` deletes rows older than seven days; Pro uses its own hook for 30/90-day retention. Both use LIMIT 1000 per pass so pruning never locks the table under load.
 
 ## Breaker state
 
@@ -654,7 +654,7 @@ Requirements:
 - CEOG_Logger: insert rows with $wpdb->prepare; populate ip_display per
   the log_full_ip setting and ip_hash always; sanitize and cap all string
   fields; JSON-encode meta.
-- Daily prune honoring log_retention_days, deleting in batches of 1000.
+- Free daily prune honoring the fixed seven-day cutoff, deleting in batches of 1000.
 - Activity Log WP_List_Table screen with type/date filters, ip_hash
   "same attacker" filter, bulk delete. No CSV export in v1.
 - Escape every rendered value; treat all logged data as hostile.

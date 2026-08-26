@@ -73,8 +73,7 @@ final class CEOG_Settings {
 	 * @return array<string, mixed>
 	 */
 	public function save( $input ) {
-		$next                       = array_merge( $this->get(), self::sanitize_patch( $input ) );
-		$next['log_retention_days'] = 7;
+		$next = array_merge( $this->get(), self::sanitize_patch( $input ) );
 
 		if ( self::checkout_uses_block() ) {
 			$next['emergency_lockdown'] = 'no';
@@ -179,9 +178,6 @@ final class CEOG_Settings {
 				case 'whitelist_payment_methods':
 					$sanitized[ $key ] = self::sanitize_key_list( $value );
 					break;
-				case 'log_retention_days':
-					$sanitized[ $key ] = 7;
-					break;
 			}
 		}
 
@@ -205,7 +201,6 @@ final class CEOG_Settings {
 			$output[ $key ] = isset( $settings[ $key ] ) ? (int) $settings[ $key ] : 0;
 		}
 
-		$output['log_retention_days'] = 7;
 
 		return $output;
 	}

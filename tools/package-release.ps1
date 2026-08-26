@@ -97,7 +97,13 @@ finally {
 	$archive.Dispose()
 }
 
-$hash = (Get-FileHash -Algorithm SHA256 -LiteralPath $zipPath).Hash
+$sha = [System.Security.Cryptography.SHA256]::Create()
+try {
+	$hash = ([System.BitConverter]::ToString($sha.ComputeHash([System.IO.File]::ReadAllBytes($zipPath)))).Replace('-', '')
+}
+finally {
+	$sha.Dispose()
+}
 Write-Output ("Release: {0}" -f $zipPath)
 Write-Output ("SHA256:  {0}" -f $hash)
 Write-Output ("Entries: {0}" -f $entries.Count)

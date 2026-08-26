@@ -1,10 +1,10 @@
 === CoderEmbassy Order Guard for WooCommerce ===
-Contributors: coderembassy
+Contributors: codersaleh
 Tags: woocommerce, security, fraud, card testing, fake orders
 Requires at least: 6.5
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,10 @@ The Free honeypot protects classic checkout. Order Guard Pro adds an optional, s
 4. Protection settings and Safe Mode-aware controls.
 
 == Changelog ==
+
+= 1.0.12 =
+* Locked Free activity-log retention to seven days for a clear WordPress.org Free boundary.
+* Added the codersaleh contributor metadata for the WordPress.org submission.
 
 = 1.0.11 =
 * Added the GPL license declaration required by WordPress.org review.

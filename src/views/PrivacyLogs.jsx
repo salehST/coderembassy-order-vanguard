@@ -154,12 +154,12 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 						</div>
 					</div>
 					<div className="ceog-readonly-value">
-						<strong>{ settings.log_retention_days || 7 }</strong>
+						<strong>{ 7 }</strong>
 						<span>{ __( 'days', 'coderembassy-order-guard' ) }</span>
 					</div>
 					<p className="ceog-field-note">
 						{ __(
-							'Free includes 7-day history. Pro extends retention to 30 or 90 days.',
+							'Free retains activity history for 7 days, with daily background pruning.',
 							'coderembassy-order-guard'
 						) }
 					</p>
