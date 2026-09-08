@@ -32,8 +32,8 @@ export default function Topbar( {
 	const isDark = theme === 'dark';
 	const ThemeIcon = isDark ? Sun : Moon;
 	const themeLabel = isDark
-		? __( 'Use light mode', 'coderembassy-order-guard' )
-		: __( 'Use dark mode', 'coderembassy-order-guard' );
+		? __( 'Use light mode', 'coderembassy-order-vanguard' )
+		: __( 'Use dark mode', 'coderembassy-order-vanguard' );
 
 	return (
 		<header className="ceog-topbar">
@@ -43,16 +43,16 @@ export default function Topbar( {
 					type="button"
 					className="ceog-icon-button ceog-mobile-menu-trigger"
 					onClick={ onOpenMenu }
-					aria-label={ __( 'Open navigation', 'coderembassy-order-guard' ) }
+					aria-label={ __( 'Open navigation', 'coderembassy-order-vanguard' ) }
 					aria-expanded={ mobileMenuOpen }
 					aria-controls="ceog-mobile-navigation"
-					title={ __( 'Open navigation', 'coderembassy-order-guard' ) }
+					title={ __( 'Open navigation', 'coderembassy-order-vanguard' ) }
 				>
 					<Menu size={ 21 } aria-hidden="true" />
 				</button>
 				<div>
 					<p className="ceog-topbar__eyebrow">
-						{ __( 'Order Guard', 'coderembassy-order-guard' ) }
+						{ __( 'Order Vanguard', 'coderembassy-order-vanguard' ) }
 					</p>
 					<h1 className="ceog-topbar__title">{ title }</h1>
 				</div>
@@ -84,7 +84,7 @@ export default function Topbar( {
 					) }
 					<span className="ceog-user__name">
 						{ user?.displayName ||
-							__( 'Admin', 'coderembassy-order-guard' ) }
+							__( 'Admin', 'coderembassy-order-vanguard' ) }
 					</span>
 				</div>
 			</div>

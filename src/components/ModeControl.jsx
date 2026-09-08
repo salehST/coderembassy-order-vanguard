@@ -17,7 +17,7 @@ export default function ModeControl( {
 				( compact ? ' ceog-mode-control--compact' : '' )
 			}
 			role="group"
-			aria-label={ __( 'Protection mode', 'coderembassy-order-guard' ) }
+			aria-label={ __( 'Protection mode', 'coderembassy-order-vanguard' ) }
 		>
 			<button
 				type="button"
@@ -27,7 +27,7 @@ export default function ModeControl( {
 				disabled={ busy }
 			>
 				<Eye size={ 16 } aria-hidden="true" />
-				{ __( 'Monitor', 'coderembassy-order-guard' ) }
+				{ __( 'Monitor', 'coderembassy-order-vanguard' ) }
 			</button>
 			<button
 				type="button"
@@ -37,7 +37,7 @@ export default function ModeControl( {
 				disabled={ busy }
 			>
 				<ShieldCheck size={ 16 } aria-hidden="true" />
-				{ __( 'Enforce', 'coderembassy-order-guard' ) }
+				{ __( 'Enforce', 'coderembassy-order-vanguard' ) }
 			</button>
 		</div>
 	);

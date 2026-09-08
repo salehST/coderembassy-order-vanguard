@@ -1,5 +1,5 @@
 /**
- * Order Guard React shell and shared data lifecycle.
+ * Order Vanguard React shell and shared data lifecycle.
  */
 import { useCallback, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
@@ -31,7 +31,9 @@ const readTheme = () => {
 };
 
 export default function App( { boot } ) {
-	const [ route, setRoute ] = useState( readRoute );
+	const [ route, setRoute ] = useState( () =>
+		readRoute( Boolean( boot.isPro ) )
+	);
 	const [ theme, setTheme ] = useState( readTheme );
 	const [ payload, setPayload ] = useState( null );
 	const [ loading, setLoading ] = useState( true );
@@ -59,12 +61,13 @@ export default function App( { boot } ) {
 	}, [ load ] );
 
 	useEffect( () => {
-		const onHashChange = () => setRoute( readRoute() );
+		const onHashChange = () =>
+			setRoute( readRoute( Boolean( boot.isPro ) ) );
 		window.addEventListener( 'hashchange', onHashChange );
 		onHashChange();
 
 		return () => window.removeEventListener( 'hashchange', onHashChange );
-	}, [] );
+	}, [ boot.isPro ] );
 
 	useEffect( () => {
 		const onLicenseUpdated = ( event ) => {
@@ -155,7 +158,7 @@ export default function App( { boot } ) {
 			! window.confirm(
 				__(
 					'We recommend reviewing the Activity Log first. Switch to Enforce mode?',
-					'coderembassy-order-guard'
+					'coderembassy-order-vanguard'
 				)
 			)
 		) {

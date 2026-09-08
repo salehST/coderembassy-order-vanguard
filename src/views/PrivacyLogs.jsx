@@ -44,19 +44,19 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 			<header className="ceog-page__header">
 				<div>
 					<p className="ceog-section-kicker">
-						{ __( 'Privacy & Logs', 'coderembassy-order-guard' ) }
+						{ __( 'Privacy & Logs', 'coderembassy-order-vanguard' ) }
 					</p>
-					<h2>{ __( 'Local, privacy-first records', 'coderembassy-order-guard' ) }</h2>
+					<h2>{ __( 'Local, privacy-first records', 'coderembassy-order-vanguard' ) }</h2>
 					<p>
 						{ __(
-							'Order Guard stores protection events on this WordPress site and sends nothing to external services.',
-							'coderembassy-order-guard'
+							'Order Vanguard stores protection events on this WordPress site and sends nothing to external services.',
+							'coderembassy-order-vanguard'
 						) }
 					</p>
 				</div>
 				<span className="ceog-status ceog-status--success">
 					<ShieldCheck size={ 15 } aria-hidden="true" />
-					{ __( 'Local only', 'coderembassy-order-guard' ) }
+					{ __( 'Local only', 'coderembassy-order-vanguard' ) }
 				</span>
 			</header>
 
@@ -65,22 +65,22 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 					<div className="ceog-settings-panel__heading">
 						<Database size={ 20 } aria-hidden="true" />
 						<div>
-							<h3>{ __( 'IP display', 'coderembassy-order-guard' ) }</h3>
+							<h3>{ __( 'IP display', 'coderembassy-order-vanguard' ) }</h3>
 							<p>
 								{ __(
 									'Repeat-attacker correlation always uses a one-way HMAC hash.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
 					</div>
 					<ToggleField
 						id="ceog-log-full-ip"
-						label={ __( 'Store full IP addresses', 'coderembassy-order-guard' ) }
+						label={ __( 'Store full IP addresses', 'coderembassy-order-vanguard' ) }
 						description={
 							draft.log_full_ip
-								? __( 'Full addresses will be visible in new log rows.', 'coderembassy-order-guard' )
-								: __( 'IP addresses are anonymized for display.', 'coderembassy-order-guard' )
+								? __( 'Full addresses will be visible in new log rows.', 'coderembassy-order-vanguard' )
+								: __( 'IP addresses are anonymized for display.', 'coderembassy-order-vanguard' )
 						}
 						checked={ draft.log_full_ip }
 						onChange={ ( value ) => update( 'log_full_ip', value ) }
@@ -92,7 +92,7 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 							<p>
 								{ __(
 									'Full IP addresses are personal data. Enable this only when your privacy policy and legal basis cover the additional storage.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
@@ -103,17 +103,17 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 					<div className="ceog-settings-panel__heading">
 						<Network size={ 20 } aria-hidden="true" />
 						<div>
-							<h3>{ __( 'Trusted proxy', 'coderembassy-order-guard' ) }</h3>
+							<h3>{ __( 'Trusted proxy', 'coderembassy-order-vanguard' ) }</h3>
 							<p>
 								{ __(
 									'Proxy headers remain untrusted unless you explicitly select your infrastructure.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
 					</div>
 					<label className="ceog-field" htmlFor="ceog-trusted-proxy">
-						<span>{ __( 'Client IP source', 'coderembassy-order-guard' ) }</span>
+						<span>{ __( 'Client IP source', 'coderembassy-order-vanguard' ) }</span>
 						<select
 							id="ceog-trusted-proxy"
 							value={ draft.trusted_proxy }
@@ -122,20 +122,20 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 							}
 						>
 							<option value="none">
-								{ __( 'Server connection (recommended)', 'coderembassy-order-guard' ) }
+								{ __( 'Server connection (recommended)', 'coderembassy-order-vanguard' ) }
 							</option>
 							<option value="cloudflare">
-								{ __( 'Cloudflare CF-Connecting-IP', 'coderembassy-order-guard' ) }
+								{ __( 'Cloudflare CF-Connecting-IP', 'coderembassy-order-vanguard' ) }
 							</option>
 							<option value="xff">
-								{ __( 'X-Forwarded-For first hop', 'coderembassy-order-guard' ) }
+								{ __( 'X-Forwarded-For first hop', 'coderembassy-order-vanguard' ) }
 							</option>
 						</select>
 					</label>
 					<p className="ceog-field-note">
 						{ __(
 							'Selecting the wrong proxy can let attackers spoof their source address.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</p>
 				</section>
@@ -144,23 +144,23 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 					<div className="ceog-settings-panel__heading">
 						<Clock3 size={ 20 } aria-hidden="true" />
 						<div>
-							<h3>{ __( 'Retention', 'coderembassy-order-guard' ) }</h3>
+							<h3>{ __( 'Retention', 'coderembassy-order-vanguard' ) }</h3>
 							<p>
 								{ __(
 									'Daily pruning keeps the attack-volume table bounded.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
 					</div>
 					<div className="ceog-readonly-value">
 						<strong>{ 7 }</strong>
-						<span>{ __( 'days', 'coderembassy-order-guard' ) }</span>
+						<span>{ __( 'days', 'coderembassy-order-vanguard' ) }</span>
 					</div>
 					<p className="ceog-field-note">
 						{ __(
 							'Free retains activity history for 7 days, with daily background pruning.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</p>
 				</section>
@@ -169,21 +169,21 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 					<div className="ceog-settings-panel__heading">
 						<Trash2 size={ 20 } aria-hidden="true" />
 						<div>
-							<h3>{ __( 'Uninstall cleanup', 'coderembassy-order-guard' ) }</h3>
+							<h3>{ __( 'Uninstall cleanup', 'coderembassy-order-vanguard' ) }</h3>
 							<p>
 								{ __(
-									'Choose whether uninstalling Order Guard removes its local records.',
-									'coderembassy-order-guard'
+									'Choose whether uninstalling Order Vanguard removes its local records.',
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
 					</div>
 					<ToggleField
 						id="ceog-delete-data"
-						label={ __( 'Delete all data on uninstall', 'coderembassy-order-guard' ) }
+						label={ __( 'Delete all data on uninstall', 'coderembassy-order-vanguard' ) }
 						description={ __(
 							'Removes the log table and plugin options permanently.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 						checked={ draft.delete_data_on_uninstall }
 						onChange={ ( value ) =>
@@ -198,7 +198,7 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 				{ saved && (
 					<span className="ceog-saved" role="status">
 						<ShieldCheck size={ 15 } aria-hidden="true" />
-						{ __( 'Privacy settings saved', 'coderembassy-order-guard' ) }
+						{ __( 'Privacy settings saved', 'coderembassy-order-vanguard' ) }
 					</span>
 				) }
 				<button
@@ -209,8 +209,8 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 				>
 					<Save size={ 16 } aria-hidden="true" />
 					{ settingsBusy
-						? __( 'Saving...', 'coderembassy-order-guard' )
-						: __( 'Save privacy settings', 'coderembassy-order-guard' ) }
+						? __( 'Saving...', 'coderembassy-order-vanguard' )
+						: __( 'Save privacy settings', 'coderembassy-order-vanguard' ) }
 				</button>
 			</div>
 		</div>

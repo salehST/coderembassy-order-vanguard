@@ -34,6 +34,7 @@ check( applicationSource.includes( 'data-ceog-pro-view={ view }' ), 'The embedde
 check( applicationSource.includes( "id: 'history-reporting'" ), 'The shared shell must expose the Pro History and Reports workspace.' );
 check( applicationSource.includes( "id: 'attack-cleanup'" ), 'The shared shell must expose a dedicated Attack Cleanup route.' );
 check( applicationSource.includes( "id: 'pro-license'" ), 'The shared shell must expose a dedicated Pro License route.' );
+check( /id:\s*'pro-license'[\s\S]{0,200}proOnly:\s*true/.test( read( 'src/navigation.js' ) ), 'The Pro License route must remain hidden on Free-only installations.' );
 check( applicationSource.includes( '<LicenseBanner' ), 'The shared shell must host the Pro-provided in-app license banner.' );
 check( applicationSource.includes( '<ExpiredLicenseModal' ), 'The shared shell must host the Pro-provided expired-license reminder.' );
 check( applicationSource.includes( 'public function get_field_name_for_flow( $flow )' ), 'Free must expose the shared salted field-name contract used by Pro Checkout Block protection.' );
@@ -61,7 +62,7 @@ const asset = read( 'build/index.asset.php' );
 check( asset.includes( "'wp-element'" ), 'The build must externalize WordPress element.' );
 check( asset.includes( "'react'" ), 'The build must depend on WordPress-provided React.' );
 
-const pot = path.join( root, 'languages', 'coderembassy-order-guard.pot' );
+const pot = path.join( root, 'languages', 'coderembassy-order-vanguard.pot' );
 check( fs.existsSync( pot ) && fs.statSync( pot ).size > 1000, 'The release POT file is missing or empty.' );
 
 if ( failures.length ) {

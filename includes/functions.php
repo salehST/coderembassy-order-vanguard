@@ -1,8 +1,8 @@
 <?php
 /**
- * Shared Order Guard helpers.
+ * Shared Order Vanguard helpers.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -90,7 +90,7 @@ function ceog_log_internal_error( Throwable $throwable, $context = '' ) {
 	$context           = substr( sanitize_text_field( (string) $context ), 0, 191 );
 	$exception_message = substr( sanitize_text_field( $throwable->getMessage() ), 0, 1000 );
 	$message = sprintf(
-		'Order Guard fail-open: %1$s [%2$s] %3$s',
+		'Order Vanguard fail-open: %1$s [%2$s] %3$s',
 		$context ? $context : 'Unhandled protection error',
 		get_class( $throwable ),
 		$exception_message
@@ -161,7 +161,7 @@ function ceog_is_enforcing() {
 }
 
 /**
- * Shared permission callback for every Order Guard REST route.
+ * Shared permission callback for every Order Vanguard REST route.
  *
  * @return bool
  */

@@ -2,7 +2,7 @@
 /**
  * Classic checkout honeypot protection.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -50,7 +50,7 @@ final class CEOG_Honeypot {
 				?>
 				<p aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
 					<label for="<?php echo esc_attr( $field_id ); ?>" aria-hidden="true">
-						<?php esc_html_e( 'Leave this field empty', 'coderembassy-order-guard' ); ?>
+						<?php esc_html_e( 'Leave this field empty', 'coderembassy-order-vanguard' ); ?>
 					</label>
 					<input
 						type="text"
@@ -94,7 +94,7 @@ final class CEOG_Honeypot {
 					array(
 						'mode'   => ceog_is_enforcing() ? 'enforce' : 'monitor',
 						'route'  => '/checkout',
-						'reason' => __( 'Automated checkout signal detected.', 'coderembassy-order-guard' ),
+						'reason' => __( 'Automated checkout signal detected.', 'coderembassy-order-vanguard' ),
 						'meta'   => array( 'flow' => 'classic' ),
 					)
 				);
@@ -107,7 +107,7 @@ final class CEOG_Honeypot {
 
 		if ( $should_block && function_exists( 'wc_add_notice' ) ) {
 			wc_add_notice(
-				__( 'We could not process your order. Please try again or contact the store for assistance.', 'coderembassy-order-guard' ),
+				__( 'We could not process your order. Please try again or contact the store for assistance.', 'coderembassy-order-vanguard' ),
 				'error'
 			);
 		}

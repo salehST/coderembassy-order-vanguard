@@ -2,7 +2,7 @@
 /**
  * CLI release gate for a source-only install missing compiled admin assets.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {
@@ -12,7 +12,7 @@ if ( 'cli' !== PHP_SAPI ) {
 define( 'ABSPATH', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
 define( 'CEOG_PATH', sys_get_temp_dir() . '/ceog-missing-build/' );
 
-$GLOBALS['ceog_admin_hook'] = 'woocommerce_page_coderembassy-order-guard';
+$GLOBALS['ceog_admin_hook'] = 'woocommerce_page_coderembassy-order-vanguard';
 
 function add_action() {}
 function add_submenu_page() { return $GLOBALS['ceog_admin_hook']; }
@@ -37,7 +37,7 @@ ob_start();
 $admin->render_missing_assets_notice();
 $notice = ob_get_clean();
 
-ceog_assets_assert( false !== strpos( $notice, 'Order Guard admin assets are missing' ), 'A missing build must show an actionable administrator notice.' );
+ceog_assets_assert( false !== strpos( $notice, 'Order Vanguard admin assets are missing' ), 'A missing build must show an actionable administrator notice.' );
 ceog_assets_assert( false !== strpos( $notice, 'notice-error' ), 'The missing-build notice must be clearly presented as an error.' );
 
 fwrite( STDOUT, "Phase 11 missing admin assets release gate passed.\n" );

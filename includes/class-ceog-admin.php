@@ -2,7 +2,7 @@
 /**
  * WordPress admin menu and React asset bootstrap.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -32,17 +32,17 @@ final class CEOG_Admin {
 	}
 
 	/**
-	 * Adds WooCommerce -> Order Guard.
+	 * Adds WooCommerce -> Order Vanguard.
 	 *
 	 * @return void
 	 */
 	public function register_menu() {
 		$this->hook_suffix = (string) add_submenu_page(
 			'woocommerce',
-			__( 'Order Guard', 'coderembassy-order-guard' ),
-			__( 'Order Guard', 'coderembassy-order-guard' ),
+			__( 'Order Vanguard', 'coderembassy-order-vanguard' ),
+			__( 'Order Vanguard', 'coderembassy-order-vanguard' ),
 			'manage_woocommerce',
-			'coderembassy-order-guard',
+			'coderembassy-order-vanguard',
 			array( $this, 'render_page' )
 		);
 	}
@@ -54,14 +54,14 @@ final class CEOG_Admin {
 	 */
 	public function render_page() {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
-			wp_die( esc_html__( 'You do not have permission to manage Order Guard.', 'coderembassy-order-guard' ) );
+			wp_die( esc_html__( 'You do not have permission to manage Order Vanguard.', 'coderembassy-order-vanguard' ) );
 		}
 
 		echo '<div id="ceog-app" class="ceog-app"></div>';
 	}
 
 	/**
-	 * Enqueues the compiled app only on the Order Guard screen.
+	 * Enqueues the compiled app only on the Order Vanguard screen.
 	 *
 	 * @param string $hook_suffix Current admin hook suffix.
 	 * @return void
@@ -123,7 +123,7 @@ final class CEOG_Admin {
 
 		wp_set_script_translations(
 			'ceog-admin',
-			'coderembassy-order-guard',
+			'coderembassy-order-vanguard',
 			CEOG_PATH . 'languages'
 		);
 	}
@@ -144,7 +144,7 @@ final class CEOG_Admin {
 
 		?>
 		<div class="notice notice-error">
-			<p><?php esc_html_e( 'Order Guard admin assets are missing. Please reinstall the plugin from a complete release package.', 'coderembassy-order-guard' ); ?></p>
+			<p><?php esc_html_e( 'Order Vanguard admin assets are missing. Please reinstall the plugin from a complete release package.', 'coderembassy-order-vanguard' ); ?></p>
 		</div>
 		<?php
 	}

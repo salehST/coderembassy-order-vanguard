@@ -2,7 +2,7 @@
 /**
  * CLI smoke checks for Phase 4 IP privacy and log contracts.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {

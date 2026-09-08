@@ -2,7 +2,7 @@
 /**
  * Throttled circuit breaker alerts.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -52,12 +52,12 @@ final class CEOG_Alerts {
 
 				$label = self::tier_label( $tier );
 				/* translators: %s is a circuit breaker tier label. */
-				$subject = sprintf( __( 'Order Guard alert: %s breaker tripped', 'coderembassy-order-guard' ), $label );
+				$subject = sprintf( __( 'Order Vanguard alert: %s breaker tripped', 'coderembassy-order-vanguard' ), $label );
 				$message = sprintf(
 					/* translators: 1: circuit breaker tier, 2: dashboard URL. */
-					__( "The %1\$s circuit breaker tripped after repeated failed orders. Review the Order Guard dashboard and Activity Log:\n\n%2\$s", 'coderembassy-order-guard' ),
+					__( "The %1\$s circuit breaker tripped after repeated failed orders. Review the Order Vanguard dashboard and Activity Log:\n\n%2\$s", 'coderembassy-order-vanguard' ),
 					$label,
-					admin_url( 'admin.php?page=coderembassy-order-guard#/dashboard' )
+					admin_url( 'admin.php?page=coderembassy-order-vanguard#/dashboard' )
 				);
 
 				set_transient( 'ceog_alert_throttle', time(), HOUR_IN_SECONDS );
@@ -72,12 +72,12 @@ final class CEOG_Alerts {
 	/** @param string $tier Tier key. @return string */
 	private static function tier_label( $tier ) {
 		if ( 'ip' === $tier ) {
-			return __( 'Per-IP', 'coderembassy-order-guard' );
+			return __( 'Per-IP', 'coderembassy-order-vanguard' );
 		}
 		if ( 'email' === $tier ) {
-			return __( 'Per-email', 'coderembassy-order-guard' );
+			return __( 'Per-email', 'coderembassy-order-vanguard' );
 		}
 
-		return __( 'Global', 'coderembassy-order-guard' );
+		return __( 'Global', 'coderembassy-order-vanguard' );
 	}
 }

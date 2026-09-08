@@ -1,5 +1,5 @@
 /**
- * Authenticated Order Guard REST client.
+ * Authenticated Order Vanguard REST client.
  */
 import apiFetch from '@wordpress/api-fetch';
 import { __ } from '@wordpress/i18n';
@@ -85,15 +85,15 @@ export function friendlyError( error ) {
 	if ( status === 401 || status === 403 ) {
 		return __(
 			'Your admin session expired. Please refresh the page and try again.',
-			'coderembassy-order-guard'
+			'coderembassy-order-vanguard'
 		);
 	}
 
 	return (
 		error?.message ||
 		__(
-			'Order Guard could not load this data. Please try again.',
-			'coderembassy-order-guard'
+			'Order Vanguard could not load this data. Please try again.',
+			'coderembassy-order-vanguard'
 		)
 	);
 }

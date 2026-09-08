@@ -2,7 +2,7 @@
 /**
  * CLI release gate for the idle storefront session path.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {

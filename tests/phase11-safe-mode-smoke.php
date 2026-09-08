@@ -2,7 +2,7 @@
 /**
  * CLI release gate proving CEOG_SAFE_MODE disables every blocking path.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {
@@ -10,7 +10,7 @@ if ( 'cli' !== PHP_SAPI ) {
 }
 
 define( 'ABSPATH', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
-define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-guard.php' );
+define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-vanguard.php' );
 define( 'CEOG_SAFE_MODE', true );
 define( 'DAY_IN_SECONDS', 86400 );
 $GLOBALS['ceog_options']    = array();

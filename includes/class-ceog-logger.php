@@ -2,7 +2,7 @@
 /**
  * Privacy-preserving protection event logger.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Owns all reads and writes to the Order Guard log table.
+ * Owns all reads and writes to the Order Vanguard log table.
  */
 final class CEOG_Logger {
 	/**
@@ -104,7 +104,7 @@ final class CEOG_Logger {
 				$result = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
 
 				if ( false === $result ) {
-					throw new RuntimeException( 'The Order Guard log row could not be stored.' );
+					throw new RuntimeException( 'The Order Vanguard log row could not be stored.' );
 				}
 
 				return true;
@@ -207,7 +207,7 @@ final class CEOG_Logger {
 				$rows  = $wpdb->get_results( $sql, ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
 
 				if ( ! is_array( $rows ) ) {
-					throw new RuntimeException( 'Recent Order Guard events could not be read.' );
+					throw new RuntimeException( 'Recent Order Vanguard events could not be read.' );
 				}
 
 				return array_map( array( __CLASS__, 'prepare_rest_row' ), $rows );
@@ -242,7 +242,7 @@ final class CEOG_Logger {
 				$deleted      = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
 
 				if ( false === $deleted ) {
-					throw new RuntimeException( 'The selected Order Guard log rows could not be deleted.' );
+					throw new RuntimeException( 'The selected Order Vanguard log rows could not be deleted.' );
 				}
 
 				delete_transient( 'ceog_dashboard_cache' );
@@ -279,7 +279,7 @@ final class CEOG_Logger {
 					$deleted = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
 
 					if ( false === $deleted ) {
-						throw new RuntimeException( 'Expired Order Guard log rows could not be pruned.' );
+						throw new RuntimeException( 'Expired Order Vanguard log rows could not be pruned.' );
 					}
 
 					$total += (int) $deleted;

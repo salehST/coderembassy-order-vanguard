@@ -139,13 +139,13 @@ export default function Lists() {
 			<header className="ceog-page__header">
 				<div>
 					<p className="ceog-section-kicker">
-						{ __( 'Access controls', 'coderembassy-order-guard' ) }
+						{ __( 'Access controls', 'coderembassy-order-vanguard' ) }
 					</p>
-					<h2>{ __( 'Lists', 'coderembassy-order-guard' ) }</h2>
+					<h2>{ __( 'Lists', 'coderembassy-order-vanguard' ) }</h2>
 					<p>
 						{ __(
 							'Manually block known sources and preserve trusted checkout paths.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</p>
 				</div>
@@ -154,7 +154,7 @@ export default function Lists() {
 						<Ban size={ 15 } aria-hidden="true" />
 						{ sprintf(
 							/* translators: %d: number of blocklist entries. */
-							__( '%d blocked', 'coderembassy-order-guard' ),
+							__( '%d blocked', 'coderembassy-order-vanguard' ),
 							Number( payload?.counts?.blocked || 0 )
 						) }
 					</span>
@@ -162,7 +162,7 @@ export default function Lists() {
 						<ShieldCheck size={ 15 } aria-hidden="true" />
 						{ sprintf(
 							/* translators: %d: number of whitelist entries. */
-							__( '%d allowed', 'coderembassy-order-guard' ),
+							__( '%d allowed', 'coderembassy-order-vanguard' ),
 							Number( payload?.counts?.allowed || 0 )
 						) }
 					</span>
@@ -172,11 +172,11 @@ export default function Lists() {
 			<div className="ceog-list-precedence" role="status">
 				<ShieldCheck size={ 19 } aria-hidden="true" />
 				<div>
-					<strong>{ __( 'Whitelist always wins', 'coderembassy-order-guard' ) }</strong>
+					<strong>{ __( 'Whitelist always wins', 'coderembassy-order-vanguard' ) }</strong>
 					<span>
 						{ __(
 							'A matching role, IP, or payment method bypasses blocklists and future protection rules.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</span>
 				</div>
@@ -200,11 +200,11 @@ export default function Lists() {
 						<div className="ceog-list-panel__heading">
 							<Ban size={ 21 } aria-hidden="true" />
 							<div>
-								<h3>{ __( 'Blocklist', 'coderembassy-order-guard' ) }</h3>
+								<h3>{ __( 'Blocklist', 'coderembassy-order-vanguard' ) }</h3>
 								<p>
 									{ __(
 										'Matches are logged in Monitor mode and stopped in Enforce mode.',
-										'coderembassy-order-guard'
+										'coderembassy-order-vanguard'
 									) }
 								</p>
 							</div>
@@ -212,26 +212,26 @@ export default function Lists() {
 
 						<ListField
 							id="ceog-block-emails"
-							label={ __( 'Billing emails', 'coderembassy-order-guard' ) }
-							description={ __( 'Exact email addresses, one per line.', 'coderembassy-order-guard' ) }
+							label={ __( 'Billing emails', 'coderembassy-order-vanguard' ) }
+							description={ __( 'Exact email addresses, one per line.', 'coderembassy-order-vanguard' ) }
 							value={ draft.blockEmails }
 							onChange={ ( value ) => update( 'blockEmails', value ) }
 							placeholder="bot@example.com"
 						/>
 						<ListField
 							id="ceog-block-domains"
-							label={ __( 'Email domains', 'coderembassy-order-guard' ) }
-							description={ __( 'Domain names without @, one per line.', 'coderembassy-order-guard' ) }
+							label={ __( 'Email domains', 'coderembassy-order-vanguard' ) }
+							description={ __( 'Domain names without @, one per line.', 'coderembassy-order-vanguard' ) }
 							value={ draft.blockDomains }
 							onChange={ ( value ) => update( 'blockDomains', value ) }
 							placeholder="example.com"
 						/>
 						<ListField
 							id="ceog-block-ips"
-							label={ __( 'IP addresses', 'coderembassy-order-guard' ) }
+							label={ __( 'IP addresses', 'coderembassy-order-vanguard' ) }
 							description={ __(
 								'IPv4 matches exactly; IPv6 matches its entire /64 network.',
-								'coderembassy-order-guard'
+								'coderembassy-order-vanguard'
 							) }
 							value={ draft.blockIps }
 							onChange={ ( value ) => update( 'blockIps', value ) }
@@ -243,11 +243,11 @@ export default function Lists() {
 						<div className="ceog-list-panel__heading">
 							<ShieldCheck size={ 21 } aria-hidden="true" />
 							<div>
-								<h3>{ __( 'Whitelist', 'coderembassy-order-guard' ) }</h3>
+								<h3>{ __( 'Whitelist', 'coderembassy-order-vanguard' ) }</h3>
 								<p>
 									{ __(
 										'Use narrow exceptions for trusted staff, infrastructure, and checkout methods.',
-										'coderembassy-order-guard'
+										'coderembassy-order-vanguard'
 									) }
 								</p>
 							</div>
@@ -257,8 +257,8 @@ export default function Lists() {
 							<Globe2 size={ 17 } aria-hidden="true" />
 							<ListField
 								id="ceog-allow-ips"
-								label={ __( 'Trusted IP addresses', 'coderembassy-order-guard' ) }
-								description={ __( 'IPv6 exceptions cover the entered /64 network.', 'coderembassy-order-guard' ) }
+								label={ __( 'Trusted IP addresses', 'coderembassy-order-vanguard' ) }
+								description={ __( 'IPv6 exceptions cover the entered /64 network.', 'coderembassy-order-vanguard' ) }
 								value={ draft.allowIps }
 								onChange={ ( value ) => update( 'allowIps', value ) }
 								placeholder="203.0.113.10"
@@ -266,37 +266,37 @@ export default function Lists() {
 						</div>
 						<SearchMultiSelect
 							id="ceog-allow-roles"
-							label={ __( 'WordPress roles', 'coderembassy-order-guard' ) }
-							description={ __( 'Search and select the roles that should always bypass protection.', 'coderembassy-order-guard' ) }
+							label={ __( 'WordPress roles', 'coderembassy-order-vanguard' ) }
+							description={ __( 'Search and select the roles that should always bypass protection.', 'coderembassy-order-vanguard' ) }
 							icon={ UserRoundCheck }
 							options={ payload?.options?.roles }
 							value={ draft.allowRoles }
 							onChange={ ( value ) => update( 'allowRoles', value ) }
-							searchPlaceholder={ __( 'Search WordPress roles...', 'coderembassy-order-guard' ) }
-							emptyText={ __( 'No matching WordPress roles.', 'coderembassy-order-guard' ) }
+							searchPlaceholder={ __( 'Search WordPress roles...', 'coderembassy-order-vanguard' ) }
+							emptyText={ __( 'No matching WordPress roles.', 'coderembassy-order-vanguard' ) }
 						/>
 						<SearchMultiSelect
 							id="ceog-allow-payments"
-							label={ __( 'Payment methods', 'coderembassy-order-guard' ) }
+							label={ __( 'Payment methods', 'coderembassy-order-vanguard' ) }
 							description={ __(
 								'Search installed gateways or add a custom gateway key manually.',
-								'coderembassy-order-guard'
+								'coderembassy-order-vanguard'
 							) }
 							icon={ CreditCard }
 							options={ payload?.options?.payment_methods }
 							value={ draft.allowPayments }
 							onChange={ ( value ) => update( 'allowPayments', value ) }
-							searchPlaceholder={ __( 'Search payment methods...', 'coderembassy-order-guard' ) }
-							emptyText={ __( 'No matching payment methods.', 'coderembassy-order-guard' ) }
+							searchPlaceholder={ __( 'Search payment methods...', 'coderembassy-order-vanguard' ) }
+							emptyText={ __( 'No matching payment methods.', 'coderembassy-order-vanguard' ) }
 							allowManual
-							manualPlaceholder={ __( 'Custom gateway key', 'coderembassy-order-guard' ) }
+							manualPlaceholder={ __( 'Custom gateway key', 'coderembassy-order-vanguard' ) }
 						/>
 						<div className="ceog-list-compatibility">
 							<Mail size={ 17 } aria-hidden="true" />
 							<span>
 								{ __(
 									'Confirm gateway keys in WooCommerce payment settings before adding an exception.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</span>
 						</div>
@@ -308,7 +308,7 @@ export default function Lists() {
 				{ saved && (
 					<span className="ceog-saved" role="status">
 						<CircleCheck size={ 15 } aria-hidden="true" />
-						{ __( 'Lists saved', 'coderembassy-order-guard' ) }
+						{ __( 'Lists saved', 'coderembassy-order-vanguard' ) }
 					</span>
 				) }
 				<button
@@ -319,8 +319,8 @@ export default function Lists() {
 				>
 					<Save size={ 16 } aria-hidden="true" />
 					{ saving
-						? __( 'Saving...', 'coderembassy-order-guard' )
-						: __( 'Save lists', 'coderembassy-order-guard' ) }
+						? __( 'Saving...', 'coderembassy-order-vanguard' )
+						: __( 'Save lists', 'coderembassy-order-vanguard' ) }
 				</button>
 			</div>
 		</div>

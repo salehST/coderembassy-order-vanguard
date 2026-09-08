@@ -1,8 +1,8 @@
 <?php
 /**
- * Order Guard uninstall cleanup.
+ * Order Vanguard uninstall cleanup.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) || ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {

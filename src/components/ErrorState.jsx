@@ -10,13 +10,13 @@ export default function ErrorState( { message, onRetry } ) {
 			<TriangleAlert size={ 20 } aria-hidden="true" />
 			<div>
 				<strong>
-					{ __( 'Order Guard could not connect', 'coderembassy-order-guard' ) }
+					{ __( 'Order Vanguard could not connect', 'coderembassy-order-vanguard' ) }
 				</strong>
 				<p>{ message }</p>
 			</div>
 			<button type="button" className="ceog-button" onClick={ onRetry }>
 				<RefreshCw size={ 16 } aria-hidden="true" />
-				{ __( 'Retry', 'coderembassy-order-guard' ) }
+				{ __( 'Retry', 'coderembassy-order-vanguard' ) }
 			</button>
 		</div>
 	);

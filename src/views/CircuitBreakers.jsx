@@ -37,62 +37,62 @@ const makeDraft = ( settings = {} ) => ( {
 const TIER_CONFIG = {
 	ip: {
 		Icon: Network,
-		title: () => __( 'Per-IP breaker', 'coderembassy-order-guard' ),
+		title: () => __( 'Per-IP breaker', 'coderembassy-order-vanguard' ),
 		description: () =>
 			__(
 				'Stops repeated failed orders from one IPv4 address or IPv6 /64 network.',
-				'coderembassy-order-guard'
+				'coderembassy-order-vanguard'
 			),
 		enabled: 'breaker_ip_enabled',
 		threshold: 'breaker_ip_threshold',
 		window: 'breaker_ip_window',
 		duration: 'breaker_ip_block',
 		durationLabel: () =>
-			__( 'Block duration (seconds)', 'coderembassy-order-guard' ),
+			__( 'Block duration (seconds)', 'coderembassy-order-vanguard' ),
 		note: () =>
 			__(
 				'Shared mobile, office, and CGNAT connections can represent several customers. Keep this block short.',
-				'coderembassy-order-guard'
+				'coderembassy-order-vanguard'
 			),
 	},
 	email: {
 		Icon: Mail,
-		title: () => __( 'Per-email breaker', 'coderembassy-order-guard' ),
+		title: () => __( 'Per-email breaker', 'coderembassy-order-vanguard' ),
 		description: () =>
 			__(
 				'Links rotating IPs when repeated failures use the same billing email.',
-				'coderembassy-order-guard'
+				'coderembassy-order-vanguard'
 			),
 		enabled: 'breaker_email_enabled',
 		threshold: 'breaker_email_threshold',
 		window: 'breaker_email_window',
 		duration: 'breaker_email_block',
 		durationLabel: () =>
-			__( 'Block duration (seconds)', 'coderembassy-order-guard' ),
+			__( 'Block duration (seconds)', 'coderembassy-order-vanguard' ),
 		note: () =>
 			__(
 				'A shared household or team billing email may affect more than one shopper. The default requires three failures.',
-				'coderembassy-order-guard'
+				'coderembassy-order-vanguard'
 			),
 	},
 	global: {
 		Icon: Globe2,
-		title: () => __( 'Global breaker', 'coderembassy-order-guard' ),
+		title: () => __( 'Global breaker', 'coderembassy-order-vanguard' ),
 		description: () =>
 			__(
 				'Pauses non-whitelisted checkout when failures arrive across the whole store.',
-				'coderembassy-order-guard'
+				'coderembassy-order-vanguard'
 			),
 		enabled: 'breaker_global_enabled',
 		threshold: 'breaker_global_threshold',
 		window: 'breaker_global_window',
 		duration: 'breaker_global_cooldown',
 		durationLabel: () =>
-			__( 'Cooldown (seconds)', 'coderembassy-order-guard' ),
+			__( 'Cooldown (seconds)', 'coderembassy-order-vanguard' ),
 		note: () =>
 			__(
 				'This temporarily pauses all non-whitelisted checkout. A short cooldown is the primary defense against distributed attacks.',
-				'coderembassy-order-guard'
+				'coderembassy-order-vanguard'
 			),
 	},
 };
@@ -105,13 +105,13 @@ const formatRemaining = ( seconds ) => {
 	return minutes > 0
 		? sprintf(
 			/* translators: 1: minutes, 2: seconds */
-			__( '%1$dm %2$ds remaining', 'coderembassy-order-guard' ),
+			__( '%1$dm %2$ds remaining', 'coderembassy-order-vanguard' ),
 			minutes,
 			remainder
 		)
 		: sprintf(
 			/* translators: %d: seconds */
-			__( '%d seconds remaining', 'coderembassy-order-guard' ),
+			__( '%d seconds remaining', 'coderembassy-order-vanguard' ),
 			remainder
 		);
 };
@@ -120,8 +120,8 @@ function TierStatus( { tier } ) {
 	if ( ! tier?.enabled ) {
 		return (
 			<div className="ceog-breaker-live ceog-breaker-live--muted">
-				<span>{ __( 'Disabled', 'coderembassy-order-guard' ) }</span>
-				<small>{ __( 'Protection inactive', 'coderembassy-order-guard' ) }</small>
+				<span>{ __( 'Disabled', 'coderembassy-order-vanguard' ) }</span>
+				<small>{ __( 'Protection inactive', 'coderembassy-order-vanguard' ) }</small>
 			</div>
 		);
 	}
@@ -137,13 +137,13 @@ function TierStatus( { tier } ) {
 			>
 				<Clock3 size={ 17 } aria-hidden="true" />
 				<div>
-					<span>{ __( 'Cooling down', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'Cooling down', 'coderembassy-order-vanguard' ) }</span>
 					<small>{ formatRemaining( tier.cooldownSeconds ) }</small>
 				</div>
 				<strong>
 					{ tier.blocking
-						? __( 'Blocking', 'coderembassy-order-guard' )
-						: __( 'Logging', 'coderembassy-order-guard' ) }
+						? __( 'Blocking', 'coderembassy-order-vanguard' )
+						: __( 'Logging', 'coderembassy-order-vanguard' ) }
 				</strong>
 			</div>
 		);
@@ -153,8 +153,8 @@ function TierStatus( { tier } ) {
 		<div className="ceog-breaker-live ceog-breaker-live--ready">
 			<CircleCheck size={ 17 } aria-hidden="true" />
 			<div>
-				<span>{ __( 'Ready', 'coderembassy-order-guard' ) }</span>
-				<small>{ __( 'Protection active', 'coderembassy-order-guard' ) }</small>
+				<span>{ __( 'Ready', 'coderembassy-order-vanguard' ) }</span>
+				<small>{ __( 'Protection active', 'coderembassy-order-vanguard' ) }</small>
 			</div>
 		</div>
 	);
@@ -179,7 +179,7 @@ function TierPanel( { name, draft, status, onUpdate } ) {
 						<h3>{ config.title() }</h3>
 						{ name === 'global' && (
 							<span className="ceog-badge ceog-badge--primary">
-								{ __( 'Distributed defense', 'coderembassy-order-guard' ) }
+								{ __( 'Distributed defense', 'coderembassy-order-vanguard' ) }
 							</span>
 						) }
 					</div>
@@ -191,10 +191,10 @@ function TierPanel( { name, draft, status, onUpdate } ) {
 
 			<ToggleField
 				id={ 'ceog-' + name + '-breaker-enabled' }
-				label={ __( 'Enable this breaker', 'coderembassy-order-guard' ) }
+				label={ __( 'Enable this breaker', 'coderembassy-order-vanguard' ) }
 				description={ __(
 					'Failed orders feed this sliding window in both Monitor and Enforce modes.',
-					'coderembassy-order-guard'
+					'coderembassy-order-vanguard'
 				) }
 				checked={ enabled }
 				onChange={ ( value ) => onUpdate( config.enabled, value ) }
@@ -202,7 +202,7 @@ function TierPanel( { name, draft, status, onUpdate } ) {
 
 			<div className="ceog-breaker-fields">
 				<label className="ceog-field" htmlFor={ 'ceog-' + name + '-threshold' }>
-					<span>{ __( 'Failed orders', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'Failed orders', 'coderembassy-order-vanguard' ) }</span>
 					<input
 						id={ 'ceog-' + name + '-threshold' }
 						type="number"
@@ -216,7 +216,7 @@ function TierPanel( { name, draft, status, onUpdate } ) {
 					/>
 				</label>
 				<label className="ceog-field" htmlFor={ 'ceog-' + name + '-window' }>
-					<span>{ __( 'Window (seconds)', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'Window (seconds)', 'coderembassy-order-vanguard' ) }</span>
 					<input
 						id={ 'ceog-' + name + '-window' }
 						type="number"
@@ -382,13 +382,13 @@ export default function CircuitBreakers( {
 			<header className="ceog-page__header">
 				<div>
 					<p className="ceog-section-kicker">
-						{ __( 'Failed-order protection', 'coderembassy-order-guard' ) }
+						{ __( 'Failed-order protection', 'coderembassy-order-vanguard' ) }
 					</p>
-					<h2>{ __( 'Circuit Breakers', 'coderembassy-order-guard' ) }</h2>
+					<h2>{ __( 'Circuit Breakers', 'coderembassy-order-vanguard' ) }</h2>
 					<p>
 						{ __(
 							'Three short sliding windows stop repeated payment failures with the smallest practical checkout impact.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</p>
 				</div>
@@ -404,18 +404,18 @@ export default function CircuitBreakers( {
 						{ activeCount > 0
 							? sprintf(
 								/* translators: %d: active breaker tiers */
-								__( '%d cooling down', 'coderembassy-order-guard' ),
+								__( '%d cooling down', 'coderembassy-order-vanguard' ),
 								activeCount
 							)
-							: __( 'All ready', 'coderembassy-order-guard' ) }
+							: __( 'All ready', 'coderembassy-order-vanguard' ) }
 					</span>
 					<button
 						type="button"
 						className="ceog-icon-button"
 						onClick={ () => loadStatus( true ) }
 						disabled={ statusLoading }
-						aria-label={ __( 'Refresh breaker status', 'coderembassy-order-guard' ) }
-						title={ __( 'Refresh breaker status', 'coderembassy-order-guard' ) }
+						aria-label={ __( 'Refresh breaker status', 'coderembassy-order-vanguard' ) }
+						title={ __( 'Refresh breaker status', 'coderembassy-order-vanguard' ) }
 					>
 						<RefreshCw size={ 17 } aria-hidden="true" />
 					</button>
@@ -435,7 +435,7 @@ export default function CircuitBreakers( {
 					<span>
 						{ __(
 							'Safe Mode keeps breaker counters and logging active while all checkout blocking remains suspended.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</span>
 				</div>
@@ -457,7 +457,7 @@ export default function CircuitBreakers( {
 				{ saved && (
 					<span className="ceog-saved" role="status">
 						<CircleCheck size={ 15 } aria-hidden="true" />
-						{ __( 'Circuit breaker settings saved', 'coderembassy-order-guard' ) }
+						{ __( 'Circuit breaker settings saved', 'coderembassy-order-vanguard' ) }
 					</span>
 				) }
 				<button
@@ -468,8 +468,8 @@ export default function CircuitBreakers( {
 				>
 					<Save size={ 16 } aria-hidden="true" />
 					{ settingsBusy
-						? __( 'Saving...', 'coderembassy-order-guard' )
-						: __( 'Save breaker settings', 'coderembassy-order-guard' ) }
+						? __( 'Saving...', 'coderembassy-order-vanguard' )
+						: __( 'Save breaker settings', 'coderembassy-order-vanguard' ) }
 				</button>
 			</div>
 		</div>

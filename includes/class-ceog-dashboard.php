@@ -2,7 +2,7 @@
 /**
  * Cached dashboard aggregation.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -76,7 +76,7 @@ final class CEOG_Dashboard {
 				);
 			},
 			self::empty_payload(),
-			'Building the Order Guard dashboard'
+			'Building the Order Vanguard dashboard'
 		);
 	}
 

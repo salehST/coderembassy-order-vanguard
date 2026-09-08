@@ -2,7 +2,7 @@
 /**
  * Settings storage and REST normalization.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

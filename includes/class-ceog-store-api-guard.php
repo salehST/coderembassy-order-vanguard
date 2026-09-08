@@ -2,7 +2,7 @@
 /**
  * WooCommerce Store API protection layer.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -339,13 +339,13 @@ final class CEOG_Store_API_Guard {
 				: ( 'emergency_lockdown' === $rule ? 'blocked_checkout' : 'blocked_add_item' );
 		}
 
-		$reason = __( 'The Store API request would be blocked by current settings.', 'coderembassy-order-guard' );
+		$reason = __( 'The Store API request would be blocked by current settings.', 'coderembassy-order-vanguard' );
 		if ( 'strict_session' === $rule ) {
-			$reason = __( 'Store API cart mutation had no existing WooCommerce session.', 'coderembassy-order-guard' );
+			$reason = __( 'Store API cart mutation had no existing WooCommerce session.', 'coderembassy-order-vanguard' );
 		} elseif ( 'emergency_lockdown' === $rule ) {
-			$reason = __( 'Emergency Store API Checkout Lockdown is enabled.', 'coderembassy-order-guard' );
+			$reason = __( 'Emergency Store API Checkout Lockdown is enabled.', 'coderembassy-order-vanguard' );
 		} elseif ( 'malformed_batch' === $rule ) {
-			$reason = __( 'Store API batch request was malformed.', 'coderembassy-order-guard' );
+			$reason = __( 'Store API batch request was malformed.', 'coderembassy-order-vanguard' );
 		}
 
 		return $this->logger->log(
@@ -376,7 +376,7 @@ final class CEOG_Store_API_Guard {
 		if ( 'strict_session' === $rule ) {
 			return new WP_Error(
 				'ceog_strict_session',
-				__( 'A valid WooCommerce session is required for this request.', 'coderembassy-order-guard' ),
+				__( 'A valid WooCommerce session is required for this request.', 'coderembassy-order-vanguard' ),
 				array( 'status' => 403 )
 			);
 		}
@@ -384,14 +384,14 @@ final class CEOG_Store_API_Guard {
 		if ( 'emergency_lockdown' === $rule ) {
 			return new WP_Error(
 				'ceog_emergency_lockdown',
-				__( 'No route was found matching the URL and request method.', 'coderembassy-order-guard' ),
+				__( 'No route was found matching the URL and request method.', 'coderembassy-order-vanguard' ),
 				array( 'status' => 404 )
 			);
 		}
 
 		return new WP_Error(
 			'ceog_malformed_batch',
-			__( 'The Store API batch request is malformed.', 'coderembassy-order-guard' ),
+			__( 'The Store API batch request is malformed.', 'coderembassy-order-vanguard' ),
 			array( 'status' => 400 )
 		);
 	}

@@ -2,7 +2,7 @@
 /**
  * Main plugin coordinator.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers Order Guard services and their WordPress hooks.
+ * Registers Order Vanguard services and their WordPress hooks.
  */
 final class CEOG_Plugin {
 	/**
@@ -103,7 +103,7 @@ final class CEOG_Plugin {
 			function () {
 				if ( function_exists( 'wc_get_logger' ) ) {
 					wc_get_logger()->warning(
-						'Order Guard Safe Mode is active; enforcement is suspended.',
+						'Order Vanguard Safe Mode is active; enforcement is suspended.',
 						array( 'source' => 'order-guard' )
 					);
 				}
@@ -127,7 +127,7 @@ final class CEOG_Plugin {
 
 		?>
 		<div class="notice notice-warning">
-			<p><?php esc_html_e( 'Order Guard Safe Mode is active - protection is monitoring only.', 'coderembassy-order-guard' ); ?></p>
+			<p><?php esc_html_e( 'Order Vanguard Safe Mode is active - protection is monitoring only.', 'coderembassy-order-vanguard' ); ?></p>
 		</div>
 		<?php
 	}

@@ -78,13 +78,13 @@ export default function StoreApiGuard( {
 			<header className="ceog-page__header">
 				<div>
 					<p className="ceog-section-kicker">
-						{ __( 'Store API protection', 'coderembassy-order-guard' ) }
+						{ __( 'Store API protection', 'coderembassy-order-vanguard' ) }
 					</p>
-					<h2>{ __( 'Store API Guard', 'coderembassy-order-guard' ) }</h2>
+					<h2>{ __( 'Store API Guard', 'coderembassy-order-vanguard' ) }</h2>
 					<p>
 						{ __(
 							'Protect cart mutations, checkout requests, and every operation embedded in a Store API batch.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</p>
 				</div>
@@ -97,10 +97,10 @@ export default function StoreApiGuard( {
 				>
 					<ShieldCheck size={ 15 } aria-hidden="true" />
 					{ meta.safeMode
-						? __( 'Safe Mode', 'coderembassy-order-guard' )
+						? __( 'Safe Mode', 'coderembassy-order-vanguard' )
 						: meta.enforcing
-							? __( 'Enforcing', 'coderembassy-order-guard' )
-							: __( 'Monitoring', 'coderembassy-order-guard' ) }
+							? __( 'Enforcing', 'coderembassy-order-vanguard' )
+							: __( 'Monitoring', 'coderembassy-order-vanguard' ) }
 				</span>
 			</header>
 
@@ -109,8 +109,8 @@ export default function StoreApiGuard( {
 					<TriangleAlert size={ 18 } aria-hidden="true" />
 					<span>
 						{ __(
-							'Safe Mode keeps Store API blocking and Order Guard rate limiting suspended while logging stays active.',
-							'coderembassy-order-guard'
+							'Safe Mode keeps Store API blocking and Order Vanguard rate limiting suspended while logging stays active.',
+							'coderembassy-order-vanguard'
 						) }
 					</span>
 				</div>
@@ -120,11 +120,11 @@ export default function StoreApiGuard( {
 				<div className="ceog-emergency-banner" role="alert">
 					<TriangleAlert size={ 20 } aria-hidden="true" />
 					<div>
-						<strong>{ __( 'Emergency Lockdown is enabled', 'coderembassy-order-guard' ) }</strong>
+						<strong>{ __( 'Emergency Lockdown is enabled', 'coderembassy-order-vanguard' ) }</strong>
 						<span>
 							{ __(
-								'Store API checkout returns 404 whenever Order Guard is enforcing. Disable this after the active attack has passed.',
-								'coderembassy-order-guard'
+								'Store API checkout returns 404 whenever Order Vanguard is enforcing. Disable this after the active attack has passed.',
+								'coderembassy-order-vanguard'
 							) }
 						</span>
 					</div>
@@ -136,11 +136,11 @@ export default function StoreApiGuard( {
 					<div className="ceog-settings-panel__heading">
 						<Gauge size={ 20 } aria-hidden="true" />
 						<div>
-							<h3>{ __( 'Cart mutation rate limit', 'coderembassy-order-guard' ) }</h3>
+							<h3>{ __( 'Cart mutation rate limit', 'coderembassy-order-vanguard' ) }</h3>
 							<p>
 								{ __(
 									'Uses WooCommerce\'s native Store API limiter for POST cart and batch traffic.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
@@ -148,10 +148,10 @@ export default function StoreApiGuard( {
 
 					<ToggleField
 						id="ceog-store-rate-limit"
-						label={ __( 'Enable Order Guard rate limiting', 'coderembassy-order-guard' ) }
+						label={ __( 'Enable Order Vanguard rate limiting', 'coderembassy-order-vanguard' ) }
 						description={ __(
 							'Configured in Monitor mode and activated only while Enforce mode is effective.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 						checked={ draft.rate_limit_enabled }
 						onChange={ ( value ) => update( 'rate_limit_enabled', value ) }
@@ -159,7 +159,7 @@ export default function StoreApiGuard( {
 
 					<div className="ceog-number-grid">
 						<label className="ceog-field" htmlFor="ceog-rate-limit-count">
-							<span>{ __( 'Requests', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'Requests', 'coderembassy-order-vanguard' ) }</span>
 							<input
 								id="ceog-rate-limit-count"
 								type="number"
@@ -171,7 +171,7 @@ export default function StoreApiGuard( {
 							/>
 						</label>
 						<label className="ceog-field" htmlFor="ceog-rate-limit-seconds">
-							<span>{ __( 'Time window (seconds)', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'Time window (seconds)', 'coderembassy-order-vanguard' ) }</span>
 							<input
 								id="ceog-rate-limit-seconds"
 								type="number"
@@ -186,19 +186,19 @@ export default function StoreApiGuard( {
 
 					<div className="ceog-limiter-status">
 						<div>
-							<span>{ __( 'Cart and batch', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'Cart and batch', 'coderembassy-order-vanguard' ) }</span>
 							<strong>
 								{ draft.rate_limit_enabled
-									? __( 'Order Guard configured', 'coderembassy-order-guard' )
-									: __( 'Order Guard disabled', 'coderembassy-order-guard' ) }
+									? __( 'Order Vanguard configured', 'coderembassy-order-vanguard' )
+									: __( 'Order Vanguard disabled', 'coderembassy-order-vanguard' ) }
 							</strong>
 						</div>
 						<div>
-							<span>{ __( 'Place order', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'Place order', 'coderembassy-order-vanguard' ) }</span>
 							<strong>
 								{ meta.nativeRateLimitEnabled
-									? __( 'WooCommerce limiter enabled', 'coderembassy-order-guard' )
-									: __( 'WooCommerce limiter not enabled', 'coderembassy-order-guard' ) }
+									? __( 'WooCommerce limiter enabled', 'coderembassy-order-vanguard' )
+									: __( 'WooCommerce limiter not enabled', 'coderembassy-order-vanguard' ) }
 							</strong>
 						</div>
 					</div>
@@ -208,11 +208,11 @@ export default function StoreApiGuard( {
 					<div className="ceog-settings-panel__heading">
 						<Blocks size={ 20 } aria-hidden="true" />
 						<div>
-							<h3>{ __( 'Batch inspection', 'coderembassy-order-guard' ) }</h3>
+							<h3>{ __( 'Batch inspection', 'coderembassy-order-vanguard' ) }</h3>
 							<p>
 								{ __(
 									'Prevents protected operations from being hidden inside one Store API request.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
@@ -223,13 +223,13 @@ export default function StoreApiGuard( {
 						<div>
 							<strong>
 								{ meta.batchInspectionActive
-									? __( 'Inspection active', 'coderembassy-order-guard' )
-									: __( 'Inspection unavailable', 'coderembassy-order-guard' ) }
+									? __( 'Inspection active', 'coderembassy-order-vanguard' )
+									: __( 'Inspection unavailable', 'coderembassy-order-vanguard' ) }
 							</strong>
 							<span>
 								{ __(
 									'Every embedded path and method is checked before WooCommerce executes the batch.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</span>
 						</div>
@@ -237,16 +237,16 @@ export default function StoreApiGuard( {
 
 					<dl className="ceog-store-api-facts">
 						<div>
-							<dt><ListChecks size={ 16 } aria-hidden="true" />{ __( 'Maximum operations', 'coderembassy-order-guard' ) }</dt>
+							<dt><ListChecks size={ 16 } aria-hidden="true" />{ __( 'Maximum operations', 'coderembassy-order-vanguard' ) }</dt>
 							<dd>25</dd>
 						</div>
 						<div>
-							<dt>{ __( 'Malformed batches', 'coderembassy-order-guard' ) }</dt>
-							<dd>{ meta.enforcing ? __( 'Rejected', 'coderembassy-order-guard' ) : __( 'Logged', 'coderembassy-order-guard' ) }</dd>
+							<dt>{ __( 'Malformed batches', 'coderembassy-order-vanguard' ) }</dt>
+							<dd>{ meta.enforcing ? __( 'Rejected', 'coderembassy-order-vanguard' ) : __( 'Logged', 'coderembassy-order-vanguard' ) }</dd>
 						</div>
 						<div>
-							<dt>{ __( 'Whitelist precedence', 'coderembassy-order-guard' ) }</dt>
-							<dd>{ __( 'Always', 'coderembassy-order-guard' ) }</dd>
+							<dt>{ __( 'Whitelist precedence', 'coderembassy-order-vanguard' ) }</dt>
+							<dd>{ __( 'Always', 'coderembassy-order-vanguard' ) }</dd>
 						</div>
 					</dl>
 				</section>
@@ -255,11 +255,11 @@ export default function StoreApiGuard( {
 					<div className="ceog-settings-panel__heading">
 						<LockKeyhole size={ 20 } aria-hidden="true" />
 						<div>
-							<h3>{ __( 'Advanced request controls', 'coderembassy-order-guard' ) }</h3>
+							<h3>{ __( 'Advanced request controls', 'coderembassy-order-vanguard' ) }</h3>
 							<p>
 								{ __(
 									'Opt-in compatibility-sensitive rules for stores under elevated attack pressure.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
@@ -267,23 +267,23 @@ export default function StoreApiGuard( {
 
 					<div className="ceog-environment-row">
 						<div>
-							<span>{ __( 'WooCommerce Checkout', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'WooCommerce Checkout', 'coderembassy-order-vanguard' ) }</span>
 							<strong>
 								{ meta.checkoutBlockDetected
-									? __( 'Checkout block detected', 'coderembassy-order-guard' )
-									: __( 'Classic checkout detected', 'coderembassy-order-guard' ) }
+									? __( 'Checkout block detected', 'coderembassy-order-vanguard' )
+									: __( 'Classic checkout detected', 'coderembassy-order-vanguard' ) }
 							</strong>
 						</div>
 						<div>
-							<span>{ __( 'Effective behavior', 'coderembassy-order-guard' ) }</span>
-							<strong>{ meta.enforcing ? __( 'Blocking enabled', 'coderembassy-order-guard' ) : __( 'Logging only', 'coderembassy-order-guard' ) }</strong>
+							<span>{ __( 'Effective behavior', 'coderembassy-order-vanguard' ) }</span>
+							<strong>{ meta.enforcing ? __( 'Blocking enabled', 'coderembassy-order-vanguard' ) : __( 'Logging only', 'coderembassy-order-vanguard' ) }</strong>
 						</div>
 						<div>
-							<span>{ __( 'Checkout Block field', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'Checkout Block field', 'coderembassy-order-vanguard' ) }</span>
 							<strong>
 								{ isPro
-									? __( 'Pro honeypot active', 'coderembassy-order-guard' )
-									: __( 'Available in Pro', 'coderembassy-order-guard' ) }
+									? __( 'Pro honeypot active', 'coderembassy-order-vanguard' )
+									: __( 'Available in Pro', 'coderembassy-order-vanguard' ) }
 							</strong>
 						</div>
 					</div>
@@ -291,10 +291,10 @@ export default function StoreApiGuard( {
 					<div className="ceog-advanced-setting">
 						<ToggleField
 							id="ceog-store-strict-session"
-							label={ __( 'Strict Session Requirement', 'coderembassy-order-guard' ) }
+							label={ __( 'Strict Session Requirement', 'coderembassy-order-vanguard' ) }
 							description={ __(
 								'Requires an existing WooCommerce session for Store API cart mutations and batch equivalents.',
-								'coderembassy-order-guard'
+								'coderembassy-order-vanguard'
 							) }
 							checked={ draft.strict_session }
 							onChange={ ( value ) => update( 'strict_session', value ) }
@@ -306,7 +306,7 @@ export default function StoreApiGuard( {
 							<p>
 								{ __(
 									'This may break headless, custom, mobile-app, and some express checkout flows. Use Monitor Mode first.',
-									'coderembassy-order-guard'
+									'coderembassy-order-vanguard'
 								) }
 							</p>
 						</div>
@@ -316,17 +316,17 @@ export default function StoreApiGuard( {
 								checked={ strictAcknowledged }
 								onChange={ ( event ) => setStrictAcknowledged( event.target.checked ) }
 							/>
-							<span>{ __( 'I understand the risks', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'I understand the risks', 'coderembassy-order-vanguard' ) }</span>
 						</label>
 					</div>
 
 					<div className="ceog-advanced-setting">
 						<ToggleField
 							id="ceog-store-emergency-lockdown"
-							label={ __( 'Emergency Store API Checkout Lockdown', 'coderembassy-order-guard' ) }
+							label={ __( 'Emergency Store API Checkout Lockdown', 'coderembassy-order-vanguard' ) }
 							description={ __(
 								'Returns 404 for direct and batch-wrapped Store API checkout operations.',
-								'coderembassy-order-guard'
+								'coderembassy-order-vanguard'
 							) }
 							checked={ draft.emergency_lockdown }
 							onChange={ ( value ) => update( 'emergency_lockdown', value ) }
@@ -342,11 +342,11 @@ export default function StoreApiGuard( {
 								{ meta.checkoutBlockDetected
 									? __(
 										'Emergency Lockdown cannot be enabled while the WooCommerce Checkout block is active.',
-										'coderembassy-order-guard'
+										'coderembassy-order-vanguard'
 									)
 									: __(
 										'For classic-checkout stores under active attack only. This stops Store API checkout and must never be used as normal protection.',
-										'coderembassy-order-guard'
+										'coderembassy-order-vanguard'
 									) }
 							</p>
 						</div>
@@ -357,7 +357,7 @@ export default function StoreApiGuard( {
 								onChange={ ( event ) => setEmergencyAcknowledged( event.target.checked ) }
 								disabled={ meta.checkoutBlockDetected }
 							/>
-							<span>{ __( 'I understand the risks', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'I understand the risks', 'coderembassy-order-vanguard' ) }</span>
 						</label>
 					</div>
 				</section>
@@ -367,7 +367,7 @@ export default function StoreApiGuard( {
 				{ saved && (
 					<span className="ceog-saved" role="status">
 						<CircleCheck size={ 15 } aria-hidden="true" />
-						{ __( 'Store API settings saved', 'coderembassy-order-guard' ) }
+						{ __( 'Store API settings saved', 'coderembassy-order-vanguard' ) }
 					</span>
 				) }
 				<button
@@ -378,8 +378,8 @@ export default function StoreApiGuard( {
 				>
 					<Save size={ 16 } aria-hidden="true" />
 					{ settingsBusy
-						? __( 'Saving...', 'coderembassy-order-guard' )
-						: __( 'Save Store API settings', 'coderembassy-order-guard' ) }
+						? __( 'Saving...', 'coderembassy-order-vanguard' )
+						: __( 'Save Store API settings', 'coderembassy-order-vanguard' ) }
 				</button>
 			</div>
 		</div>

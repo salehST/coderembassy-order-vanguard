@@ -2,7 +2,7 @@
 /**
  * Plugin installation and lifecycle tasks.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Creates and maintains the Order Guard data store.
+ * Creates and maintains the Order Vanguard data store.
  */
 final class CEOG_Activator {
 	/**

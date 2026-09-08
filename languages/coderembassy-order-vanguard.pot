@@ -1,13 +1,13 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: CoderEmbassy Order Guard for WooCommerce 1.0.11\n"
+"Project-Id-Version: CoderEmbassy Order Vanguard 1.0.15\n"
 "Report-Msgid-Bugs-To: https://coderembassy.com/\n"
-"POT-Creation-Date: 2026-08-08 08:30:17+0000\n"
+"POT-Creation-Date: 2026-09-08 09:41:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: CoderEmbassy release tooling\n"
-"X-Domain: coderembassy-order-guard\n"
+"X-Domain: coderembassy-order-vanguard\n"
 
 #: src/views/CircuitBreakers.jsx:108
 #. 1: minutes, 2: seconds
@@ -31,7 +31,7 @@ msgstr ""
 
 #: src/components/LicenseNotice.jsx:56
 #. %d: trial days remaining
-msgid "%d days remain to activate Order Guard Pro."
+msgid "%d days remain to activate Order Vanguard Pro."
 msgstr ""
 
 #: src/views/ActivityLog.jsx:266
@@ -51,8 +51,8 @@ msgstr ""
 
 #: src/components/LicenseNotice.jsx:49
 msgid ""
-"A license key is required to continue managing Order Guard Pro workspaces. Free protection remains "
-"available."
+"A license key is required to continue managing Order Vanguard Pro workspaces. Free protection "
+"remains available."
 msgstr ""
 
 #: src/views/Lists.jsx:177
@@ -69,7 +69,7 @@ msgstr ""
 msgid "A valid WooCommerce session is required for this request."
 msgstr ""
 
-#: coderembassy-order-guard.php:5
+#: coderembassy-order-vanguard.php:5
 msgid "API-level protection against card testing, bot orders, and fake WooCommerce checkouts."
 msgstr ""
 
@@ -150,7 +150,7 @@ msgid "Attack Cleanup"
 msgstr ""
 
 #: src/views/Placeholder.jsx:95
-msgid "Attack Cleanup and Pro automation tools are ready from the Order Guard navigation."
+msgid "Attack Cleanup and Pro automation tools are ready from the Order Vanguard navigation."
 msgstr ""
 
 #: src/views/Dashboard.jsx:400
@@ -274,7 +274,7 @@ msgid "Checkout paused"
 msgstr ""
 
 #: src/views/Settings.jsx:69
-msgid "Choose what Order Guard records and how it responds to suspicious checkout traffic."
+msgid "Choose what Order Vanguard records and how it responds to suspicious checkout traffic."
 msgstr ""
 
 #: src/views/Settings.jsx:221
@@ -282,7 +282,7 @@ msgid "Choose where important protection notices will be delivered."
 msgstr ""
 
 #: src/views/PrivacyLogs.jsx:174
-msgid "Choose whether uninstalling Order Guard removes its local records."
+msgid "Choose whether uninstalling Order Vanguard removes its local records."
 msgstr ""
 
 #: src/navigation.js:43 src/views/CircuitBreakers.jsx:387
@@ -337,12 +337,12 @@ msgstr ""
 msgid "CoderEmbassy"
 msgstr ""
 
-#: coderembassy-order-guard.php:3 src/views/Dashboard.jsx:286
-msgid "CoderEmbassy Order Guard for WooCommerce"
+#: coderembassy-order-vanguard.php:3 src/views/Dashboard.jsx:286
+msgid "CoderEmbassy Order Vanguard"
 msgstr ""
 
-#: coderembassy-order-guard.php:85
-msgid "CoderEmbassy Order Guard requires WooCommerce to be installed and active."
+#: coderembassy-order-vanguard.php:86
+msgid "CoderEmbassy Order Vanguard requires WooCommerce to be installed and active."
 msgstr ""
 
 #: src/views/Settings.jsx:168
@@ -458,11 +458,11 @@ msgid "Emergency Store API Checkout Lockdown is enabled."
 msgstr ""
 
 #: src/views/Settings.jsx:117
-msgid "Enable Order Guard"
+msgid "Enable Order Vanguard"
 msgstr ""
 
 #: src/views/StoreApiGuard.jsx:151
-msgid "Enable Order Guard rate limiting"
+msgid "Enable Order Vanguard rate limiting"
 msgstr ""
 
 #: src/views/Settings.jsx:230
@@ -548,7 +548,7 @@ msgid "Free"
 msgstr ""
 
 #: src/views/PrivacyLogs.jsx:161
-msgid "Free includes 7-day history. Pro extends retention to 30 or 90 days."
+msgid "Free retains activity history for 7 days, with daily background pruning."
 msgstr ""
 
 #: src/views/ActivityLog.jsx:290
@@ -639,7 +639,7 @@ msgstr ""
 
 #: src/views/Dashboard.jsx:329
 msgid ""
-"Keep Monitor mode on while Order Guard records traffic. Switch to Enforce after the activity log "
+"Keep Monitor mode on while Order Vanguard records traffic. Switch to Enforce after the activity log "
 "matches what you expect."
 msgstr ""
 
@@ -744,7 +744,7 @@ msgid "Next"
 msgstr ""
 
 #: includes/class-ceog-lists.php:548
-msgid "No Order Guard signals have been recorded for this order."
+msgid "No Order Vanguard signals have been recorded for this order."
 msgstr ""
 
 #: src/views/Placeholder.jsx:45
@@ -804,81 +804,85 @@ msgid "Order"
 msgstr ""
 
 #: includes/class-ceog-admin.php:42 includes/class-ceog-admin.php:43 includes/class-ceog-lists.php:488 src/components/Sidebar.jsx:63 src/components/Topbar.jsx:55
-msgid "Order Guard"
+msgid "Order Vanguard"
 msgstr ""
 
 #: src/views/Placeholder.jsx:72
-msgid "Order Guard Pro"
+msgid "Order Vanguard Pro"
 msgstr ""
 
 #: src/views/Placeholder.jsx:92
-msgid "Order Guard Pro is active"
+msgid "Order Vanguard Pro is active"
 msgstr ""
 
 #: src/components/LicenseNotice.jsx:41
-msgid "Order Guard Pro requires a license key for commercial updates and continued Pro workspace access."
+msgid "Order Vanguard Pro requires a license key for commercial updates and continued Pro workspace access."
 msgstr ""
 
 #: includes/class-ceog-plugin.php:130 src/views/Dashboard.jsx:268
-msgid "Order Guard Safe Mode is active - protection is monitoring only."
+msgid "Order Vanguard Safe Mode is active - protection is monitoring only."
 msgstr ""
 
 #: includes/class-ceog-admin.php:147
-msgid "Order Guard admin assets are missing. Please reinstall the plugin from a complete release package."
+msgid ""
+"Order Vanguard admin assets are missing. Please reinstall the plugin from a complete release "
+"package."
 msgstr ""
 
 #: includes/class-ceog-alerts.php:55
-msgid "Order Guard alert: %s breaker tripped"
+msgid "Order Vanguard alert: %s breaker tripped"
 msgstr ""
 
 #: src/views/Dashboard.jsx:403
 msgid ""
-"Order Guard blocked %1$s attempts. %2$s failed or junk orders remain - Pro can clean these up "
+"Order Vanguard blocked %1$s attempts. %2$s failed or junk orders remain - Pro can clean these up "
 "automatically."
 msgstr ""
 
 #: src/views/StoreApiGuard.jsx:192
-msgid "Order Guard configured"
+msgid "Order Vanguard configured"
 msgstr ""
 
 #: src/components/ErrorState.jsx:13
-msgid "Order Guard could not connect"
+msgid "Order Vanguard could not connect"
 msgstr ""
 
 #: src/api.js:94
-msgid "Order Guard could not load this data. Please try again."
+msgid "Order Vanguard could not load this data. Please try again."
 msgstr ""
 
 #: src/views/StoreApiGuard.jsx:193
-msgid "Order Guard disabled"
+msgid "Order Vanguard disabled"
 msgstr ""
 
 #: src/views/Placeholder.jsx:63
-msgid "Order Guard help"
+msgid "Order Vanguard help"
 msgstr ""
 
 #: src/components/Sidebar.jsx:34
-msgid "Order Guard navigation"
+msgid "Order Vanguard navigation"
 msgstr ""
 
 #: src/views/ActivityLog.jsx:211
-msgid "Order Guard returned an invalid CSV export."
+msgid "Order Vanguard returned an invalid CSV export."
 msgstr ""
 
 #: src/views/PrivacyLogs.jsx:51
-msgid "Order Guard stores protection events on this WordPress site and sends nothing to external services."
+msgid ""
+"Order Vanguard stores protection events on this WordPress site and sends nothing to external "
+"services."
 msgstr ""
 
 #: includes/class-ceog-lists.php:595
-msgid "Order Guard: billing email added to the blocklist."
+msgid "Order Vanguard: billing email added to the blocklist."
 msgstr ""
 
 #: includes/class-ceog-lists.php:596
-msgid "Order Guard: customer IP added to the blocklist."
+msgid "Order Vanguard: customer IP added to the blocklist."
 msgstr ""
 
 #: includes/class-ceog-origin-rules.php:143
-msgid "Order Guard: unknown origin - review before fulfilment."
+msgid "Order Vanguard: unknown origin - review before fulfilment."
 msgstr ""
 
 #: src/views/ActivityLog.jsx:59 src/views/Dashboard.jsx:51
@@ -1142,7 +1146,7 @@ msgstr ""
 
 #: src/views/StoreApiGuard.jsx:111
 msgid ""
-"Safe Mode keeps Store API blocking and Order Guard rate limiting suspended while logging stays "
+"Safe Mode keeps Store API blocking and Order Vanguard rate limiting suspended while logging stays "
 "active."
 msgstr ""
 
@@ -1263,7 +1267,7 @@ msgstr ""
 
 #: src/views/StoreApiGuard.jsx:125
 msgid ""
-"Store API checkout returns 404 whenever Order Guard is enforcing. Disable this after the active "
+"Store API checkout returns 404 whenever Order Vanguard is enforcing. Disable this after the active "
 "attack has passed."
 msgstr ""
 
@@ -1302,8 +1306,8 @@ msgstr ""
 #: includes/class-ceog-alerts.php:58
 #. 1: circuit breaker tier, 2: dashboard URL.
 msgid ""
-"The %1$s circuit breaker tripped after repeated failed orders. Review the Order Guard dashboard and "
-"Activity Log:\n"
+"The %1$s circuit breaker tripped after repeated failed orders. Review the Order Vanguard dashboard "
+"and Activity Log:\n"
 "\n"
 "%2$s"
 msgstr ""
@@ -1327,7 +1331,7 @@ msgid ""
 msgstr ""
 
 #: src/components/LicenseNotice.jsx:80
-msgid "The license server is temporarily unreachable. Order Guard Pro is using its last known status."
+msgid "The license server is temporarily unreachable. Order Vanguard Pro is using its last known status."
 msgstr ""
 
 #: includes/class-ceog-breakers.php:796
@@ -1339,11 +1343,11 @@ msgid "The per-email failed-order circuit breaker tripped."
 msgstr ""
 
 #: includes/class-ceog-lists.php:572
-msgid "The requested Order Guard action is invalid."
+msgid "The requested Order Vanguard action is invalid."
 msgstr ""
 
 #: includes/class-ceog-lists.php:584 includes/class-ceog-lists.php:589
-msgid "The requested Order Guard value is invalid."
+msgid "The requested Order Vanguard value is invalid."
 msgstr ""
 
 #: includes/class-ceog-rest-controller.php:412
@@ -1473,7 +1477,7 @@ msgstr ""
 msgid "We could not process your order. Please try again or contact the store for assistance."
 msgstr ""
 
-#: src/App.jsx:156
+#: src/App.jsx:159
 msgid "We recommend reviewing the Activity Log first. Switch to Enforce mode?"
 msgstr ""
 
@@ -1526,29 +1530,29 @@ msgid "X-Forwarded-For first hop"
 msgstr ""
 
 #: includes/class-ceog-admin.php:57
-msgid "You do not have permission to manage Order Guard."
+msgid "You do not have permission to manage Order Vanguard."
 msgstr ""
 
 #: includes/class-ceog-lists.php:563
-msgid "You do not have permission to update Order Guard lists."
+msgid "You do not have permission to update Order Vanguard lists."
 msgstr ""
 
 #: src/components/LicenseNotice.jsx:74
-msgid "Your Order Guard Pro license could not be verified. Review the saved key."
+msgid "Your Order Vanguard Pro license could not be verified. Review the saved key."
 msgstr ""
 
 #: src/components/LicenseNotice.jsx:168
-msgid "Your Order Guard Pro license has expired"
+msgid "Your Order Vanguard Pro license has expired"
 msgstr ""
 
 #: src/components/LicenseNotice.jsx:67
-msgid "Your Order Guard Pro license has expired. Renew it to restore updates and Pro workspace access."
+msgid "Your Order Vanguard Pro license has expired. Renew it to restore updates and Pro workspace access."
 msgstr ""
 
 #: src/components/LicenseNotice.jsx:60
 msgid ""
-"Your Order Guard Pro license is in its grace period. Renew soon to keep updates and Pro workspace "
-"access."
+"Your Order Vanguard Pro license is in its grace period. Renew soon to keep updates and Pro "
+"workspace access."
 msgstr ""
 
 #: src/api.js:86

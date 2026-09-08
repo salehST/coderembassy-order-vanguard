@@ -2,7 +2,7 @@
 /**
  * CLI smoke checks for Phase 8 classic checkout honeypot protection.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {
@@ -10,7 +10,7 @@ if ( 'cli' !== PHP_SAPI ) {
 }
 
 define( 'ABSPATH', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
-define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-guard.php' );
+define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-vanguard.php' );
 $GLOBALS['ceog_options'] = array();
 $GLOBALS['ceog_hooks']   = array();
 $GLOBALS['ceog_notices'] = array();

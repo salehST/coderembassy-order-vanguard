@@ -36,27 +36,27 @@ const readDismissedPro = () => {
 const eventLabel = ( type ) => {
 	switch ( type ) {
 		case 'breaker_ip_trip':
-			return __( 'Per-IP breaker tripped', 'coderembassy-order-guard' );
+			return __( 'Per-IP breaker tripped', 'coderembassy-order-vanguard' );
 		case 'breaker_email_trip':
-			return __( 'Email breaker tripped', 'coderembassy-order-guard' );
+			return __( 'Email breaker tripped', 'coderembassy-order-vanguard' );
 		case 'breaker_global_trip':
-			return __( 'Global breaker tripped', 'coderembassy-order-guard' );
+			return __( 'Global breaker tripped', 'coderembassy-order-vanguard' );
 		case 'blocked_add_item':
-			return __( 'Add-to-cart blocked', 'coderembassy-order-guard' );
+			return __( 'Add-to-cart blocked', 'coderembassy-order-vanguard' );
 		case 'blocked_checkout':
-			return __( 'Checkout blocked', 'coderembassy-order-guard' );
+			return __( 'Checkout blocked', 'coderembassy-order-vanguard' );
 		case 'blocked_batch_op':
-			return __( 'Batch operation blocked', 'coderembassy-order-guard' );
+			return __( 'Batch operation blocked', 'coderembassy-order-vanguard' );
 		case 'flagged_order':
-			return __( 'Order flagged', 'coderembassy-order-guard' );
+			return __( 'Order flagged', 'coderembassy-order-vanguard' );
 		case 'honeypot_hit':
-			return __( 'Honeypot triggered', 'coderembassy-order-guard' );
+			return __( 'Honeypot triggered', 'coderembassy-order-vanguard' );
 		case 'blocklist_hit':
-			return __( 'Blocklist matched', 'coderembassy-order-guard' );
+			return __( 'Blocklist matched', 'coderembassy-order-vanguard' );
 		case 'monitor_would_block':
-			return __( 'Monitor decision', 'coderembassy-order-guard' );
+			return __( 'Monitor decision', 'coderembassy-order-vanguard' );
 		default:
-			return type || __( 'Protection event', 'coderembassy-order-guard' );
+			return type || __( 'Protection event', 'coderembassy-order-vanguard' );
 	}
 };
 
@@ -253,8 +253,8 @@ export default function Dashboard( {
 						type="button"
 						className="ceog-icon-button"
 						onClick={ () => setReloadKey( ( key ) => key + 1 ) }
-						aria-label={ __( 'Retry dashboard update', 'coderembassy-order-guard' ) }
-						title={ __( 'Retry dashboard update', 'coderembassy-order-guard' ) }
+						aria-label={ __( 'Retry dashboard update', 'coderembassy-order-vanguard' ) }
+						title={ __( 'Retry dashboard update', 'coderembassy-order-vanguard' ) }
 					>
 						<RefreshCw size={ 17 } aria-hidden="true" />
 					</button>
@@ -265,7 +265,7 @@ export default function Dashboard( {
 				<div className="ceog-warning" role="status">
 					<TriangleAlert size={ 18 } aria-hidden="true" />
 					<span>
-						{ __( 'Order Guard Safe Mode is active - protection is monitoring only.', 'coderembassy-order-guard' ) }
+						{ __( 'Order Vanguard Safe Mode is active - protection is monitoring only.', 'coderembassy-order-vanguard' ) }
 					</span>
 				</div>
 			) }
@@ -273,63 +273,63 @@ export default function Dashboard( {
 			<section className="ceog-hero" aria-labelledby="ceog-hero-title">
 				<div className="ceog-hero__copy">
 					<div className="ceog-hero__badges">
-						<span className="ceog-badge ceog-badge--light">{ isPro ? __( 'Pro', 'coderembassy-order-guard' ) : __( 'Free', 'coderembassy-order-guard' ) }</span>
+						<span className="ceog-badge ceog-badge--light">{ isPro ? __( 'Pro', 'coderembassy-order-vanguard' ) : __( 'Free', 'coderembassy-order-vanguard' ) }</span>
 						<span className="ceog-hero__status">
 							<CircleCheck size={ 15 } aria-hidden="true" />
 							{ ! active
-								? __( 'Protection disabled', 'coderembassy-order-guard' )
+								? __( 'Protection disabled', 'coderembassy-order-vanguard' )
 								: enforcing
-									? __( 'Protection active', 'coderembassy-order-guard' )
-									: __( 'Monitoring traffic', 'coderembassy-order-guard' ) }
+									? __( 'Protection active', 'coderembassy-order-vanguard' )
+									: __( 'Monitoring traffic', 'coderembassy-order-vanguard' ) }
 						</span>
 					</div>
-					<h2 id="ceog-hero-title">{ __( 'CoderEmbassy Order Guard for WooCommerce', 'coderembassy-order-guard' ) }</h2>
-					<p>{ __( 'API-level protection against card testing, bot orders, and fake checkouts.', 'coderembassy-order-guard' ) }</p>
+					<h2 id="ceog-hero-title">{ __( 'CoderEmbassy Order Vanguard', 'coderembassy-order-vanguard' ) }</h2>
+					<p>{ __( 'API-level protection against card testing, bot orders, and fake checkouts.', 'coderembassy-order-vanguard' ) }</p>
 					<button type="button" className="ceog-button ceog-button--hero" onClick={ () => navigateTo( 'activity-log' ) }>
 						<Activity size={ 16 } aria-hidden="true" />
-						{ __( 'View activity log', 'coderembassy-order-guard' ) }
+						{ __( 'View activity log', 'coderembassy-order-vanguard' ) }
 						<ArrowRight size={ 16 } aria-hidden="true" />
 					</button>
 				</div>
 
 				<div className="ceog-hero__mode">
-					<span>{ __( 'Protection mode', 'coderembassy-order-guard' ) }</span>
-					<strong>{ enforcing ? __( 'Enforcing', 'coderembassy-order-guard' ) : __( 'Monitoring', 'coderembassy-order-guard' ) }</strong>
+					<span>{ __( 'Protection mode', 'coderembassy-order-vanguard' ) }</span>
+					<strong>{ enforcing ? __( 'Enforcing', 'coderembassy-order-vanguard' ) : __( 'Monitoring', 'coderembassy-order-vanguard' ) }</strong>
 					<ModeControl mode={ mode } onChange={ changeMode } busy={ modeBusy } />
 				</div>
 			</section>
 
-			<section className="ceog-stat-grid" aria-label={ __( 'Protection summary', 'coderembassy-order-guard' ) }>
+			<section className="ceog-stat-grid" aria-label={ __( 'Protection summary', 'coderembassy-order-vanguard' ) }>
 				<div className="ceog-stat ceog-stat--green">
 					<ShieldCheck size={ 19 } aria-hidden="true" />
 					<strong>{ formatCount( dashboard?.blocked_today ) }</strong>
-					<span>{ __( 'Blocked today', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'Blocked today', 'coderembassy-order-vanguard' ) }</span>
 				</div>
 				<div className="ceog-stat ceog-stat--amber">
 					<Activity size={ 19 } aria-hidden="true" />
 					<strong>{ formatCount( dashboard?.suspicious_7d ) }</strong>
-					<span>{ __( 'Suspicious (7d)', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'Suspicious (7d)', 'coderembassy-order-vanguard' ) }</span>
 				</div>
 				<div className="ceog-stat ceog-stat--purple">
 					<CircleCheck size={ 19 } aria-hidden="true" />
-					<strong>{ enforcing ? __( 'Enforce', 'coderembassy-order-guard' ) : __( 'Monitor', 'coderembassy-order-guard' ) }</strong>
-					<span>{ __( 'Protection mode', 'coderembassy-order-guard' ) }</span>
+					<strong>{ enforcing ? __( 'Enforce', 'coderembassy-order-vanguard' ) : __( 'Monitor', 'coderembassy-order-vanguard' ) }</strong>
+					<span>{ __( 'Protection mode', 'coderembassy-order-vanguard' ) }</span>
 				</div>
 				<div className={ 'ceog-stat ' + ( breaker.remaining > 0 ? 'ceog-stat--danger' : 'ceog-stat--blue' ) }>
 					<Clock3 size={ 19 } aria-hidden="true" />
-					<strong>{ breaker.remaining > 0 ? formatRemaining( breaker.remaining ) : __( 'Ready', 'coderembassy-order-guard' ) }</strong>
-					<span>{ breaker.remaining > 0 && enforcing ? __( 'Checkout paused', 'coderembassy-order-guard' ) : __( 'Circuit breakers', 'coderembassy-order-guard' ) }</span>
+					<strong>{ breaker.remaining > 0 ? formatRemaining( breaker.remaining ) : __( 'Ready', 'coderembassy-order-vanguard' ) }</strong>
+					<span>{ breaker.remaining > 0 && enforcing ? __( 'Checkout paused', 'coderembassy-order-vanguard' ) : __( 'Circuit breakers', 'coderembassy-order-vanguard' ) }</span>
 				</div>
 			</section>
 
 			<section className="ceog-quickstart">
 				<div>
-					<span className="ceog-section-kicker">{ __( 'Monitor first', 'coderembassy-order-guard' ) }</span>
-					<h2>{ __( 'Start with a clear baseline', 'coderembassy-order-guard' ) }</h2>
-					<p>{ __( 'Keep Monitor mode on while Order Guard records traffic. Switch to Enforce after the activity log matches what you expect.', 'coderembassy-order-guard' ) }</p>
+					<span className="ceog-section-kicker">{ __( 'Monitor first', 'coderembassy-order-vanguard' ) }</span>
+					<h2>{ __( 'Start with a clear baseline', 'coderembassy-order-vanguard' ) }</h2>
+					<p>{ __( 'Keep Monitor mode on while Order Vanguard records traffic. Switch to Enforce after the activity log matches what you expect.', 'coderembassy-order-vanguard' ) }</p>
 				</div>
 				<button type="button" className="ceog-button" onClick={ () => navigateTo( 'settings' ) }>
-					{ __( 'Review settings', 'coderembassy-order-guard' ) }
+					{ __( 'Review settings', 'coderembassy-order-vanguard' ) }
 					<ArrowRight size={ 16 } aria-hidden="true" />
 				</button>
 			</section>
@@ -339,7 +339,7 @@ export default function Dashboard( {
 					<div className="ceog-dashboard-panel__header">
 						<div>
 							<BarChart3 size={ 19 } aria-hidden="true" />
-							<h2 id="ceog-weekly-title">{ __( 'Threat activity this week', 'coderembassy-order-guard' ) }</h2>
+							<h2 id="ceog-weekly-title">{ __( 'Threat activity this week', 'coderembassy-order-vanguard' ) }</h2>
 						</div>
 						<span>{ formatCount( dashboard?.suspicious_7d ) }</span>
 					</div>
@@ -360,10 +360,10 @@ export default function Dashboard( {
 					<div className="ceog-dashboard-panel__header">
 						<div>
 							<Activity size={ 19 } aria-hidden="true" />
-							<h2 id="ceog-recent-title">{ __( 'Recent protection events', 'coderembassy-order-guard' ) }</h2>
+							<h2 id="ceog-recent-title">{ __( 'Recent protection events', 'coderembassy-order-vanguard' ) }</h2>
 						</div>
 						<button type="button" className="ceog-button ceog-button--quiet" onClick={ () => navigateTo( 'activity-log' ) }>
-							{ __( 'View all', 'coderembassy-order-guard' ) }
+							{ __( 'View all', 'coderembassy-order-vanguard' ) }
 							<ArrowRight size={ 15 } aria-hidden="true" />
 						</button>
 					</div>
@@ -377,7 +377,7 @@ export default function Dashboard( {
 										<small>{ eventTime( event.event_time ) }</small>
 									</div>
 									{ event.order_url && (
-										<a href={ event.order_url } aria-label={ __( 'Open order', 'coderembassy-order-guard' ) } title={ __( 'Open order', 'coderembassy-order-guard' ) }>
+										<a href={ event.order_url } aria-label={ __( 'Open order', 'coderembassy-order-vanguard' ) } title={ __( 'Open order', 'coderembassy-order-vanguard' ) }>
 											<ExternalLink size={ 16 } aria-hidden="true" />
 										</a>
 									) }
@@ -387,7 +387,7 @@ export default function Dashboard( {
 					) : (
 						<div className="ceog-dashboard-empty">
 							<ShieldCheck size={ 22 } aria-hidden="true" />
-							<span>{ __( 'No protection events yet', 'coderembassy-order-guard' ) }</span>
+							<span>{ __( 'No protection events yet', 'coderembassy-order-vanguard' ) }</span>
 						</div>
 					) }
 				</section>
@@ -396,17 +396,17 @@ export default function Dashboard( {
 			{ showPro && (
 				<section className="ceog-pro-context" aria-labelledby="ceog-pro-context-title">
 					<div>
-						<span className="ceog-badge">{ __( 'Pro', 'coderembassy-order-guard' ) }</span>
-						<h2 id="ceog-pro-context-title">{ __( 'Attack cleanup is available', 'coderembassy-order-guard' ) }</h2>
+						<span className="ceog-badge">{ __( 'Pro', 'coderembassy-order-vanguard' ) }</span>
+						<h2 id="ceog-pro-context-title">{ __( 'Attack cleanup is available', 'coderembassy-order-vanguard' ) }</h2>
 						<p>
 							{ sprintf(
-								__( 'Order Guard blocked %1$s attempts. %2$s failed or junk orders remain - Pro can clean these up automatically.', 'coderembassy-order-guard' ),
+								__( 'Order Vanguard blocked %1$s attempts. %2$s failed or junk orders remain - Pro can clean these up automatically.', 'coderembassy-order-vanguard' ),
 								formatCount( proContext.blocked_attempts ),
 								formatCount( proContext.remaining_orders )
 							) }
 						</p>
 					</div>
-					<button type="button" className="ceog-icon-button" onClick={ dismissPro } aria-label={ __( 'Dismiss cleanup suggestion', 'coderembassy-order-guard' ) } title={ __( 'Dismiss cleanup suggestion', 'coderembassy-order-guard' ) }>
+					<button type="button" className="ceog-icon-button" onClick={ dismissPro } aria-label={ __( 'Dismiss cleanup suggestion', 'coderembassy-order-vanguard' ) } title={ __( 'Dismiss cleanup suggestion', 'coderembassy-order-vanguard' ) }>
 						<X size={ 18 } aria-hidden="true" />
 					</button>
 				</section>

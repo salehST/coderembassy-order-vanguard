@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $root = Resolve-Path (Join-Path $PSScriptRoot '..')
-$mainFile = Join-Path $root 'coderembassy-order-guard.php'
+$mainFile = Join-Path $root 'coderembassy-order-vanguard.php'
 $mainSource = Get-Content -LiteralPath $mainFile -Raw
 $versionMatch = [regex]::Match($mainSource, "define\(\s*'CEOG_VERSION',\s*'([^']+)'\s*\)")
 if (-not $versionMatch.Success) {
@@ -9,7 +9,7 @@ if (-not $versionMatch.Success) {
 }
 
 $version = $versionMatch.Groups[1].Value
-$slug = 'coderembassy-order-guard'
+$slug = 'coderembassy-order-vanguard'
 $releaseDirectory = Join-Path $root 'release'
 $zipPath = Join-Path $releaseDirectory ($slug + '-' + $version + '.zip')
 $stageRoot = Join-Path ([System.IO.Path]::GetTempPath()) ('ceog-release-' + [guid]::NewGuid().ToString('N'))
@@ -18,7 +18,7 @@ $runtimeItems = @(
 	'build',
 	'includes',
 	'languages',
-	'coderembassy-order-guard.php',
+	'coderembassy-order-vanguard.php',
 	'assets',
 	'readme.txt',
 	'uninstall.php'

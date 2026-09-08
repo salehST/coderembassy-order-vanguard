@@ -22,7 +22,7 @@ export default function Sidebar( {
 					type="button"
 					className="ceog-sidebar-overlay"
 					onClick={ onDismiss }
-					aria-label={ __( 'Close navigation', 'coderembassy-order-guard' ) }
+					aria-label={ __( 'Close navigation', 'coderembassy-order-vanguard' ) }
 					tabIndex="-1"
 				/>
 			) }
@@ -31,18 +31,18 @@ export default function Sidebar( {
 			className={
 				'ceog-sidebar' + ( mobileOpen ? ' is-mobile-open' : '' )
 			}
-			aria-label={ __( 'Order Guard navigation', 'coderembassy-order-guard' ) }
+			aria-label={ __( 'Order Vanguard navigation', 'coderembassy-order-vanguard' ) }
 		>
 			<div className="ceog-sidebar__header">
 				{ logo ? (
 					<img
 						className="ceog-sidebar__logo"
 						src={ logo }
-						alt={ __( 'CoderEmbassy', 'coderembassy-order-guard' ) }
+						alt={ __( 'CoderEmbassy', 'coderembassy-order-vanguard' ) }
 					/>
 				) : (
 					<strong className="ceog-sidebar__brand">
-						{ __( 'CoderEmbassy', 'coderembassy-order-guard' ) }
+						{ __( 'CoderEmbassy', 'coderembassy-order-vanguard' ) }
 					</strong>
 				) }
 				{ mobileOpen && (
@@ -50,8 +50,8 @@ export default function Sidebar( {
 						type="button"
 						className="ceog-icon-button ceog-sidebar__close"
 						onClick={ onDismiss }
-						aria-label={ __( 'Close navigation', 'coderembassy-order-guard' ) }
-						title={ __( 'Close navigation', 'coderembassy-order-guard' ) }
+						aria-label={ __( 'Close navigation', 'coderembassy-order-vanguard' ) }
+						title={ __( 'Close navigation', 'coderembassy-order-vanguard' ) }
 					>
 						<X size={ 20 } aria-hidden="true" />
 					</button>
@@ -60,7 +60,7 @@ export default function Sidebar( {
 
 			<nav
 				className="ceog-sidebar__nav"
-				aria-label={ __( 'Order Guard', 'coderembassy-order-guard' ) }
+				aria-label={ __( 'Order Vanguard', 'coderembassy-order-vanguard' ) }
 			>
 				{ NAV_ITEMS.filter( ( item ) => ! item.proOnly || boot.isPro ).map( ( item ) => {
 					const Icon = item.icon;
@@ -86,11 +86,11 @@ export default function Sidebar( {
 
 			<div className="ceog-sidebar__footer">
 				<span className="ceog-badge ceog-badge--free">
-					{ boot.isPro ? __( 'Pro active', 'coderembassy-order-guard' ) : __( 'Free', 'coderembassy-order-guard' ) }
+					{ boot.isPro ? __( 'Pro active', 'coderembassy-order-vanguard' ) : __( 'Free', 'coderembassy-order-vanguard' ) }
 				</span>
 				<span>
-					{ __( 'Version', 'coderembassy-order-guard' ) }{ ' ' }
-					{ boot.version || '1.0.7' }
+					{ __( 'Version', 'coderembassy-order-vanguard' ) }{ ' ' }
+					{ boot.version || '1.0.15' }
 				</span>
 			</div>
 		</aside>

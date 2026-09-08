@@ -2,7 +2,7 @@
 /**
  * CLI smoke checks for Phase 10 dashboard aggregation and alerts.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {
@@ -10,7 +10,7 @@ if ( 'cli' !== PHP_SAPI ) {
 }
 
 define( 'ABSPATH', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
-define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-guard.php' );
+define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-vanguard.php' );
 define( 'ARRAY_A', 'ARRAY_A' );
 define( 'DAY_IN_SECONDS', 86400 );
 define( 'HOUR_IN_SECONDS', 3600 );

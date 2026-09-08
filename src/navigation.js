@@ -24,89 +24,89 @@ export const DEFAULT_ROUTE = 'dashboard';
 export const NAV_ITEMS = [
 	{
 		id: 'dashboard',
-		label: () => __( 'Dashboard', 'coderembassy-order-guard' ),
+		label: () => __( 'Dashboard', 'coderembassy-order-vanguard' ),
 		icon: LayoutDashboard,
 	},
 	{
 		id: 'activity-log',
-		label: () => __( 'Activity Log', 'coderembassy-order-guard' ),
+		label: () => __( 'Activity Log', 'coderembassy-order-vanguard' ),
 		icon: Activity,
 	},
 	{
 		id: 'history-reporting',
-		label: () => __( 'History & Reports', 'coderembassy-order-guard' ),
+		label: () => __( 'History & Reports', 'coderembassy-order-vanguard' ),
 		icon: History,
 		proOnly: true,
 	},
 	{
 		id: 'circuit-breakers',
-		label: () => __( 'Circuit Breakers', 'coderembassy-order-guard' ),
+		label: () => __( 'Circuit Breakers', 'coderembassy-order-vanguard' ),
 		icon: ShieldAlert,
 	},
 	{
 		id: 'store-api',
-		label: () => __( 'Store API Guard', 'coderembassy-order-guard' ),
+		label: () => __( 'Store API Guard', 'coderembassy-order-vanguard' ),
 		icon: Blocks,
 	},
 	{
 		id: 'turnstile',
-		label: () => __( 'Turnstile', 'coderembassy-order-guard' ),
+		label: () => __( 'Turnstile', 'coderembassy-order-vanguard' ),
 		icon: Cloud,
 		proOnly: true,
 	},
 	{
 		id: 'alerts',
-		label: () => __( 'Alerts', 'coderembassy-order-guard' ),
+		label: () => __( 'Alerts', 'coderembassy-order-vanguard' ),
 		icon: BellRing,
 		proOnly: true,
 	},
 	{
 		id: 'lists',
-		label: () => __( 'Lists', 'coderembassy-order-guard' ),
+		label: () => __( 'Lists', 'coderembassy-order-vanguard' ),
 		icon: ListFilter,
 	},
 	{
 		id: 'settings',
-		label: () => __( 'Settings', 'coderembassy-order-guard' ),
+		label: () => __( 'Settings', 'coderembassy-order-vanguard' ),
 		icon: Settings,
 	},
 	{
 		id: 'privacy-logs',
-		label: () => __( 'Privacy & Logs', 'coderembassy-order-guard' ),
+		label: () => __( 'Privacy & Logs', 'coderembassy-order-vanguard' ),
 		icon: Database,
 	},
 	{
 		id: 'help',
-		label: () => __( 'Help', 'coderembassy-order-guard' ),
+		label: () => __( 'Help', 'coderembassy-order-vanguard' ),
 		icon: BadgeHelp,
 	},
 	{
 		id: 'auto-blocklist',
-		label: () => __( 'Auto Blocklisting', 'coderembassy-order-guard' ),
+		label: () => __( 'Auto Blocklisting', 'coderembassy-order-vanguard' ),
 		icon: ShieldBan,
 		proOnly: true,
 	},
 	{
 		id: 'attack-cleanup',
-		label: () => __( 'Attack Cleanup', 'coderembassy-order-guard' ),
+		label: () => __( 'Attack Cleanup', 'coderembassy-order-vanguard' ),
 		icon: Trash2,
 		proOnly: true,
 	},
 	{
 		id: 'pro-license',
-		label: () => __( 'Pro License', 'coderembassy-order-guard' ),
+		label: () => __( 'Pro License', 'coderembassy-order-vanguard' ),
 		icon: KeyRound,
+		proOnly: true,
 	},
 ];
 
-export function readRoute() {
+export function readRoute( isPro = false ) {
 	const requested = window.location.hash
 		.replace( /^#\/?/, '' )
 		.split( '?' )[ 0 ];
+	const item = NAV_ITEMS.find( ( candidate ) => candidate.id === requested );
 
-	return NAV_ITEMS.some( ( item ) => item.id === requested )
-		? requested
-		: DEFAULT_ROUTE;
+	return item && ( ! item.proOnly || isPro ) ? requested : DEFAULT_ROUTE;
 }
 
 export function navigateTo( route ) {

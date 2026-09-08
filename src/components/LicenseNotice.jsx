@@ -39,49 +39,49 @@ export function LicenseBanner( { boot } ) {
 
 	let tone = 'warning';
 	let message = __(
-		'Order Guard Pro requires a license key for commercial updates and continued Pro workspace access.',
-		'coderembassy-order-guard'
+		'Order Vanguard Pro requires a license key for commercial updates and continued Pro workspace access.',
+		'coderembassy-order-vanguard'
 	);
-	let action = __( 'Activate license', 'coderembassy-order-guard' );
+	let action = __( 'Activate license', 'coderembassy-order-vanguard' );
 
 	if ( locked ) {
 		tone = 'locked';
 		message = __(
-			'A license key is required to continue managing Order Guard Pro workspaces. Free protection remains available.',
-			'coderembassy-order-guard'
+			'A license key is required to continue managing Order Vanguard Pro workspaces. Free protection remains available.',
+			'coderembassy-order-vanguard'
 		);
 	} else if ( nagDays > 0 ) {
 		message = sprintf(
 			/* translators: %d: trial days remaining */
-			__( '%d days remain to activate Order Guard Pro.', 'coderembassy-order-guard' ),
+			__( '%d days remain to activate Order Vanguard Pro.', 'coderembassy-order-vanguard' ),
 			nagDays
 		);
 	} else if ( state === 'GRACE_PERIOD' ) {
 		message = __(
-			'Your Order Guard Pro license is in its grace period. Renew soon to keep updates and Pro workspace access.',
-			'coderembassy-order-guard'
+			'Your Order Vanguard Pro license is in its grace period. Renew soon to keep updates and Pro workspace access.',
+			'coderembassy-order-vanguard'
 		);
-		action = __( 'Renew license', 'coderembassy-order-guard' );
+		action = __( 'Renew license', 'coderembassy-order-vanguard' );
 	} else if ( state === 'EXPIRED' ) {
 		tone = 'error';
 		message = __(
-			'Your Order Guard Pro license has expired. Renew it to restore updates and Pro workspace access.',
-			'coderembassy-order-guard'
+			'Your Order Vanguard Pro license has expired. Renew it to restore updates and Pro workspace access.',
+			'coderembassy-order-vanguard'
 		);
-		action = __( 'Renew license', 'coderembassy-order-guard' );
+		action = __( 'Renew license', 'coderembassy-order-vanguard' );
 	} else if ( state === 'INVALID' ) {
 		tone = 'error';
 		message = __(
-			'Your Order Guard Pro license could not be verified. Review the saved key.',
-			'coderembassy-order-guard'
+			'Your Order Vanguard Pro license could not be verified. Review the saved key.',
+			'coderembassy-order-vanguard'
 		);
-		action = __( 'Check license', 'coderembassy-order-guard' );
+		action = __( 'Check license', 'coderembassy-order-vanguard' );
 	} else if ( state === 'UNREACHABLE' ) {
 		message = __(
-			'The license server is temporarily unreachable. Order Guard Pro is using its last known status.',
-			'coderembassy-order-guard'
+			'The license server is temporarily unreachable. Order Vanguard Pro is using its last known status.',
+			'coderembassy-order-vanguard'
 		);
-		action = __( 'Review license', 'coderembassy-order-guard' );
+		action = __( 'Review license', 'coderembassy-order-vanguard' );
 	}
 
 	const dismiss = () => {
@@ -102,7 +102,7 @@ export function LicenseBanner( { boot } ) {
 				{ action }
 			</button>
 			{ ! locked && (
-				<button type="button" className="ceog-license-banner__dismiss" onClick={ dismiss } aria-label={ __( 'Dismiss license notice', 'coderembassy-order-guard' ) } title={ __( 'Dismiss license notice', 'coderembassy-order-guard' ) }>
+				<button type="button" className="ceog-license-banner__dismiss" onClick={ dismiss } aria-label={ __( 'Dismiss license notice', 'coderembassy-order-vanguard' ) } title={ __( 'Dismiss license notice', 'coderembassy-order-vanguard' ) }>
 					<X size={ 17 } aria-hidden="true" />
 				</button>
 			) }
@@ -161,19 +161,19 @@ export function ExpiredLicenseModal( { boot } ) {
 	return (
 		<div className="ceog-license-modal" onMouseDown={ ( event ) => event.target === event.currentTarget && setOpen( false ) }>
 			<div className="ceog-license-modal__card" role="alertdialog" aria-modal="true" aria-labelledby="ceog-license-expired-title" aria-describedby="ceog-license-expired-body">
-				<button type="button" className="ceog-license-modal__close" onClick={ () => setOpen( false ) } aria-label={ __( 'Close', 'coderembassy-order-guard' ) }>
+				<button type="button" className="ceog-license-modal__close" onClick={ () => setOpen( false ) } aria-label={ __( 'Close', 'coderembassy-order-vanguard' ) }>
 					<X size={ 18 } aria-hidden="true" />
 				</button>
 				<div className="ceog-license-modal__icon"><ShieldAlert size={ 30 } aria-hidden="true" /></div>
-				<h2 id="ceog-license-expired-title">{ __( 'Your Order Guard Pro license has expired', 'coderembassy-order-guard' ) }</h2>
-				<p id="ceog-license-expired-body">{ __( 'The grace period is over. Renew now to restore private updates and Pro workspace access. Existing Free protection remains available.', 'coderembassy-order-guard' ) }</p>
+				<h2 id="ceog-license-expired-title">{ __( 'Your Order Vanguard Pro license has expired', 'coderembassy-order-vanguard' ) }</h2>
+				<p id="ceog-license-expired-body">{ __( 'The grace period is over. Renew now to restore private updates and Pro workspace access. Existing Free protection remains available.', 'coderembassy-order-vanguard' ) }</p>
 				<a id="ceog-license-renew" className="ceog-button ceog-button--primary" href={ modal.renewUrl } target="_blank" rel="noopener noreferrer">
-					{ __( 'Renew license', 'coderembassy-order-guard' ) }
+					{ __( 'Renew license', 'coderembassy-order-vanguard' ) }
 				</a>
 				<small aria-live="polite">
 					{ sprintf(
 						/* translators: %d: seconds until the modal closes */
-						__( 'This reminder closes in %d seconds.', 'coderembassy-order-guard' ),
+						__( 'This reminder closes in %d seconds.', 'coderembassy-order-vanguard' ),
 						remaining
 					) }
 				</small>

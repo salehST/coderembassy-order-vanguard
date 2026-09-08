@@ -2,7 +2,7 @@
 /**
  * Shared allowlist and blocklist services.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -146,7 +146,7 @@ final class CEOG_Lists {
 
 		throw new $exception_class(
 			'ceog_blocklist',
-			esc_html( __( 'We could not process your order. Please contact the store for assistance.', 'coderembassy-order-guard' ) ),
+			esc_html( __( 'We could not process your order. Please contact the store for assistance.', 'coderembassy-order-vanguard' ) ),
 			403
 		);
 	}
@@ -238,7 +238,7 @@ final class CEOG_Lists {
 				if ( $logged && ceog_is_enforcing() && is_object( $errors ) && method_exists( $errors, 'add' ) ) {
 					$errors->add(
 						'ceog_blocklist',
-						esc_html( __( 'We could not process your order. Please contact the store for assistance.', 'coderembassy-order-guard' ) )
+						esc_html( __( 'We could not process your order. Please contact the store for assistance.', 'coderembassy-order-vanguard' ) )
 					);
 				}
 			},
@@ -485,7 +485,7 @@ final class CEOG_Lists {
 
 		add_meta_box(
 			'ceog-order-signals',
-			__( 'Order Guard', 'coderembassy-order-guard' ),
+			__( 'Order Vanguard', 'coderembassy-order-vanguard' ),
 			array( $this, 'render_order_metabox' ),
 			array_values( array_unique( $screens ) ),
 			'side',
@@ -519,13 +519,13 @@ final class CEOG_Lists {
 		$whitelisted = $this->is_whitelisted( $context );
 		$match       = $this->match_blocklist( $context );
 		$status      = $whitelisted
-			? __( 'Whitelisted', 'coderembassy-order-guard' )
-			: ( ! empty( $match['matched'] ) ? __( 'Blocklisted', 'coderembassy-order-guard' ) : __( 'No list match', 'coderembassy-order-guard' ) );
+			? __( 'Whitelisted', 'coderembassy-order-vanguard' )
+			: ( ! empty( $match['matched'] ) ? __( 'Blocklisted', 'coderembassy-order-vanguard' ) : __( 'No list match', 'coderembassy-order-vanguard' ) );
 		$signals = array(
-			__( 'Origin', 'coderembassy-order-guard' )  => $order->get_meta( '_ceog_origin_signal', true ),
-			__( 'Session', 'coderembassy-order-guard' ) => $order->get_meta( '_ceog_session_present', true ),
-			__( 'Lists', 'coderembassy-order-guard' )   => $order->get_meta( '_ceog_list_match', true ),
-			__( 'Breaker', 'coderembassy-order-guard' ) => $order->get_meta( '_ceog_breaker_context', true ),
+			__( 'Origin', 'coderembassy-order-vanguard' )  => $order->get_meta( '_ceog_origin_signal', true ),
+			__( 'Session', 'coderembassy-order-vanguard' ) => $order->get_meta( '_ceog_session_present', true ),
+			__( 'Lists', 'coderembassy-order-vanguard' )   => $order->get_meta( '_ceog_list_match', true ),
+			__( 'Breaker', 'coderembassy-order-vanguard' ) => $order->get_meta( '_ceog_breaker_context', true ),
 		);
 		$signals = array_filter(
 			$signals,
@@ -537,7 +537,7 @@ final class CEOG_Lists {
 		$email_blocked = in_array( $email, array_map( 'strtolower', $settings['blocklist_emails'] ), true );
 		$ip_blocked    = self::ip_in_list( $ip, $settings['blocklist_ips'] );
 		?>
-		<p><strong><?php esc_html_e( 'Current list status', 'coderembassy-order-guard' ); ?></strong><br><?php echo esc_html( $status ); ?></p>
+		<p><strong><?php esc_html_e( 'Current list status', 'coderembassy-order-vanguard' ); ?></strong><br><?php echo esc_html( $status ); ?></p>
 		<?php if ( $signals ) : ?>
 			<ul class="ceog-order-signals">
 				<?php foreach ( $signals as $label => $value ) : ?>
@@ -545,12 +545,12 @@ final class CEOG_Lists {
 				<?php endforeach; ?>
 			</ul>
 		<?php else : ?>
-			<p><?php esc_html_e( 'No Order Guard signals have been recorded for this order.', 'coderembassy-order-guard' ); ?></p>
+			<p><?php esc_html_e( 'No Order Vanguard signals have been recorded for this order.', 'coderembassy-order-vanguard' ); ?></p>
 		<?php endif; ?>
 		<hr>
 		<?php
-		$this->render_block_button( $order->get_id(), 'email', $email, __( 'Block this email', 'coderembassy-order-guard' ), $email_blocked );
-		$this->render_block_button( $order->get_id(), 'ip', $ip, __( 'Block this IP', 'coderembassy-order-guard' ), $ip_blocked );
+		$this->render_block_button( $order->get_id(), 'email', $email, __( 'Block this email', 'coderembassy-order-vanguard' ), $email_blocked );
+		$this->render_block_button( $order->get_id(), 'ip', $ip, __( 'Block this IP', 'coderembassy-order-vanguard' ), $ip_blocked );
 	}
 
 	/**
@@ -560,7 +560,7 @@ final class CEOG_Lists {
 	 */
 	public function handle_block_entity() {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
-			wp_die( esc_html__( 'You do not have permission to update Order Guard lists.', 'coderembassy-order-guard' ) );
+			wp_die( esc_html__( 'You do not have permission to update Order Vanguard lists.', 'coderembassy-order-vanguard' ) );
 		}
 
 		$order_id = absint( wp_unslash( $_POST['order_id'] ?? 0 ) );
@@ -569,7 +569,7 @@ final class CEOG_Lists {
 		$type  = sanitize_key( wp_unslash( $_POST['entity_type'] ?? '' ) );
 
 		if ( ! $order || ! in_array( $type, array( 'email', 'ip' ), true ) ) {
-			wp_die( esc_html__( 'The requested Order Guard action is invalid.', 'coderembassy-order-guard' ) );
+			wp_die( esc_html__( 'The requested Order Vanguard action is invalid.', 'coderembassy-order-vanguard' ) );
 		}
 
 		$expected = 'email' === $type
@@ -581,19 +581,19 @@ final class CEOG_Lists {
 		$supplied = 'email' === $type ? strtolower( sanitize_email( $supplied ) ) : CEOG_IP::canonicalize( $supplied );
 
 		if ( '' === $expected || $expected !== $supplied ) {
-			wp_die( esc_html__( 'The requested Order Guard value is invalid.', 'coderembassy-order-guard' ) );
+			wp_die( esc_html__( 'The requested Order Vanguard value is invalid.', 'coderembassy-order-vanguard' ) );
 		}
 
 		$result = $this->add_block_entity( $type, $supplied );
 		if ( false === $result ) {
-			wp_die( esc_html__( 'The requested Order Guard value is invalid.', 'coderembassy-order-guard' ) );
+			wp_die( esc_html__( 'The requested Order Vanguard value is invalid.', 'coderembassy-order-vanguard' ) );
 		}
 
 		if ( ! empty( $result['added'] ) ) {
 			$order->add_order_note(
 				'email' === $type
-					? __( 'Order Guard: billing email added to the blocklist.', 'coderembassy-order-guard' )
-					: __( 'Order Guard: customer IP added to the blocklist.', 'coderembassy-order-guard' )
+					? __( 'Order Vanguard: billing email added to the blocklist.', 'coderembassy-order-vanguard' )
+					: __( 'Order Vanguard: customer IP added to the blocklist.', 'coderembassy-order-vanguard' )
 			);
 		}
 
@@ -627,7 +627,7 @@ final class CEOG_Lists {
 			<input type="hidden" name="entity_type" value="<?php echo esc_attr( $type ); ?>">
 			<input type="hidden" name="entity_value" value="<?php echo esc_attr( $value ); ?>">
 			<?php wp_nonce_field( 'ceog_block_entity_' . $order_id ); ?>
-			<button type="submit" class="button button-secondary" <?php disabled( $blocked ); ?>><?php echo esc_html( $blocked ? __( 'Already blocklisted', 'coderembassy-order-guard' ) : $label ); ?></button>
+			<button type="submit" class="button button-secondary" <?php disabled( $blocked ); ?>><?php echo esc_html( $blocked ? __( 'Already blocklisted', 'coderembassy-order-vanguard' ) : $label ); ?></button>
 		</form>
 		<?php
 	}
@@ -874,14 +874,14 @@ final class CEOG_Lists {
 	 */
 	private static function match_reason( $type ) {
 		if ( 'email' === $type ) {
-			return __( 'Billing email matched the blocklist.', 'coderembassy-order-guard' );
+			return __( 'Billing email matched the blocklist.', 'coderembassy-order-vanguard' );
 		}
 
 		if ( 'email_domain' === $type ) {
-			return __( 'Billing email domain matched the blocklist.', 'coderembassy-order-guard' );
+			return __( 'Billing email domain matched the blocklist.', 'coderembassy-order-vanguard' );
 		}
 
-		return __( 'Customer IP matched the blocklist.', 'coderembassy-order-guard' );
+		return __( 'Customer IP matched the blocklist.', 'coderembassy-order-vanguard' );
 	}
 }
 

@@ -1,10 +1,10 @@
-=== CoderEmbassy Order Guard for WooCommerce ===
+=== CoderEmbassy Order Vanguard ===
 Contributors: codersaleh
 Tags: woocommerce, security, fraud, card testing, fake orders
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.12
+Stable tag: 1.0.15
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,13 +12,13 @@ API-level WooCommerce protection against card testing, automated fake orders, an
 
 == Description ==
 
-Order Guard protects classic checkout, Checkout Block, Store API cart traffic, and Store API batch requests with monitor-first circuit breakers, request controls, lists, and review signals. The Free plugin has no CAPTCHA keys, subscriptions, remote scoring services, or external data transfers.
+Order Vanguard protects classic checkout, Checkout Block, Store API cart traffic, and Store API batch requests with monitor-first circuit breakers, request controls, lists, and review signals. The Free plugin has no CAPTCHA keys, subscriptions, remote scoring services, or external data transfers.
 
 For product quantity rules and customer-friendly purchase limits, see [CoderEmbassy Quantity Manager for WooCommerce](https://coderembassy.com/).
 
 == Privacy ==
 
-Order Guard stores protection events only in this site's WordPress database. A log row can contain the event time and type, protection mode, request route, reason, order ID, a sanitized user agent, `ip_display`, and a one-way `ip_hash` correlation value.
+Order Vanguard stores protection events only in this site's WordPress database. A log row can contain the event time and type, protection mode, request route, reason, order ID, a sanitized user agent, `ip_display`, and a one-way `ip_hash` correlation value.
 
 By default, IPv4 addresses are anonymized by replacing the last octet with zero. IPv6 addresses are reduced to their /64 network. The correlation hash is generated locally with HMAC-SHA256 and the site's WordPress authentication salt. It is used to recognize repeat traffic without storing the original address in the hash. Email counters use the same one-way approach over a lowercased email address; plaintext email addresses are not written to the protection log.
 
@@ -29,19 +29,19 @@ Free log history is retained for seven days and pruned daily in bounded batches.
 == Installation ==
 
 1. Install and activate WooCommerce.
-2. Upload and activate CoderEmbassy Order Guard for WooCommerce.
-3. Open WooCommerce > Order Guard.
+2. Upload and activate CoderEmbassy Order Vanguard.
+3. Open WooCommerce > Order Vanguard.
 4. Keep Monitor mode enabled while reviewing Activity Log events.
 
 == Frequently Asked Questions ==
 
 = Why doesn't my CAPTCHA stop card testing? =
 
-Many attacks send requests directly to WooCommerce Store API endpoints instead of interacting with the visible checkout form. Order Guard evaluates those server-side requests, including operations embedded in Store API batch requests. It complements a CAPTCHA rather than replacing one.
+Many attacks send requests directly to WooCommerce Store API endpoints instead of interacting with the visible checkout form. Order Vanguard evaluates those server-side requests, including operations embedded in Store API batch requests. It complements a CAPTCHA rather than replacing one.
 
 = Will this block real customers? =
 
-Order Guard starts in Monitor mode, where it records decisions without blocking. Review the Activity Log before switching to Enforce. Whitelists preserve trusted roles, IPs, and payment methods, and `CEOG_SAFE_MODE` immediately suspends every blocking action. Per-IP blocks are intentionally short because mobile, office, and CGNAT networks may represent several customers behind one address.
+Order Vanguard starts in Monitor mode, where it records decisions without blocking. Review the Activity Log before switching to Enforce. Whitelists preserve trusted roles, IPs, and payment methods, and `CEOG_SAFE_MODE` immediately suspends every blocking action. Per-IP blocks are intentionally short because mobile, office, and CGNAT networks may represent several customers behind one address.
 
 = Does it work with the Checkout block? =
 
@@ -53,7 +53,7 @@ Yes. Each embedded operation is normalized and evaluated individually. In Enforc
 
 = Is any data sent to external services? =
 
-The Free plugin sends no protection decisions, logs, hashes, settings, or dashboard aggregates to an external service. If the merchant explicitly enables the optional Pro Cloudflare Turnstile integration with their own keys, the shopper's browser connects to Cloudflare and the server validates a single-use token with Cloudflare Siteverify; Order Guard does not store that token.
+The Free plugin sends no protection decisions, logs, hashes, settings, or dashboard aggregates to an external service. If the merchant explicitly enables the optional Pro Cloudflare Turnstile integration with their own keys, the shopper's browser connects to Cloudflare and the server validates a single-use token with Cloudflare Siteverify; Order Vanguard does not store that token.
 
 = How should express and wallet payments be configured? =
 
@@ -61,7 +61,7 @@ Add trusted express and wallet gateway keys to the payment-method whitelist. Whi
 
 = Does the honeypot protect the Checkout block? =
 
-The Free honeypot protects classic checkout. Order Guard Pro adds an optional, site-specific Checkout Block honeypot through WooCommerce's Additional Checkout Fields API (WooCommerce 8.9+), while preserving the same Monitor-first and fail-open safety behavior.
+The Free honeypot protects classic checkout. Order Vanguard Pro adds an optional, site-specific Checkout Block honeypot through WooCommerce's Additional Checkout Fields API (WooCommerce 8.9+), while preserving the same Monitor-first and fail-open safety behavior.
 
 == Screenshots ==
 
@@ -70,7 +70,35 @@ The Free honeypot protects classic checkout. Order Guard Pro adds an optional, s
 3. Per-IP, per-email, and global circuit breaker settings.
 4. Protection settings and Safe Mode-aware controls.
 
+== Source Code and Build Process ==
+
+The complete human-readable source code, build configuration, and release tools are publicly maintained at [github.com/salehST/coderembassy-order-vanguard](https://github.com/salehST/coderembassy-order-vanguard).
+
+The generated `build/index.js` and styles are compiled from the files in `src/`. To reproduce the distributed assets, install a current Node.js LTS release and run these commands from the repository root:
+
+`npm ci`
+`npm run build`
+`npm run make-pot`
+`npm run release:audit`
+`npm run package:release`
+
+The build uses the WordPress packages listed in `package.json` and [lucide-react](https://github.com/lucide-icons/lucide), an ISC-licensed icon library. Exact dependency versions and source package URLs are recorded in `package-lock.json`.
+
 == Changelog ==
+
+= 1.0.15 =
+* Documented the public human-readable source repository and reproducible build process.
+* Documented the bundled Lucide icon source, license, and dependency lockfile.
+
+= 1.0.14 =
+* Renamed the public plugin identity to CoderEmbassy Order Vanguard.
+* Updated the package slug, bootstrap filename, text domain, and admin URL to `coderembassy-order-vanguard`.
+* Preserved existing `CEOG_*` compatibility constants and `ceog_*` settings, tables, hooks, and stored data.
+
+= 1.0.13 =
+* Applied the initial distinctive-name update requested by the WordPress Plugins Team.
+* Updated the package identity while preserving all existing protection data.
+* Hid and route-guarded the Pro License workspace on Free-only installations.
 
 = 1.0.12 =
 * Locked Free activity-log retention to seven days for a clear WordPress.org Free boundary.
@@ -93,7 +121,7 @@ The Free honeypot protects classic checkout. Order Guard Pro adds an optional, s
 * Added Checkout Block field protection status to the responsive Store API Guard environment summary when Pro is active.
 
 = 1.0.7 =
-* Added separate Attack Cleanup and Pro License routes to the shared Order Guard navigation when Pro is active.
+* Added separate Attack Cleanup and Pro License routes to the shared Order Vanguard navigation when Pro is active.
 * Added responsive, accessible host components for the Pro license banner and expired-license reminder while keeping licensing logic inside the separate Pro add-on.
 * Preserved complete Free workspace access when the Pro license soft lock is active.
 
@@ -110,12 +138,12 @@ The Free honeypot protects classic checkout. Order Guard Pro adds an optional, s
 * Added a dedicated Auto Blocklisting navigation screen and audit event labels when Pro is active.
 
 = 1.0.3 =
-* Embedded Attack Cleanup inside the existing Order Guard React workspace.
+* Embedded Attack Cleanup inside the existing Order Vanguard React workspace.
 * Keeps desktop navigation and the mobile drawer available while using Pro tools.
 
 = 1.0.2 =
-* Consolidated Free and Pro under the single Order Guard WordPress menu.
-* Shows Attack Cleanup in the Order Guard navigation when Pro is active.
+* Consolidated Free and Pro under the single Order Vanguard WordPress menu.
+* Shows Attack Cleanup in the Order Vanguard navigation when Pro is active.
 
 = 1.0.1 =
 * Added a secure admin bootstrap extension point for the separate Pro add-on.

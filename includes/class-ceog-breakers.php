@@ -2,7 +2,7 @@
 /**
  * Tiered failed-order circuit breakers.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -624,7 +624,7 @@ final class CEOG_Breakers {
 				'ip'     => $context['ip'] ?? '',
 				'mode'   => $enforcing ? 'enforce' : 'monitor',
 				'route'  => $route,
-				'reason' => __( 'Checkout matched a tripped circuit breaker.', 'coderembassy-order-guard' ),
+				'reason' => __( 'Checkout matched a tripped circuit breaker.', 'coderembassy-order-vanguard' ),
 				'meta'   => array(
 					'rule'        => 'circuit_breaker',
 					'tiers'       => array_values( $tiers ),
@@ -773,7 +773,7 @@ final class CEOG_Breakers {
 	 * @return string
 	 */
 	private static function pause_message() {
-		return __( 'Checkout is temporarily paused due to unusual activity. Please try again in a couple of minutes.', 'coderembassy-order-guard' );
+		return __( 'Checkout is temporarily paused due to unusual activity. Please try again in a couple of minutes.', 'coderembassy-order-vanguard' );
 	}
 
 	/**
@@ -793,14 +793,14 @@ final class CEOG_Breakers {
 	 */
 	private static function trip_reason( $tier ) {
 		if ( 'ip' === $tier ) {
-			return __( 'The per-IP failed-order circuit breaker tripped.', 'coderembassy-order-guard' );
+			return __( 'The per-IP failed-order circuit breaker tripped.', 'coderembassy-order-vanguard' );
 		}
 
 		if ( 'email' === $tier ) {
-			return __( 'The per-email failed-order circuit breaker tripped.', 'coderembassy-order-guard' );
+			return __( 'The per-email failed-order circuit breaker tripped.', 'coderembassy-order-vanguard' );
 		}
 
-		return __( 'The global failed-order circuit breaker tripped.', 'coderembassy-order-guard' );
+		return __( 'The global failed-order circuit breaker tripped.', 'coderembassy-order-vanguard' );
 	}
 
 	/**

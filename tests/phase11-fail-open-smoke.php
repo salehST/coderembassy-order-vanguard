@@ -2,7 +2,7 @@
 /**
  * CLI release gate for missing storage and thrown dependency failures.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 namespace Automattic\WooCommerce\StoreApi\Exceptions {
@@ -15,7 +15,7 @@ namespace {
 	}
 
 	define( 'ABSPATH', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
-	define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-guard.php' );
+	define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-vanguard.php' );
 	define( 'DAY_IN_SECONDS', 86400 );
 	$GLOBALS['ceog_options']          = array();
 	$GLOBALS['ceog_transients']       = array();

@@ -2,7 +2,7 @@
 /**
  * Authenticated admin REST endpoints.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -311,7 +311,7 @@ final class CEOG_REST_Controller {
 		if ( false === $result ) {
 			return new WP_Error(
 				'ceog_invalid_block_entity',
-				__( 'Enter a valid email address or IP address.', 'coderembassy-order-guard' ),
+				__( 'Enter a valid email address or IP address.', 'coderembassy-order-vanguard' ),
 				array( 'status' => 400 )
 			);
 		}
@@ -332,7 +332,7 @@ final class CEOG_REST_Controller {
 		if ( '' !== $after && '' !== $before && $after > $before ) {
 			return new WP_Error(
 				'ceog_invalid_log_range',
-				__( 'The start date must not be later than the end date.', 'coderembassy-order-guard' ),
+				__( 'The start date must not be later than the end date.', 'coderembassy-order-vanguard' ),
 				array( 'status' => 400 )
 			);
 		}
@@ -389,7 +389,7 @@ final class CEOG_REST_Controller {
 		) {
 			return new WP_Error(
 				'ceog_checkout_block_lockdown',
-				__( 'Emergency Lockdown cannot be enabled while the WooCommerce Checkout block is active.', 'coderembassy-order-guard' ),
+				__( 'Emergency Lockdown cannot be enabled while the WooCommerce Checkout block is active.', 'coderembassy-order-vanguard' ),
 				array( 'status' => 400 )
 			);
 		}
@@ -409,7 +409,7 @@ final class CEOG_REST_Controller {
 		if ( ! in_array( $mode, array( 'monitor', 'enforce' ), true ) ) {
 			return new WP_Error(
 				'ceog_invalid_mode',
-				__( 'The selected protection mode is invalid.', 'coderembassy-order-guard' ),
+				__( 'The selected protection mode is invalid.', 'coderembassy-order-vanguard' ),
 				array( 'status' => 400 )
 			);
 		}

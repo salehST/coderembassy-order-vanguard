@@ -2,7 +2,7 @@
 /**
  * CLI smoke checks for Phase 9 unknown-origin order review signals.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {
@@ -10,7 +10,7 @@ if ( 'cli' !== PHP_SAPI ) {
 }
 
 define( 'ABSPATH', dirname( __DIR__ ) . DIRECTORY_SEPARATOR );
-define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-guard.php' );
+define( 'CEOG_FILE', dirname( __DIR__ ) . '/coderembassy-order-vanguard.php' );
 $GLOBALS['ceog_options']            = array();
 $GLOBALS['ceog_hooks']              = array();
 $GLOBALS['ceog_completed_by_email'] = array();
@@ -134,7 +134,7 @@ $browser_order = new CEOG_Phase9_Order(
 	array( 'meta' => array( '_wc_order_attribution_source_type' => 'typein' ) )
 );
 ceog_phase9_assert( false === $rules->evaluate_order( $browser_order, 'classic' ), 'A normal browser order with direct attribution must not be flagged.' );
-ceog_phase9_assert( empty( $browser_order->meta['_ceog_origin_signal'] ), 'Known attribution must not create an Order Guard signal.' );
+ceog_phase9_assert( empty( $browser_order->meta['_ceog_origin_signal'] ), 'Known attribution must not create an Order Vanguard signal.' );
 
 $unknown_order = new CEOG_Phase9_Order(
 	102,

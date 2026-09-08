@@ -2,7 +2,7 @@
 /**
  * Unknown-origin order review signals.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -125,7 +125,7 @@ final class CEOG_Origin_Rules {
 					array(
 						'ip'       => method_exists( $order, 'get_customer_ip_address' ) ? $order->get_customer_ip_address() : '',
 						'order_id' => $order_id,
-						'reason'   => __( 'Unknown order attribution requires review.', 'coderembassy-order-guard' ),
+						'reason'   => __( 'Unknown order attribution requires review.', 'coderembassy-order-vanguard' ),
 						'meta'     => array(
 							'flow'           => 'store_api' === $flow ? 'store_api' : 'classic',
 							'source_type'    => '' === $source_type ? 'missing' : 'unknown',
@@ -140,7 +140,7 @@ final class CEOG_Origin_Rules {
 				$order->update_meta_data( '_ceog_origin_signal', 'unknown' );
 				if ( method_exists( $order, 'add_order_note' ) ) {
 					$order->add_order_note(
-						__( 'Order Guard: unknown origin - review before fulfilment.', 'coderembassy-order-guard' )
+						__( 'Order Vanguard: unknown origin - review before fulfilment.', 'coderembassy-order-vanguard' )
 					);
 				}
 

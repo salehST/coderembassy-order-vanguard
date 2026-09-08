@@ -2,7 +2,7 @@
 /**
  * CLI smoke checks for Phase 7 tiered circuit breakers.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 namespace Automattic\WooCommerce\StoreApi\Exceptions {

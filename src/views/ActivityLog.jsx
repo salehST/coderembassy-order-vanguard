@@ -44,31 +44,31 @@ const EVENT_TYPES = [
 const eventLabel = ( type ) => {
 	switch ( type ) {
 		case 'breaker_ip_trip':
-			return __( 'Per-IP breaker tripped', 'coderembassy-order-guard' );
+			return __( 'Per-IP breaker tripped', 'coderembassy-order-vanguard' );
 		case 'breaker_email_trip':
-			return __( 'Email breaker tripped', 'coderembassy-order-guard' );
+			return __( 'Email breaker tripped', 'coderembassy-order-vanguard' );
 		case 'breaker_global_trip':
-			return __( 'Global breaker tripped', 'coderembassy-order-guard' );
+			return __( 'Global breaker tripped', 'coderembassy-order-vanguard' );
 		case 'blocked_add_item':
-			return __( 'Add-to-cart blocked', 'coderembassy-order-guard' );
+			return __( 'Add-to-cart blocked', 'coderembassy-order-vanguard' );
 		case 'blocked_checkout':
-			return __( 'Checkout blocked', 'coderembassy-order-guard' );
+			return __( 'Checkout blocked', 'coderembassy-order-vanguard' );
 		case 'blocked_batch_op':
-			return __( 'Batch operation blocked', 'coderembassy-order-guard' );
+			return __( 'Batch operation blocked', 'coderembassy-order-vanguard' );
 		case 'flagged_order':
-			return __( 'Order flagged', 'coderembassy-order-guard' );
+			return __( 'Order flagged', 'coderembassy-order-vanguard' );
 		case 'honeypot_hit':
-			return __( 'Honeypot triggered', 'coderembassy-order-guard' );
+			return __( 'Honeypot triggered', 'coderembassy-order-vanguard' );
 		case 'blocklist_hit':
-			return __( 'Blocklist matched', 'coderembassy-order-guard' );
+			return __( 'Blocklist matched', 'coderembassy-order-vanguard' );
 		case 'monitor_would_block':
-			return __( 'Monitor decision', 'coderembassy-order-guard' );
+			return __( 'Monitor decision', 'coderembassy-order-vanguard' );
 		case 'auto_block_added':
-			return __( 'Temporary block added', 'coderembassy-order-guard' );
+			return __( 'Temporary block added', 'coderembassy-order-vanguard' );
 		case 'auto_block_expired':
-			return __( 'Temporary block expired', 'coderembassy-order-guard' );
+			return __( 'Temporary block expired', 'coderembassy-order-vanguard' );
 		default:
-			return type || __( 'Unknown event', 'coderembassy-order-guard' );
+			return type || __( 'Unknown event', 'coderembassy-order-vanguard' );
 	}
 };
 
@@ -173,7 +173,7 @@ export default function ActivityLog( { isPro = false } ) {
 			! window.confirm(
 				sprintf(
 					/* translators: %d: number of selected log rows. */
-					__( 'Permanently delete %d selected event(s)?', 'coderembassy-order-guard' ),
+					__( 'Permanently delete %d selected event(s)?', 'coderembassy-order-vanguard' ),
 					selectedIds.length
 				)
 			)
@@ -208,7 +208,7 @@ export default function ActivityLog( { isPro = false } ) {
 		try {
 			const response = await exportLogCsv( filters );
 			if ( typeof response?.content !== 'string' ) {
-				throw new Error( __( 'Order Guard returned an invalid CSV export.', 'coderembassy-order-guard' ) );
+				throw new Error( __( 'Order Vanguard returned an invalid CSV export.', 'coderembassy-order-vanguard' ) );
 			}
 
 			const blob = new window.Blob( [ response.content ], {
@@ -227,13 +227,13 @@ export default function ActivityLog( { isPro = false } ) {
 				response.truncated
 					? sprintf(
 						/* translators: 1: exported rows, 2: total matching rows. */
-						__( 'Exported the first %1$d of %2$d matching events.', 'coderembassy-order-guard' ),
+						__( 'Exported the first %1$d of %2$d matching events.', 'coderembassy-order-vanguard' ),
 						Number( response.rows || 0 ),
 						Number( response.total || 0 )
 					)
 					: sprintf(
 						/* translators: %d: exported rows. */
-						__( 'Exported %d matching events.', 'coderembassy-order-guard' ),
+						__( 'Exported %d matching events.', 'coderembassy-order-vanguard' ),
 						Number( response.rows || 0 )
 					)
 			);
@@ -249,13 +249,13 @@ export default function ActivityLog( { isPro = false } ) {
 			<header className="ceog-page__header">
 				<div>
 					<p className="ceog-section-kicker">
-						{ __( 'Protection history', 'coderembassy-order-guard' ) }
+						{ __( 'Protection history', 'coderembassy-order-vanguard' ) }
 					</p>
-					<h2>{ __( 'Activity Log', 'coderembassy-order-guard' ) }</h2>
+					<h2>{ __( 'Activity Log', 'coderembassy-order-vanguard' ) }</h2>
 					<p>
 						{ __(
 							'Review monitor decisions and enforced actions without loading the full log into your browser.',
-							'coderembassy-order-guard'
+							'coderembassy-order-vanguard'
 						) }
 					</p>
 				</div>
@@ -263,7 +263,7 @@ export default function ActivityLog( { isPro = false } ) {
 					<Activity size={ 15 } aria-hidden="true" />
 					{ sprintf(
 						/* translators: %d: number of matching protection events. */
-						__( '%d events', 'coderembassy-order-guard' ),
+						__( '%d events', 'coderembassy-order-vanguard' ),
 						result.total
 					) }
 				</span>
@@ -271,13 +271,13 @@ export default function ActivityLog( { isPro = false } ) {
 
 			<form className="ceog-log-filters" onSubmit={ applyFilters }>
 				<label className="ceog-field" htmlFor="ceog-log-type">
-					<span>{ __( 'Event type', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'Event type', 'coderembassy-order-vanguard' ) }</span>
 					<select
 						id="ceog-log-type"
 						value={ draft.type }
 						onChange={ ( event ) => updateDraft( 'type', event.target.value ) }
 					>
-						<option value="">{ __( 'All events', 'coderembassy-order-guard' ) }</option>
+						<option value="">{ __( 'All events', 'coderembassy-order-vanguard' ) }</option>
 						{ EVENT_TYPES.map( ( type ) => (
 							<option key={ type } value={ type }>
 								{ eventLabel( type ) }
@@ -287,7 +287,7 @@ export default function ActivityLog( { isPro = false } ) {
 				</label>
 
 				<label className="ceog-field" htmlFor="ceog-log-after">
-					<span>{ __( 'From date', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'From date', 'coderembassy-order-vanguard' ) }</span>
 					<input
 						id="ceog-log-after"
 						type="date"
@@ -298,7 +298,7 @@ export default function ActivityLog( { isPro = false } ) {
 				</label>
 
 				<label className="ceog-field" htmlFor="ceog-log-before">
-					<span>{ __( 'To date', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'To date', 'coderembassy-order-vanguard' ) }</span>
 					<input
 						id="ceog-log-before"
 						type="date"
@@ -311,11 +311,11 @@ export default function ActivityLog( { isPro = false } ) {
 				<div className="ceog-log-filter-actions">
 					<button type="submit" className="ceog-button ceog-button--primary">
 						<Filter size={ 16 } aria-hidden="true" />
-						{ __( 'Apply filters', 'coderembassy-order-guard' ) }
+						{ __( 'Apply filters', 'coderembassy-order-vanguard' ) }
 					</button>
 					<button type="button" className="ceog-button" onClick={ clearFilters }>
 						<SearchX size={ 16 } aria-hidden="true" />
-						{ __( 'Clear', 'coderembassy-order-guard' ) }
+						{ __( 'Clear', 'coderembassy-order-vanguard' ) }
 					</button>
 				</div>
 			</form>
@@ -323,14 +323,14 @@ export default function ActivityLog( { isPro = false } ) {
 			{ filters.ip_hash && (
 				<div className="ceog-correlation-filter" role="status">
 					<Fingerprint size={ 18 } aria-hidden="true" />
-					<span>{ __( 'Showing events from the same attacker', 'coderembassy-order-guard' ) }</span>
+					<span>{ __( 'Showing events from the same attacker', 'coderembassy-order-vanguard' ) }</span>
 					<code>{ filters.ip_hash.slice( 0, 12 ) + '...' }</code>
 					<button
 						type="button"
 						className="ceog-icon-button"
 						onClick={ clearFilters }
-						aria-label={ __( 'Clear attacker filter', 'coderembassy-order-guard' ) }
-						title={ __( 'Clear attacker filter', 'coderembassy-order-guard' ) }
+						aria-label={ __( 'Clear attacker filter', 'coderembassy-order-vanguard' ) }
+						title={ __( 'Clear attacker filter', 'coderembassy-order-vanguard' ) }
 					>
 						<X size={ 16 } aria-hidden="true" />
 					</button>
@@ -352,10 +352,10 @@ export default function ActivityLog( { isPro = false } ) {
 						{ selectedIds.length > 0
 							? sprintf(
 								/* translators: %d: number of selected log rows. */
-								__( '%d selected', 'coderembassy-order-guard' ),
+								__( '%d selected', 'coderembassy-order-vanguard' ),
 								selectedIds.length
 							)
-							: __( 'Select rows to delete', 'coderembassy-order-guard' ) }
+							: __( 'Select rows to delete', 'coderembassy-order-vanguard' ) }
 					</span>
 					<div>
 						{ isPro && (
@@ -367,8 +367,8 @@ export default function ActivityLog( { isPro = false } ) {
 							>
 								<Download size={ 16 } aria-hidden="true" />
 								{ exporting
-									? __( 'Preparing CSV...', 'coderembassy-order-guard' )
-									: __( 'Export filtered CSV', 'coderembassy-order-guard' ) }
+									? __( 'Preparing CSV...', 'coderembassy-order-vanguard' )
+									: __( 'Export filtered CSV', 'coderembassy-order-vanguard' ) }
 							</button>
 						) }
 						<button
@@ -376,8 +376,8 @@ export default function ActivityLog( { isPro = false } ) {
 							className="ceog-icon-button"
 							onClick={ () => setReloadKey( ( current ) => current + 1 ) }
 							disabled={ loading }
-							aria-label={ __( 'Refresh events', 'coderembassy-order-guard' ) }
-							title={ __( 'Refresh events', 'coderembassy-order-guard' ) }
+							aria-label={ __( 'Refresh events', 'coderembassy-order-vanguard' ) }
+							title={ __( 'Refresh events', 'coderembassy-order-vanguard' ) }
 						>
 							<RefreshCw size={ 16 } aria-hidden="true" />
 						</button>
@@ -389,8 +389,8 @@ export default function ActivityLog( { isPro = false } ) {
 						>
 							<Trash2 size={ 16 } aria-hidden="true" />
 							{ deleting
-								? __( 'Deleting...', 'coderembassy-order-guard' )
-								: __( 'Delete selected', 'coderembassy-order-guard' ) }
+								? __( 'Deleting...', 'coderembassy-order-vanguard' )
+								: __( 'Delete selected', 'coderembassy-order-vanguard' ) }
 						</button>
 					</div>
 				</div>
@@ -398,16 +398,16 @@ export default function ActivityLog( { isPro = false } ) {
 				{ loading && result.rows.length < 1 ? (
 					<div className="ceog-log-loading">
 						<RefreshCw size={ 22 } aria-hidden="true" />
-						<span>{ __( 'Loading protection events...', 'coderembassy-order-guard' ) }</span>
+						<span>{ __( 'Loading protection events...', 'coderembassy-order-vanguard' ) }</span>
 					</div>
 				) : result.rows.length < 1 ? (
 					<div className="ceog-log-empty">
 						<Activity size={ 26 } aria-hidden="true" />
-						<h3>{ __( 'No matching protection events', 'coderembassy-order-guard' ) }</h3>
+						<h3>{ __( 'No matching protection events', 'coderembassy-order-vanguard' ) }</h3>
 						<p>
 							{ __(
 								'Events recorded by future protection rules will appear here. Adjust the filters if you expected existing rows.',
-								'coderembassy-order-guard'
+								'coderembassy-order-vanguard'
 							) }
 						</p>
 					</div>
@@ -421,16 +421,16 @@ export default function ActivityLog( { isPro = false } ) {
 											type="checkbox"
 											checked={ allSelected }
 											onChange={ togglePage }
-											aria-label={ __( 'Select this page', 'coderembassy-order-guard' ) }
+											aria-label={ __( 'Select this page', 'coderembassy-order-vanguard' ) }
 										/>
 									</th>
-									<th>{ __( 'Time', 'coderembassy-order-guard' ) }</th>
-									<th>{ __( 'Type', 'coderembassy-order-guard' ) }</th>
-									<th>{ __( 'Mode', 'coderembassy-order-guard' ) }</th>
-									<th>{ __( 'IP', 'coderembassy-order-guard' ) }</th>
-									<th>{ __( 'Route', 'coderembassy-order-guard' ) }</th>
-									<th>{ __( 'Reason', 'coderembassy-order-guard' ) }</th>
-									<th>{ __( 'Order', 'coderembassy-order-guard' ) }</th>
+									<th>{ __( 'Time', 'coderembassy-order-vanguard' ) }</th>
+									<th>{ __( 'Type', 'coderembassy-order-vanguard' ) }</th>
+									<th>{ __( 'Mode', 'coderembassy-order-vanguard' ) }</th>
+									<th>{ __( 'IP', 'coderembassy-order-vanguard' ) }</th>
+									<th>{ __( 'Route', 'coderembassy-order-vanguard' ) }</th>
+									<th>{ __( 'Reason', 'coderembassy-order-vanguard' ) }</th>
+									<th>{ __( 'Order', 'coderembassy-order-vanguard' ) }</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -443,7 +443,7 @@ export default function ActivityLog( { isPro = false } ) {
 												onChange={ () => toggleRow( row.id ) }
 												aria-label={ sprintf(
 													/* translators: %d: log row ID. */
-													__( 'Select event %d', 'coderembassy-order-guard' ),
+													__( 'Select event %d', 'coderembassy-order-vanguard' ),
 													row.id
 												) }
 											/>
@@ -457,8 +457,8 @@ export default function ActivityLog( { isPro = false } ) {
 										<td>
 											<span className={ 'ceog-mode-badge ceog-mode-badge--' + row.mode }>
 												{ row.mode === 'enforce'
-													? __( 'Enforce', 'coderembassy-order-guard' )
-													: __( 'Monitor', 'coderembassy-order-guard' ) }
+													? __( 'Enforce', 'coderembassy-order-vanguard' )
+													: __( 'Monitor', 'coderembassy-order-vanguard' ) }
 											</span>
 										</td>
 										<td>
@@ -469,8 +469,8 @@ export default function ActivityLog( { isPro = false } ) {
 														type="button"
 														className="ceog-icon-button ceog-icon-button--small"
 														onClick={ () => filterAttacker( row.ip_hash ) }
-														aria-label={ __( 'Show the same attacker', 'coderembassy-order-guard' ) }
-														title={ __( 'Show the same attacker', 'coderembassy-order-guard' ) }
+														aria-label={ __( 'Show the same attacker', 'coderembassy-order-vanguard' ) }
+														title={ __( 'Show the same attacker', 'coderembassy-order-vanguard' ) }
 													>
 														<Fingerprint size={ 14 } aria-hidden="true" />
 													</button>
@@ -503,11 +503,11 @@ export default function ActivityLog( { isPro = false } ) {
 						{ result.pages > 0
 							? sprintf(
 								/* translators: 1: current page, 2: total pages. */
-								__( 'Page %1$d of %2$d', 'coderembassy-order-guard' ),
+								__( 'Page %1$d of %2$d', 'coderembassy-order-vanguard' ),
 								page,
 								result.pages
 							)
-							: __( 'No pages', 'coderembassy-order-guard' ) }
+							: __( 'No pages', 'coderembassy-order-vanguard' ) }
 					</span>
 					<div>
 						<button
@@ -517,7 +517,7 @@ export default function ActivityLog( { isPro = false } ) {
 							disabled={ page <= 1 || loading }
 						>
 							<ChevronLeft size={ 16 } aria-hidden="true" />
-							{ __( 'Previous', 'coderembassy-order-guard' ) }
+							{ __( 'Previous', 'coderembassy-order-vanguard' ) }
 						</button>
 						<button
 							type="button"
@@ -525,7 +525,7 @@ export default function ActivityLog( { isPro = false } ) {
 							onClick={ () => setPage( page + 1 ) }
 							disabled={ page >= result.pages || loading }
 						>
-							{ __( 'Next', 'coderembassy-order-guard' ) }
+							{ __( 'Next', 'coderembassy-order-vanguard' ) }
 							<ChevronRight size={ 16 } aria-hidden="true" />
 						</button>
 					</div>

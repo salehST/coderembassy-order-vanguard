@@ -1,6 +1,6 @@
 {
-	"name": "coderembassy-order-guard",
-	"version": "1.0.12",
+	"name": "coderembassy-order-vanguard",
+	"version": "1.0.15",
 	"private": true,
 	"scripts": {
 		"build": "wp-scripts build src/index.js --output-path=build",

@@ -5,7 +5,7 @@ const traverse = require( '@babel/traverse' ).default;
 const gettextParser = require( 'gettext-parser' );
 
 const root = path.resolve( __dirname, '..' );
-const domain = 'coderembassy-order-guard';
+const domain = 'coderembassy-order-vanguard';
 const entries = new Map();
 
 const lineAt = ( source, index ) => source.slice( 0, index ).split( /\r?\n/ ).length;
@@ -111,18 +111,18 @@ const walk = ( directory, extensions ) => {
 	return output;
 };
 
-extractPhp( 'coderembassy-order-guard.php' );
+extractPhp( 'coderembassy-order-vanguard.php' );
 walk( 'includes', [ '.php' ] ).forEach( extractPhp );
 walk( 'src', [ '.js', '.jsx' ] ).forEach( extractJs );
-add( 'CoderEmbassy Order Guard for WooCommerce', 'coderembassy-order-guard.php', 3 );
-add( 'API-level protection against card testing, bot orders, and fake WooCommerce checkouts.', 'coderembassy-order-guard.php', 5 );
+add( 'CoderEmbassy Order Vanguard', 'coderembassy-order-vanguard.php', 3 );
+add( 'API-level protection against card testing, bot orders, and fake WooCommerce checkouts.', 'coderembassy-order-vanguard.php', 5 );
 
-const pluginSource = fs.readFileSync( path.join( root, 'coderembassy-order-guard.php' ), 'utf8' );
+const pluginSource = fs.readFileSync( path.join( root, 'coderembassy-order-vanguard.php' ), 'utf8' );
 const version = pluginSource.match( /define\(\s*'CEOG_VERSION',\s*'([^']+)'\s*\)/ )?.[ 1 ] || '1.0.0';
 const catalog = {
 	charset: 'UTF-8',
 	headers: {
-		'project-id-version': `CoderEmbassy Order Guard for WooCommerce ${ version }`,
+		'project-id-version': `CoderEmbassy Order Vanguard ${ version }`,
 		'report-msgid-bugs-to': 'https://coderembassy.com/',
 		'pot-creation-date': new Date().toISOString().replace( 'T', ' ' ).replace( /\.\d{3}Z$/, '+0000' ),
 		'mime-version': '1.0',
@@ -147,7 +147,7 @@ for ( const msgid of [ ...entries.keys() ].sort( ( left, right ) => left.localeC
 }
 
 const output = gettextParser.po.compile( catalog, { foldLength: 100, sortByMsgid: true } );
-const destination = path.join( root, 'languages', 'coderembassy-order-guard.pot' );
+const destination = path.join( root, 'languages', 'coderembassy-order-vanguard.pot' );
 fs.mkdirSync( path.dirname( destination ), { recursive: true } );
 fs.writeFileSync( destination, output );
 process.stdout.write( `Generated ${ path.relative( root, destination ) } with ${ entries.size } strings.\n` );

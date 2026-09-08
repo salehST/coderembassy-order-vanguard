@@ -2,7 +2,7 @@
 /**
  * Minimal CLI checks for the Phase 2 settings service.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {

@@ -2,7 +2,7 @@
 /**
  * Client IP resolution and privacy helpers.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

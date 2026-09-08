@@ -1,27 +1,27 @@
 <?php
 /**
- * Plugin Name: CoderEmbassy Order Guard for WooCommerce
- * Plugin URI:  https://coderembassy.com/
+ * Plugin Name: CoderEmbassy Order Vanguard
+ * Plugin URI:  https://github.com/salehST/coderembassy-order-vanguard
  * Description: API-level protection against card testing, bot orders, and fake WooCommerce checkouts.
- * Version:     1.0.12
+ * Version:     1.0.15
  * Author:      CoderEmbassy
  * Author URI:  https://coderembassy.com/
  * License:     GPLv2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: coderembassy-order-guard
+ * Text Domain: coderembassy-order-vanguard
  * Domain Path: /languages
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * Requires Plugins: woocommerce
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CEOG_VERSION', '1.0.12' );
+define( 'CEOG_VERSION', '1.0.15' );
 define( 'CEOG_DB_VERSION', '1.0.4' );
 define( 'CEOG_FILE', __FILE__ );
 define( 'CEOG_PATH', plugin_dir_path( __FILE__ ) );
@@ -63,7 +63,7 @@ function ceog_declare_woocommerce_compatibility() {
 add_action( 'before_woocommerce_init', 'ceog_declare_woocommerce_compatibility' );
 
 /**
- * Determines whether WooCommerce is available for Order Guard.
+ * Determines whether WooCommerce is available for Order Vanguard.
  *
  * @return bool
  */
@@ -83,7 +83,7 @@ function ceog_woocommerce_dependency_notice() {
 
 	?>
 	<div class="notice notice-error">
-		<p><?php esc_html_e( 'CoderEmbassy Order Guard requires WooCommerce to be installed and active.', 'coderembassy-order-guard' ); ?></p>
+		<p><?php esc_html_e( 'CoderEmbassy Order Vanguard requires WooCommerce to be installed and active.', 'coderembassy-order-vanguard' ); ?></p>
 	</div>
 	<?php
 }

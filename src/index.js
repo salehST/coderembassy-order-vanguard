@@ -1,5 +1,5 @@
 /**
- * Order Guard admin entrypoint.
+ * Order Vanguard admin entrypoint.
  */
 import { render } from '@wordpress/element';
 import App from './App';

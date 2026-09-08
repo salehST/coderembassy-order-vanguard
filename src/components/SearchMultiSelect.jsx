@@ -93,7 +93,7 @@ export default function SearchMultiSelect( {
 			</div>
 
 			{ selected.length > 0 && (
-				<div className="ceog-choice-tokens" aria-label={ __( 'Selected values', 'coderembassy-order-guard' ) }>
+				<div className="ceog-choice-tokens" aria-label={ __( 'Selected values', 'coderembassy-order-vanguard' ) }>
 					{ selected.map( ( key ) => (
 						<span className="ceog-choice-token" key={ key }>
 							<span>{ labels[ key ] || key }</span>
@@ -103,12 +103,12 @@ export default function SearchMultiSelect( {
 								onClick={ () => toggle( key ) }
 								aria-label={ sprintf(
 									/* translators: %s: selected role or payment-method key. */
-									__( 'Remove %s', 'coderembassy-order-guard' ),
+									__( 'Remove %s', 'coderembassy-order-vanguard' ),
 									key
 								) }
 								title={ sprintf(
 									/* translators: %s: selected role or payment-method key. */
-									__( 'Remove %s', 'coderembassy-order-guard' ),
+									__( 'Remove %s', 'coderembassy-order-vanguard' ),
 									key
 								) }
 							>
@@ -146,8 +146,8 @@ export default function SearchMultiSelect( {
 					<button
 					type="button"
 					onClick={ () => setOpen( ! open ) }
-					aria-label={ __( 'Toggle options', 'coderembassy-order-guard' ) }
-					title={ __( 'Toggle options', 'coderembassy-order-guard' ) }
+					aria-label={ __( 'Toggle options', 'coderembassy-order-vanguard' ) }
+					title={ __( 'Toggle options', 'coderembassy-order-vanguard' ) }
 					>
 						<ChevronDown size={ 16 } aria-hidden="true" />
 					</button>
@@ -194,7 +194,7 @@ export default function SearchMultiSelect( {
 					/>
 					<button type="submit" className="ceog-button" disabled={ ! manual.trim() }>
 						<Plus size={ 15 } aria-hidden="true" />
-						{ __( 'Add key', 'coderembassy-order-guard' ) }
+						{ __( 'Add key', 'coderembassy-order-vanguard' ) }
 					</button>
 				</form>
 			) }

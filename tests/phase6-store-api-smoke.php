@@ -2,7 +2,7 @@
 /**
  * CLI smoke checks for Phase 6 Store API direct and batch guards.
  *
- * @package CoderEmbassy_Order_Guard
+ * @package CoderEmbassy_Order_Vanguard
  */
 
 if ( 'cli' !== PHP_SAPI ) {
@@ -262,7 +262,7 @@ ceog_phase6_assert( true === $enforce_limits['proxy_support'], 'Trusted proxy se
 
 $GLOBALS['wp']->query_vars['rest_route'] = '/wc/store/v1/checkout';
 $checkout_limits = $guard->configure_rate_limits( $defaults );
-ceog_phase6_assert( false === $checkout_limits['enabled'], 'Order Guard must not override WooCommerce checkout rate limiting.' );
+ceog_phase6_assert( false === $checkout_limits['enabled'], 'Order Vanguard must not override WooCommerce checkout rate limiting.' );
 
 $GLOBALS['wp']->query_vars['rest_route'] = '/wc/store/v1/batch';
 $batch_limits = $guard->configure_rate_limits( $defaults );
