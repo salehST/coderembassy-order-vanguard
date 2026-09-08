@@ -159,7 +159,7 @@ export default function PrivacyLogs( { payload, settingsBusy, onSave } ) {
 					</div>
 					<p className="ceog-field-note">
 						{ __(
-							'Free retains activity history for 7 days, with daily background pruning.',
+							'Activity history is retained for 7 days, with daily background pruning.',
 							'coderembassy-order-vanguard'
 						) }
 					</p>

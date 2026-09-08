@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: CoderEmbassy Order Vanguard 1.0.15\n"
+"Project-Id-Version: CoderEmbassy Order Vanguard 1.0.16\n"
 "Report-Msgid-Bugs-To: https://coderembassy.com/\n"
-"POT-Creation-Date: 2026-09-08 09:41:03+0000\n"
+"POT-Creation-Date: 2026-09-08 10:22:56+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -91,6 +91,10 @@ msgstr ""
 
 #: src/navigation.js:32 src/views/ActivityLog.jsx:254
 msgid "Activity Log"
+msgstr ""
+
+#: src/views/PrivacyLogs.jsx:161
+msgid "Activity history is retained for 7 days, with daily background pruning."
 msgstr ""
 
 #: src/components/SearchMultiSelect.jsx:197
@@ -545,10 +549,6 @@ msgstr ""
 
 #: src/components/Sidebar.jsx:89 src/views/Dashboard.jsx:276
 msgid "Free"
-msgstr ""
-
-#: src/views/PrivacyLogs.jsx:161
-msgid "Free retains activity history for 7 days, with daily background pruning."
 msgstr ""
 
 #: src/views/ActivityLog.jsx:290

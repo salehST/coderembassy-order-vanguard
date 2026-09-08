@@ -4,7 +4,7 @@ Tags: woocommerce, security, fraud, card testing, fake orders
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.0.15
+Stable tag: 1.0.16
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,7 @@ By default, IPv4 addresses are anonymized by replacing the last octet with zero.
 
 Full IP display storage is optional and disabled by default. Enabling it may store personal data and should be covered by the site's privacy policy and legal basis.
 
-Free log history is retained for seven days and pruned daily in bounded batches. Nothing is sent to CoderEmbassy or any third party. The merchant can choose to remove the plugin's table and options during uninstall.
+Activity history is retained for seven days and pruned daily in bounded batches. Nothing is sent to CoderEmbassy or any third party. The merchant can choose to remove the plugin's table and options during uninstall.
 
 == Installation ==
 
@@ -86,6 +86,9 @@ The build uses the WordPress packages listed in `package.json` and [lucide-react
 
 == Changelog ==
 
+= 1.0.16 =
+* Reworded the retention description with neutral, accurate wording.
+
 = 1.0.15 =
 * Documented the public human-readable source repository and reproducible build process.
 * Documented the bundled Lucide icon source, license, and dependency lockfile.
@@ -101,7 +104,7 @@ The build uses the WordPress packages listed in `package.json` and [lucide-react
 * Hid and route-guarded the Pro License workspace on Free-only installations.
 
 = 1.0.12 =
-* Locked Free activity-log retention to seven days for a clear WordPress.org Free boundary.
+* Standardized activity-log retention at seven days with daily bounded pruning.
 * Added the codersaleh contributor metadata for the WordPress.org submission.
 
 = 1.0.11 =

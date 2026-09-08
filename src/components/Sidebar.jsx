@@ -90,7 +90,7 @@ export default function Sidebar( {
 				</span>
 				<span>
 					{ __( 'Version', 'coderembassy-order-vanguard' ) }{ ' ' }
-					{ boot.version || '1.0.15' }
+					{ boot.version || '1.0.16' }
 				</span>
 			</div>
 		</aside>
