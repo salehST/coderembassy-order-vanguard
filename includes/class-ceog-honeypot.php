@@ -121,8 +121,8 @@ final class CEOG_Honeypot {
 	/**
 	 * Returns a deterministic site-specific field name for one checkout flow.
 	 *
-	 * This public extension point lets the separate Pro add-on register a
-	 * Checkout Block field without duplicating or exposing the site salt.
+	 * This public extension point supports additional checkout flows without
+	 * duplicating or exposing the site salt.
 	 *
 	 * @param string $flow Stable checkout-flow identifier.
 	 * @return string

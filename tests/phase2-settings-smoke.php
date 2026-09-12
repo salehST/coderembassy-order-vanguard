@@ -75,6 +75,7 @@ $saved   = $service->save(
 		'mode'                 => 'enforce',
 		'breaker_ip_threshold' => 0,
 		'rate_limit_limit'     => 5000,
+		'log_retention_days'  => 90,
 		'alert_email'          => 'owner@example.com',
 		'blocklist_emails'     => array( 'blocked@example.com', array( 'invalid' ) ),
 		'blocklist_ips'        => array( '192.0.2.44', 'not-an-ip', array( 'invalid' ) ),
@@ -85,6 +86,8 @@ ceog_phase2_assert( 'no' === $saved['enabled'], 'Boolean false must store as no.
 ceog_phase2_assert( 'enforce' === $saved['mode'], 'Valid Enforce mode must persist.' );
 ceog_phase2_assert( 1 === $saved['breaker_ip_threshold'], 'Threshold must clamp to its minimum.' );
 ceog_phase2_assert( 1000 === $saved['rate_limit_limit'], 'Rate limit must clamp to its maximum.' );
+ceog_phase2_assert( 90 === $saved['log_retention_days'], 'A supported retention period must persist.' );
+ceog_phase2_assert( 30 === CEOG_Settings::sanitize_patch( array( 'log_retention_days' => 60 ) )['log_retention_days'], 'Unsupported retention values must use the safe default.' );
 ceog_phase2_assert( array( 'blocked@example.com' ) === $saved['blocklist_emails'], 'Nested email values must be discarded.' );
 ceog_phase2_assert( array( '192.0.2.44' ) === $saved['blocklist_ips'], 'Invalid IP values must be discarded.' );
 ceog_phase2_assert( ! CEOG_Settings::validate_patch( array( 'unknown_key' => true ) ), 'Unknown settings keys must be rejected.' );

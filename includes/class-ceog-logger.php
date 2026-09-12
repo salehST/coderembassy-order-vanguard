@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class CEOG_Logger {
 	/**
-	 * Event types stored by the free plugin.
+	 * Supported protection event types.
 	 *
 	 * @var string[]
 	 */
@@ -101,7 +101,7 @@ final class CEOG_Logger {
 					$row['reason'],
 					false === $row['meta'] ? '{}' : $row['meta']
 				);
-				$result = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
+				$result = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.NotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Custom append-only log table; prepared immediately above and intentionally uncached.
 
 				if ( false === $result ) {
 					throw new RuntimeException( 'The Order Vanguard log row could not be stored.' );
@@ -160,7 +160,7 @@ final class CEOG_Logger {
 						"SELECT COUNT(*) FROM {$table} WHERE {$where}", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare -- Clauses are allowlisted above.
 						$values
 					);
-					$total     = (int) $wpdb->get_var( $count_sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
+					$total     = (int) $wpdb->get_var( $count_sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.NotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Dynamic allowlisted clauses are prepared immediately above; live log totals are intentionally uncached.
 				}
 				$offset       = ( $page - 1 ) * $per_page;
 				$query_values = array_merge( $values, array( $per_page, $offset ) );
@@ -169,7 +169,7 @@ final class CEOG_Logger {
 					"SELECT id, event_time, event_type, mode, ip_display, ip_hash, route, order_id, reason, meta FROM {$table} WHERE {$where} ORDER BY event_time DESC, id DESC LIMIT %d OFFSET %d", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber -- Dynamic allowlisted clauses provide the additional placeholders.
 					$query_values
 				);
-				$rows         = $wpdb->get_results( $rows_sql, ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
+				$rows         = $wpdb->get_results( $rows_sql, ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.NotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Dynamic allowlisted clauses are prepared immediately above; live log rows are intentionally uncached.
 
 				return array(
 					'rows'  => array_map( array( __CLASS__, 'prepare_rest_row' ), is_array( $rows ) ? $rows : array() ),
@@ -204,7 +204,7 @@ final class CEOG_Logger {
 					"SELECT id, event_time, event_type, mode, ip_display, ip_hash, route, order_id, reason, meta FROM {$table} ORDER BY event_time DESC, id DESC LIMIT %d", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 					$limit
 				);
-				$rows  = $wpdb->get_results( $sql, ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
+				$rows  = $wpdb->get_results( $sql, ARRAY_A ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.NotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Custom log query is prepared immediately above and intentionally uncached.
 
 				if ( ! is_array( $rows ) ) {
 					throw new RuntimeException( 'Recent Order Vanguard events could not be read.' );
@@ -239,7 +239,7 @@ final class CEOG_Logger {
 					"DELETE FROM {$table} WHERE id IN ({$placeholders})", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare -- Placeholder count comes from sanitized IDs.
 					$ids
 				);
-				$deleted      = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
+				$deleted      = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.NotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Sanitized IDs are prepared immediately above; mutation queries are not cacheable.
 
 				if ( false === $deleted ) {
 					throw new RuntimeException( 'The selected Order Vanguard log rows could not be deleted.' );
@@ -263,10 +263,10 @@ final class CEOG_Logger {
 		return (int) ceog_safe(
 			function () {
 				global $wpdb;
-
-				// The WordPress.org Free plugin owns a complete, fixed seven-day history.
-				// Longer retention is implemented by the separate Pro add-on's own pruner.
-				$cutoff = gmdate( 'Y-m-d H:i:s', current_time( 'timestamp' ) - ( 7 * DAY_IN_SECONDS ) );
+				$settings = ceog_get_settings();
+				$days     = absint( $settings['log_retention_days'] ?? 30 );
+				$days     = in_array( $days, array( 7, 30, 90 ), true ) ? $days : 30;
+				$cutoff   = gmdate( 'Y-m-d H:i:s', current_time( 'timestamp' ) - ( $days * DAY_IN_SECONDS ) );
 				$table     = $wpdb->prefix . 'ceog_log';
 				$total     = 0;
 
@@ -276,7 +276,7 @@ final class CEOG_Logger {
 						$cutoff,
 						1000
 					);
-					$deleted = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.PreparedSQL.NotPrepared -- Prepared immediately above.
+					$deleted = $wpdb->query( $sql ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.NotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Cutoff and bounded limit are prepared immediately above; mutation queries are not cacheable.
 
 					if ( false === $deleted ) {
 						throw new RuntimeException( 'Expired Order Vanguard log rows could not be pruned.' );

@@ -82,7 +82,7 @@ final class CEOG_Activator {
 		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
 		dbDelta( $sql );
 
-		$installed_table = $wpdb->get_var(
+		$installed_table = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- One-time schema verification during activation cannot use the object cache.
 			$wpdb->prepare(
 				'SHOW TABLES LIKE %s',
 				$wpdb->esc_like( $table_name )

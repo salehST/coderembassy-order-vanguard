@@ -28,21 +28,21 @@ const collect = ( directory ) => {
 collect( 'src' );
 collect( 'includes' );
 const applicationSource = sourceFiles.map( read ).join( '\n' );
+
 check( ! applicationSource.includes( 'dangerouslySetInnerHTML' ), 'React must not use dangerouslySetInnerHTML.' );
 check( ! /https?:\/\//.test( applicationSource ), 'Runtime source must not reference remote assets or services.' );
-check( applicationSource.includes( 'data-ceog-pro-view={ view }' ), 'The embedded Pro mount must expose its requested view before effects run.' );
-check( applicationSource.includes( "id: 'history-reporting'" ), 'The shared shell must expose the Pro History and Reports workspace.' );
-check( applicationSource.includes( "id: 'attack-cleanup'" ), 'The shared shell must expose a dedicated Attack Cleanup route.' );
-check( applicationSource.includes( "id: 'pro-license'" ), 'The shared shell must expose a dedicated Pro License route.' );
-check( /id:\s*'pro-license'[\s\S]{0,200}proOnly:\s*true/.test( read( 'src/navigation.js' ) ), 'The Pro License route must remain hidden on Free-only installations.' );
-check( applicationSource.includes( '<LicenseBanner' ), 'The shared shell must host the Pro-provided in-app license banner.' );
-check( applicationSource.includes( '<ExpiredLicenseModal' ), 'The shared shell must host the Pro-provided expired-license reminder.' );
-check( applicationSource.includes( 'public function get_field_name_for_flow( $flow )' ), 'Free must expose the shared salted field-name contract used by Pro Checkout Block protection.' );
-check( applicationSource.includes( 'Pro honeypot active' ), 'Store API Guard must report the Pro Checkout Block field layer.' );
-check( applicationSource.includes( "id: 'turnstile'" ), 'The shared shell must expose the Pro Turnstile workspace.' );
-check( applicationSource.includes( '<ProWorkspace view="turnstile"' ), 'The Turnstile route must mount the separate Pro workspace.' );
-check( applicationSource.includes( 'exportLogCsv( filters )' ), 'The Pro CSV action must export the currently applied Activity Log filters.' );
-check( applicationSource.includes( "__( 'Export filtered CSV'" ), 'The Pro CSV action must remain available from Activity Log.' );
+check( ! /\bisPro\b|\bproOnly\b|ceog-pro|LicenseBanner|ExpiredLicenseModal|ProWorkspace|exportLogCsv|Available in Pro|Order Vanguard Pro/i.test( applicationSource ), 'The WordPress.org runtime must not contain paid-feature or license-gating integration.' );
+check( ! fs.existsSync( path.join( root, 'src/components/LicenseNotice.jsx' ) ), 'License UI must not ship in the WordPress.org source.' );
+check( ! fs.existsSync( path.join( root, 'src/views/ProWorkspace.jsx' ) ), 'Paid workspace mounts must not ship in the WordPress.org source.' );
+
+const functions = read( 'includes/functions.php' );
+const settings = read( 'includes/class-ceog-settings.php' );
+const logger = read( 'includes/class-ceog-logger.php' );
+const privacy = read( 'src/views/PrivacyLogs.jsx' );
+check( functions.includes( "'log_retention_days'        => 30" ), 'Retention must have a safe 30-day default.' );
+check( settings.includes( "array( 7, 30, 90 )" ), 'Retention sanitation must allow 7, 30, and 90 days.' );
+check( logger.includes( "$settings['log_retention_days'] ?? 30" ), 'The daily pruner must use the saved retention setting.' );
+check( [ 7, 30, 90 ].every( ( days ) => new RegExp( `<option\\s+value=\\{\\s*${ days }\\s*\\}>` ).test( privacy ) ), 'The admin UI must expose every retention choice.' );
 
 const rest = read( 'includes/class-ceog-rest-controller.php' );
 const routeCount = ( rest.match( /register_rest_route\(/g ) || [] ).length;
@@ -52,15 +52,18 @@ check( permissionCount === 10, `Expected 10 protected REST methods, found ${ per
 check( ( rest.match( /'args'\s*=>/g ) || [] ).length >= 10, 'Every REST method must declare an args schema.' );
 check( rest.includes( "'maximum'           => 100" ), 'Activity Log per-page maximum must remain 100.' );
 check( rest.includes( "'maxItems'          => 100" ), 'Bulk log deletion maximum must remain 100.' );
-check( read( 'includes/class-ceog-logger.php' ).includes( "'include_total'" ), 'Bounded export batches must be able to skip repeated count queries.' );
 
 const admin = read( 'includes/class-ceog-admin.php' );
-check( admin.includes( "wp_set_script_translations(" ), 'Admin script translations must be registered.' );
-check( admin.includes( "build/style-index.css" ), 'Missing-build checks must include the compiled stylesheet.' );
+check( admin.includes( 'wp_set_script_translations(' ), 'Admin script translations must be registered.' );
+check( admin.includes( 'build/style-index.css' ), 'Missing-build checks must include the compiled stylesheet.' );
 
 const asset = read( 'build/index.asset.php' );
 check( asset.includes( "'wp-element'" ), 'The build must externalize WordPress element.' );
 check( asset.includes( "'react'" ), 'The build must depend on WordPress-provided React.' );
+
+const readme = read( 'readme.txt' );
+check( readme.includes( 'https://github.com/salehST/coderembassy-order-vanguard' ), 'The readme must link to the public source repository.' );
+check( readme.includes( 'Human-readable admin source and build configuration are included' ), 'The package must document its bundled source.' );
 
 const pot = path.join( root, 'languages', 'coderembassy-order-vanguard.pot' );
 check( fs.existsSync( pot ) && fs.statSync( pot ).size > 1000, 'The release POT file is missing or empty.' );

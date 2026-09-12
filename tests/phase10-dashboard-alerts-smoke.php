@@ -140,17 +140,12 @@ ceog_phase10_assert( 2 === $payload['blocked_today'], 'Dashboard must derive tod
 ceog_phase10_assert( 7 === $payload['suspicious_7d'], 'Dashboard must sum the seven-day suspicious count.' );
 ceog_phase10_assert( 7 === count( $payload['weekly_series'] ), 'Dashboard must always return exactly seven chart days.' );
 ceog_phase10_assert( 1 === count( $payload['recent_events'] ), 'Dashboard must return the bounded recent event set.' );
-ceog_phase10_assert( $payload['pro_context']['show'] && 3 === $payload['pro_context']['remaining_orders'], 'Enforced activity with failed orders must expose honest Pro context.' );
 ceog_phase10_assert( 1 === $wpdb->group_queries && 1 === $wpdb->recent_queries, 'The first dashboard request must run one aggregate and one recent query.' );
-ceog_phase10_assert( 1 === count( $GLOBALS['ceog_order_queries'] ), 'Failed-order context must use one HPOS-safe query.' );
+ceog_phase10_assert( 0 === count( $GLOBALS['ceog_order_queries'] ), 'Dashboard aggregation must not query unrelated order records.' );
 
 $cached = $dashboard->get_payload();
 ceog_phase10_assert( 2 === $cached['blocked_today'], 'Cached dashboard values must remain typed.' );
 ceog_phase10_assert( 1 === $wpdb->group_queries && 1 === $wpdb->recent_queries, 'A warm cache must not repeat database queries.' );
-
-$GLOBALS['ceog_options']['ceog_settings']['mode'] = 'monitor';
-$monitor_payload = $dashboard->get_payload();
-ceog_phase10_assert( ! $monitor_payload['pro_context']['show'], 'The cleanup card must never appear outside effective Enforce mode.' );
 
 $GLOBALS['ceog_transients']['ceog_dashboard_cache'] = array( 'marker' => true );
 $settings->save( array( 'mode' => 'enforce' ) );

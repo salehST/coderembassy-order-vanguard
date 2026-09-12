@@ -181,12 +181,12 @@ final class CEOG_Lists {
 		$match = self::evaluate_blocklist( $context, $settings );
 
 		/**
-		 * Allows an active add-on to supply additional list matches.
+		 * Allows other code to supply additional list matches.
 		 * Whitelist precedence has already been applied above.
 		 *
 		 * @param array<string, mixed> $match    Current match.
 		 * @param array<string, mixed> $context  Checkout context.
-		 * @param array<string, mixed> $settings Sanitized Free settings.
+		 * @param array<string, mixed> $settings Sanitized plugin settings.
 		 */
 		return apply_filters( 'ceog_blocklist_match', $match, $context, $settings );
 	}

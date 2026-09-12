@@ -11,7 +11,6 @@ if ( boot.nonce ) {
 }
 
 const route = ( endpoint ) => '/ceog/v1/' + endpoint;
-const proRoute = ( endpoint ) => '/ceog-pro/v1/' + endpoint;
 
 export const fetchSettings = () => apiFetch( { path: route( 'settings' ) } );
 
@@ -50,13 +49,6 @@ export const deleteLog = ( ids ) =>
 		path: route( 'log/delete' ),
 		method: 'POST',
 		data: { ids },
-	} );
-
-export const exportLogCsv = ( filters ) =>
-	apiFetch( {
-		path: proRoute( 'reports/export' ),
-		method: 'POST',
-		data: { filters },
 	} );
 
 export const fetchLists = () => apiFetch( { path: route( 'lists' ) } );

@@ -142,6 +142,17 @@ final class CEOG_Settings {
 				continue;
 			}
 
+			if ( 'log_retention_days' === $key ) {
+
+				$days              = absint( $value );
+
+				$sanitized[ $key ] = in_array( $days, array( 7, 30, 90 ), true ) ? $days : 30;
+
+				continue;
+
+			}
+
+
 			if ( isset( self::$integer_bounds[ $key ] ) ) {
 				$bounds            = self::$integer_bounds[ $key ];
 				$sanitized[ $key ] = min( $bounds[1], max( $bounds[0], absint( $value ) ) );
@@ -200,6 +211,13 @@ final class CEOG_Settings {
 		foreach ( array_keys( self::$integer_bounds ) as $key ) {
 			$output[ $key ] = isset( $settings[ $key ] ) ? (int) $settings[ $key ] : 0;
 		}
+
+
+		$days                         = absint( $settings['log_retention_days'] ?? 30 );
+
+
+		$output['log_retention_days'] = in_array( $days, array( 7, 30, 90 ), true ) ? $days : 30;
+
 
 
 		return $output;

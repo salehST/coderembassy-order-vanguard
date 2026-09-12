@@ -45,6 +45,7 @@ function ceog_get_default_settings() {
 		'whitelist_roles'           => array( 'administrator', 'shop_manager' ),
 		'whitelist_payment_methods' => array(),
 		'log_full_ip'               => 'no',
+		'log_retention_days'        => 30,
 		'trusted_proxy'             => 'none',
 		'alert_email_enabled'       => 'yes',
 		'alert_email'               => '',

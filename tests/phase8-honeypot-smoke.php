@@ -91,7 +91,7 @@ $block_name = $honeypot->get_field_name_for_flow( 'checkout_block' );
 $second     = new CEOG_Honeypot( $settings, $logger );
 ceog_phase8_assert( 1 === preg_match( '/^ceog_[a-f0-9]{24}$/', $field_name ), 'The field name must be opaque and bounded.' );
 ceog_phase8_assert( $field_name === $second->get_field_name(), 'The stored site salt must produce a stable field name.' );
-ceog_phase8_assert( 1 === preg_match( '/^ceog_[a-f0-9]{24}$/', $block_name ), 'The Pro extension field name must remain opaque and bounded.' );
+ceog_phase8_assert( 1 === preg_match( '/^ceog_[a-f0-9]{24}$/', $block_name ), 'The extension field name must remain opaque and bounded.' );
 ceog_phase8_assert( $field_name !== $block_name, 'Classic and Checkout Block flows must use separate salted field names.' );
 ceog_phase8_assert( $block_name === $second->get_field_name_for_flow( 'checkout_block' ), 'The Checkout Block field name must be stable for the site.' );
 ceog_phase8_assert( strlen( get_option( 'ceog_honeypot_salt', '' ) ) >= 32, 'A site-specific honeypot salt must be stored.' );

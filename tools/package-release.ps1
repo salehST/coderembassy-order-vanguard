@@ -21,7 +21,10 @@ $runtimeItems = @(
 	'coderembassy-order-vanguard.php',
 	'assets',
 	'readme.txt',
-	'uninstall.php'
+	'uninstall.php',
+	'src',
+	'package.json',
+	'package-lock.json'
 )
 
 New-Item -ItemType Directory -Force -Path $releaseDirectory, $stagePlugin | Out-Null
@@ -87,7 +90,11 @@ try {
 	if ($entries.Count -lt 10 -or @($entries | Where-Object { -not $_.StartsWith($requiredPrefix) }).Count -gt 0) {
 		throw 'The release ZIP does not have the expected single plugin root.'
 	}
-	$forbidden = @($entries | Where-Object { $_ -match '/(node_modules|src|tests|tools|release)/' })
+	$forbidden = @($entries | Where-Object { $_ -match '/(node_modules|tests|tools|release)/' })
+	$requiredSource = @(($requiredPrefix + 'src/index.js'), ($requiredPrefix + 'package.json'), ($requiredPrefix + 'package-lock.json'))
+	if (@($requiredSource | Where-Object { $_ -notin $entries }).Count -gt 0) {
+		throw 'Human-readable source or build configuration is missing from the ZIP.'
+	}
 	if ($forbidden.Count -gt 0) {
 		throw ('Forbidden development files found in the ZIP: ' + ($forbidden -join ', '))
 	}

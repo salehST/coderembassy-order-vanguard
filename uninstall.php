@@ -22,7 +22,7 @@ global $wpdb;
 $ceog_table_name = $wpdb->prefix . 'ceog_log';
 
 // The identifier is composed exclusively from WordPress's trusted table prefix.
-$wpdb->query( "DROP TABLE IF EXISTS {$ceog_table_name}" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.SchemaChange, WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+$wpdb->query( "DROP TABLE IF EXISTS {$ceog_table_name}" ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.SchemaChange,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.PreparedSQL.InterpolatedNotPrepared,PluginCheck.Security.DirectDB.UnescapedDBParameter -- Identifier uses only WordPress's trusted table prefix; destructive cleanup runs solely after the saved opt-in.
 
 delete_option( 'ceog_settings' );
 delete_option( 'ceog_db_version' );

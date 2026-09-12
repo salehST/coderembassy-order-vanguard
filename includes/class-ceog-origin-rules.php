@@ -182,7 +182,7 @@ final class CEOG_Origin_Rules {
 			array(
 				'billing_email' => $email,
 				'status'        => 'completed',
-				'exclude'       => $order_id > 0 ? array( $order_id ) : array(),
+				'exclude'       => $order_id > 0 ? array( $order_id ) : array(), // phpcs:ignore WordPressVIPMinimum.Performance.WPQueryParams.PostNotIn_exclude -- Bounded one-row lookup excludes only the current order ID.
 				'limit'         => 1,
 				'return'        => 'ids',
 			)

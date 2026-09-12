@@ -3,7 +3,7 @@
  * Plugin Name: CoderEmbassy Order Vanguard
  * Plugin URI:  https://github.com/salehST/coderembassy-order-vanguard
  * Description: API-level protection against card testing, bot orders, and fake WooCommerce checkouts.
- * Version:     1.0.16
+ * Version:     1.1.0
  * Author:      CoderEmbassy
  * Author URI:  https://coderembassy.com/
  * License:     GPLv2 or later
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'CEOG_VERSION', '1.0.16' );
+define( 'CEOG_VERSION', '1.1.0' );
 define( 'CEOG_DB_VERSION', '1.0.4' );
 define( 'CEOG_FILE', __FILE__ );
 define( 'CEOG_PATH', plugin_dir_path( __FILE__ ) );

@@ -101,23 +101,19 @@ final class CEOG_Admin {
 
 		$user = wp_get_current_user();
 
-		$bootstrap = apply_filters(
-			'ceog_admin_bootstrap',
-			array(
+		$bootstrap = array(
 				'restUrl'   => esc_url_raw( rest_url( 'ceog/v1/' ) ),
 				'nonce'     => wp_create_nonce( 'wp_rest' ),
 				'caps'      => array(
 					'manage' => current_user_can( 'manage_woocommerce' ),
 				),
 				'version'   => CEOG_VERSION,
-				'isPro'     => false,
 				'logoLight' => esc_url_raw( CEOG_URL . 'assets/images/logo-light.png' ),
 				'logoDark'  => esc_url_raw( CEOG_URL . 'assets/images/logo-dark.png' ),
 				'user'      => array(
 					'displayName' => sanitize_text_field( $user->display_name ),
 					'avatarUrl'   => esc_url_raw( get_avatar_url( $user->ID, array( 'size' => 64 ) ) ),
 				),
-			)
 		);
 		wp_localize_script( 'ceog-admin', 'ceogBoot', is_array( $bootstrap ) ? $bootstrap : array() );
 
